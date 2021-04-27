@@ -1,0 +1,152 @@
+<html>
+
+<head>
+    <style>
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0px auto;
+        }
+
+        /* Zebra striping */
+
+        tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+        th {
+            background: #333;
+            color: white;
+            font-weight: bold;
+            cursor: s-resize;
+            background-repeat: no-repeat;
+            background-position: 3% center;
+        }
+
+        td,
+        th {
+            padding: 6px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th.des:after {
+            content: "\21E3";
+        }
+
+        th.aes:after {
+            content: "\21E1";
+        }
+    </style>
+</head>
+
+<body>
+    <table id="powerTable">
+      <thead>
+        <th>Power</th>
+        <th>Time(msec)</th>
+        <th>Try it yourself</th>
+      </thead>
+    </table>
+    <div>* - these are estimated because I do not want to leave my computer running that long.</div>
+    <script>
+      var data = [
+        {
+          "exponent": 10,
+          "timeMsec": 0
+        },
+        {
+          "exponent": 18,
+          "timeMsec": 3,
+          "description": "Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng "
+        },
+        {
+          "exponent": 20,
+          "timeMsec": 2
+        },
+        {
+          "exponent": 32,
+          "timeMsec": 7291
+        },
+        {
+          "exponent": 34,
+          "timeMsec": 29164,
+          "description": "Sorting all 10 digit phone numbers with Obama's algorithm"
+        },
+        {
+          "exponent": 40,
+          "timeMsec": "59727872*"
+        },
+        {
+          "exponent": 50,
+          "timeMsec": "489290727424*"
+        },
+        {
+          "exponent": 53,
+          "timeMsec": "31314606555136*",
+          "description": "When javascript integers start truncating https://rachelbythebay.com/w/2021/02/03/bits/"
+        }
+      ];
+      
+      function pow(exponent) {
+        var result = 1;
+        for(var i = 0; i < exponent; i++) {
+          result *= 2;
+        }
+        return result;
+      }
+
+      function simulate(exponent, tryCell) {
+        var accumulator = 0;
+        var iterations = pow(exponent);
+
+        var t1 = new Date().getTime();
+        for(var i = 0; i < iterations; i++) {
+          accumulator += 1;
+        }
+        var t2 = new Date().getTime();
+        var timeMsec = t2 - t1;
+
+        tryCell.innerHTML = "" + timeMsec;
+        console.log("2^" + exponent + ": " + accumulator + ": " + timeMsec)
+      }
+
+      function setupSimulation(exponent, tryCell) {
+        return function() {
+          simulate(exponent, tryCell);
+        }
+      }
+
+      var table = document.getElementById("powerTable");
+      for(var i = 0; i < data.length; i++) {
+        var exponent = data[i].exponent;
+        var timeMsec = data[i].timeMsec;
+        var tableRow = document.createElement("tr");
+        table.append(tableRow);
+
+        var exponentCell = document.createElement("td");
+        tableRow.append(exponentCell);
+        var exponentDiv = document.createElement("div");
+        exponentCell.append(exponentDiv);
+        exponentDiv.innerHTML = "2^" + exponent;
+
+        var timeCell = document.createElement("td");
+        tableRow.append(timeCell);
+        var timeDiv = document.createElement("div");
+        timeCell.append(timeDiv);
+        timeDiv.innerHTML = timeMsec;
+
+        var tryItCell = document.createElement("td");
+        tableRow.append(tryItCell);
+        var tryItButton = document.createElement("input");
+        tryItCell.append(tryItButton);
+        tryItButton.onclick = setupSimulation(exponent, tryItCell);
+        tryItButton.type="button";
+        tryItButton.value = "go";
+      }
+
+
+    </script>
+</body>
+
+</html>
