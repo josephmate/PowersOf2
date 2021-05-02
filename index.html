@@ -43,51 +43,127 @@
 <body>
     <table id="powerTable">
       <thead>
-        <th>Power</th>
+        <!--
+        <th>O(lgN) Power</th>
+        <th>O(sqrt(N)) Power</th>
+        -->
+        <th>O(N) Power</th>
+        <th>O(NlgN) Power</th>
+        <!--
+        <th>O(N^2) Power</th>
+        <th>O(N^3) Power</th>
+        <th>O(2^N) Power</th>
+        <th>O(N!) Power</th>
+        <th>O(N^N) Power</th>
+        -->
         <th>Time(msec)</th>
-        <th>Try it yourself</th>
+        <th>Noteable Usage</th>
+        <th>Time it yourself</th>
       </thead>
     </table>
     <div>* - these are estimated because I do not want to leave my computer running that long.</div>
     <script>
       var data = [
         {
-          "exponent": 10,
+          "linearBase2Exponent": 10,
+          // log(2^10) = 3.01
+          "linearBase10Exponent": 3,
+          // lg ( 2^7* lg (2 ^ 7)) = 9.80
+          // lg ( 2^8* lg (2 ^ 8)) = 11
+          "logLinearBase2Exponent": 8,
+          // lg ( 10^2* lg (10 ^ 2)) = 9.37
+          // lg ( 10^3* lg (10 ^ 3)) = 13.2
+          "logLinearBase10Exponent": 2,
+          // ran this in my browser
           "timeMsec": 0
         },
         {
-          "exponent": 18,
-          "timeMsec": 3,
-          "description": "Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng "
+          "linearBase2Exponent": 20,
+          // lg(2^20) = 6.02
+          "linearBase10Exponent": 6,
+          // lg ( 2^16* lg (2 ^ 16)) = 20
+          // lg ( 2^20 lg (2 ^ 20)) = 24
+          "logLinearBase2Exponent": 16,
+          // lg ( 10^5* lg (10 ^ 5)) = 20.67
+          // lg ( 10^6* lg (10 ^ 6)) = 24
+          "logLinearBase10Exponent": 5,
+          // ran this in my browser
+          "timeMsec": 5,
+          "description": "Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng (2^18 time)"
         },
         {
-          "exponent": 20,
-          "timeMsec": 2
+          "linearBase2Exponent": 30,
+          // lg(2^30) = 9.03
+          "linearBase10Exponent": 9,
+          // lg ( 2^25* lg (2 ^ 25)) = 29.6
+          // lg ( 2^26* lg (2 ^ 26)) = 30.7
+          // lg ( 2^30 lg (2 ^ 30)) = 34.9
+          "logLinearBase2Exponent": 25,
+          // lg ( 10^7* lg (10 ^ 7)) = 27.7
+          // lg ( 10^8* lg (10 ^ 8)) = 31.3
+          // lg ( 10^9* lg (10 ^ 9)) = 34.8
+          "logLinearBase10Exponent": 8,
+          // ran this in my browser
+          "timeMsec": 2295,
+          "description": "Sorting all 10 digit phone numbers with Obama's algorithm (10^10 or about 2^34) or counting all 32 bit integers (2^32)"
         },
         {
-          "exponent": 32,
-          "timeMsec": 7291
+          "linearBase2Exponent": 40,
+          // lg(2^40) = 12.04
+          "linearBase10Exponent": 12,
+          // lg ( 2^34* lg (2 ^ 34)) = 39.09
+          // lg ( 2^35* lg (2 ^ 35)) = 40.1
+          // lg ( 2^40 lg (2 ^ 40)) = 45.3
+          "logLinearBase2Exponent": 35,
+          // lg ( 10^10 lg (10 ^ 10)) = 38.2
+          // lg ( 10^11* lg (10 ^ 11)) = 41.7
+          // lg ( 10^12* lg (10 ^ 12)) = 45.2
+          "logLinearBase10Exponent": 11,
+          // 2295 * 1024^1
+          "timeMsec": "2350080*"
         },
         {
-          "exponent": 34,
-          "timeMsec": 29164,
-          "description": "Sorting all 10 digit phone numbers with Obama's algorithm"
+          "linearBase2Exponent": 50,
+          // lg(2^50) = 15.05
+          "linearBase10Exponent": 15,
+          // lg ( 2^34* lg (2 ^ 34)) = 49.459
+          // lg ( 2^45* lg (2 ^ 45)) = 50.492
+          // lg ( 2^50 lg (2 ^ 50)) = 55.6
+          "logLinearBase2Exponent": 45,
+          // lg ( 10^13 lg (10 ^ 13)) = 48.6
+          // lg ( 10^14* lg (10 ^ 14)) = 52.0
+          // lg ( 10^15* lg (10 ^ 15)) = 55.5
+          "logLinearBase10Exponent": 13,
+          // 2295 * 1024^2
+          "timeMsec": "2406481920*",
+          "description": "303 days to calculate 50,000,000,000,000 digits of pi (about 2^46)"
         },
         {
-          "exponent": 40,
-          "timeMsec": "59727872*"
-        },
-        {
-          "exponent": 50,
-          "timeMsec": "489290727424*"
-        },
-        {
-          "exponent": 53,
-          "timeMsec": "31314606555136*",
-          "description": "When javascript integers start truncating https://rachelbythebay.com/w/2021/02/03/bits/"
+          "linearBase2Exponent": 60,
+          // lg(2^60) = 18.06
+          "linearBase10Exponent": 18,
+          // lg ( 2^54* lg (2 ^ 54)) = 59.75
+          // lg ( 2^55* lg (2 ^ 55)) = 60.78
+          // lg ( 2^60 lg (2 ^ 60)) = 65.9
+          "logLinearBase2Exponent": 54,
+          // lg ( 10^16 lg (10 ^ 16)) = 58.88
+          // lg ( 10^17* lg (10 ^ 17)) = 62.29
+          // lg ( 10^18* lg (10 ^ 18)) = 65.7
+          "logLinearBase10Exponent": 16,
+          // 2295 * 1024^3
+          "timeMsec": "2464237486080*",
+          "description": "brute force attack of DES is 2^56 in the worst case"
         }
       ];
       
+      function addTextCell(tableRow, text) {
+        var cell = document.createElement("td");
+        tableRow.append(cell);
+        var div = document.createElement("div");
+        cell.append(div);
+        div.innerHTML = text;
+      }
+
       function pow(exponent) {
         var result = 1;
         for(var i = 0; i < exponent; i++) {
@@ -119,30 +195,30 @@
 
       var table = document.getElementById("powerTable");
       for(var i = 0; i < data.length; i++) {
-        var exponent = data[i].exponent;
+        var linearBase2Exponent = data[i].linearBase2Exponent;
+        var linearBase10Exponent = data[i].linearBase10Exponent;
+        var logLinearBase2Exponent = data[i].logLinearBase2Exponent;
+        var logLinearBase10Exponent = data[i].logLinearBase10Exponent;
+        var description = data[i].description;
         var timeMsec = data[i].timeMsec;
         var tableRow = document.createElement("tr");
         table.append(tableRow);
-
-        var exponentCell = document.createElement("td");
-        tableRow.append(exponentCell);
-        var exponentDiv = document.createElement("div");
-        exponentCell.append(exponentDiv);
-        exponentDiv.innerHTML = "2^" + exponent;
-
-        var timeCell = document.createElement("td");
-        tableRow.append(timeCell);
-        var timeDiv = document.createElement("div");
-        timeCell.append(timeDiv);
-        timeDiv.innerHTML = timeMsec;
+        addTextCell(tableRow, "2<sup>" + linearBase2Exponent + "</sup>, " + "10<sup>" + linearBase10Exponent + "</sup>");
+        addTextCell(tableRow, "2<sup>" + logLinearBase2Exponent + "</sup>, " + "10<sup>" + logLinearBase10Exponent + "</sup>");
+        addTextCell(tableRow, timeMsec);
+        if(description) {
+          addTextCell(tableRow, description);
+        } else {
+          addTextCell(tableRow, "");
+        }
 
         var tryItCell = document.createElement("td");
         tableRow.append(tryItCell);
         var tryItButton = document.createElement("input");
         tryItCell.append(tryItButton);
-        tryItButton.onclick = setupSimulation(exponent, tryItCell);
+        tryItButton.onclick = setupSimulation(linearBase2Exponent, tryItCell);
         tryItButton.type="button";
-        tryItButton.value = "go";
+        tryItButton.value = "O(N)";
       }
 
 
@@ -150,3 +226,4 @@
 </body>
 
 </html>
+ 
