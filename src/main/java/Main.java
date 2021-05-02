@@ -12,26 +12,52 @@ public class Main {
 
   private static final String TOP_MATERIAL =
       """
-      <html>
-      <head>
-        <link rel="stylesheet" href="css/styles.css">
-      </head> 
-      <body>
-        <table>
-          <thead>
-      """;
+          <html>
+          <head>
+            <link rel="stylesheet" href="css/styles.css">
+            <script>
+              function pow(exponent) {
+                var result = 1;
+                for(var i = 0; i < exponent; i++) {
+                  result *= 2;
+                }
+                return result;
+              }
+            
+              function simulate(cellId, linearBase2Power) {
+                var accumulator = 0;
+                var iterations = pow(linearBase2Power);
+        
+                var t1 = new Date().getTime();
+                for(var i = 0; i < iterations; i++) {
+                  accumulator += 1;
+                }
+                var t2 = new Date().getTime();
+                var timeMsec = t2 - t1;
+                console.log("2^" + linearBase2Power + ": " + accumulator + ": " + timeMsec);
+                
+                var tableCell = document.getElementById(cellId);
+                tableCell.innerHTML = "" + timeMsec + " ms";
+              }
+            </script>
+          </head> 
+          <body>
+            <table>
+              <thead>
+          """;
   private static final String AFTER_TABLE_HEADERS =
       """
             <th>Time(msec)</th>
             <th>Notable Usage</th>
-            <!--<th>Time it yourself</th>-->
+            <th>Time it yourself*</th>
           </thead>
       """;
 
   private static final String BOTTOM_MATERIAL =
     """
       </table>
-      <div>* - these are estimated because I do not want to leave my computer running that long.</div>
+      <div>* - Counts from 1 to 2^N in your browser.</div>
+      <div>** - these are estimated because I do not want to leave my computer running that long.</div>
     </body>      
     </html>
     """;
@@ -44,9 +70,42 @@ public class Main {
       .build();
 
   private static final Map<Integer, Long> TIMED_POWERS = new ImmutableMap.Builder()
+      .put(0, 0L)
+      .put(1, 0L)
+      .put(2, 0L)
+      .put(3, 0L)
+      .put(4, 0L)
+      .put(5, 0L)
+      .put(6, 0L)
+      .put(7, 0L)
+      .put(8, 0L)
+      .put(9, 0L)
       .put(10, 0L)
-      .put(20, 5L)
-      .put(30, 2295L)
+      .put(11, 0L)
+      .put(12, 0L)
+      .put(13, 0L)
+      .put(14, 0L)
+      .put(15, 0L)
+      .put(16, 0L)
+      .put(17, 0L)
+      .put(18, 0L)
+      .put(19, 1L)
+      .put(20, 1L)
+      .put(21, 3L)
+      .put(22, 6L)
+      .put(23, 11L)
+      .put(24, 24L)
+      .put(25, 51L)
+      .put(26, 95L)
+      .put(27, 197L)
+      .put(28, 392L)
+      .put(29, 776L)
+      .put(30, 1560L)
+      .put(31, 4723L)
+      .put(32, 6046L)
+      .put(33, 12095L)
+      .put(34, 24830L)
+      .put(35, 48955L)
       .build();
 
   private static double factorial(double n) {
@@ -145,7 +204,7 @@ public class Main {
     final long years = days / 365;
 
     if (years > 0) {
-      return years + " years, " + days + " days";
+      return years + " years, " + daysTrimmed + " days";
     }
     if (days > 0) {
       return daysTrimmed + " days, " + hoursTrimmed + " hours";
@@ -161,6 +220,14 @@ public class Main {
     }
 
     return millisecondsTrimmed + " ms";
+  }
+
+  private static long extendPower(int linearBase2Power) {
+    long result = 48955L;
+    for (int i = 35; i <= linearBase2Power; i++) {
+      result = result << 2;
+    }
+    return result;
   }
 
   public static void main(String[] args) throws Exception {
@@ -182,6 +249,9 @@ public class Main {
         writer.write("      <td>");
         if (duration != null) {
           writer.write(prettyPrintDuration(duration));
+        } else {
+          writer.write(prettyPrintDuration(extendPower(linearBase2Power)));
+          writer.write("**");
         }
         writer.write("</td>\n");
 
@@ -190,6 +260,18 @@ public class Main {
         if (notable != null) {
           writer.write(notable);
         }
+        writer.write("</td>\n");
+
+        // simulate
+        String cellId = "linearBase2Power_" + linearBase2Power;
+        writer.write("      <td id='");
+        writer.write(cellId);
+        writer.write("'>");
+        writer.write("<input type='button' onclick='simulate(\"");
+        writer.write(cellId);
+        writer.write("\",");
+        writer.write(String.valueOf(linearBase2Power));
+        writer.write(")' value='Go'");
         writer.write("</td>\n");
 
         writer.write("    </tr>\n");

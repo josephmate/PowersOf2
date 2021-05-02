@@ -1,6 +1,31 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+    function pow(exponent) {
+      var result = 1;
+      for(var i = 0; i < exponent; i++) {
+        result *= 2;
+      }
+      return result;
+    }
+
+    function simulate(cellId, linearBase2Power) {
+      var accumulator = 0;
+      var iterations = pow(linearBase2Power);
+
+      var t1 = new Date().getTime();
+      for(var i = 0; i < iterations; i++) {
+        accumulator += 1;
+      }
+      var t2 = new Date().getTime();
+      var timeMsec = t2 - t1;
+      console.log("2^" + linearBase2Power + ": " + accumulator + ": " + timeMsec);
+
+      var tableCell = document.getElementById(cellId);
+      tableCell.innerHTML = "" + timeMsec + " ms";
+    }
+  </script>
 </head>
 <body>
   <table>
@@ -16,7 +41,7 @@
       <th>O(N<sup>N</sup>)
       <th>Time(msec)</th>
       <th>Notable Usage</th>
-      <!--<th>Time it yourself</th>-->
+      <th>Time it yourself*</th>
     </thead>
     <tr>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
@@ -28,8 +53,9 @@
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_0'><input type='button' onclick='simulate("linearBase2Power_0",0)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>2</sup>, 10<sup>1</sup></td>
@@ -41,8 +67,9 @@
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_1'><input type='button' onclick='simulate("linearBase2Power_1",1)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
@@ -54,8 +81,9 @@
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_2'><input type='button' onclick='simulate("linearBase2Power_2",2)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>8</sup>, 10<sup>2</sup></td>
@@ -67,8 +95,9 @@
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_3'><input type='button' onclick='simulate("linearBase2Power_3",3)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>16</sup>, 10<sup>5</sup></td>
@@ -80,8 +109,9 @@
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_4'><input type='button' onclick='simulate("linearBase2Power_4",4)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>32</sup>, 10<sup>10</sup></td>
@@ -93,8 +123,9 @@
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_5'><input type='button' onclick='simulate("linearBase2Power_5",5)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>64</sup>, 10<sup>19</sup></td>
@@ -106,8 +137,9 @@
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_6'><input type='button' onclick='simulate("linearBase2Power_6",6)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>128</sup>, 10<sup>39</sup></td>
@@ -119,8 +151,9 @@
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_7'><input type='button' onclick='simulate("linearBase2Power_7",7)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>256</sup>, 10<sup>77</sup></td>
@@ -132,8 +165,9 @@
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_8'><input type='button' onclick='simulate("linearBase2Power_8",8)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>512</sup>, 10<sup>154</sup></td>
@@ -145,8 +179,9 @@
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_9'><input type='button' onclick='simulate("linearBase2Power_9",9)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -160,6 +195,7 @@
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>0 ms</td>
       <td></td>
+      <td id='linearBase2Power_10'><input type='button' onclick='simulate("linearBase2Power_10",10)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -171,8 +207,9 @@
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_11'><input type='button' onclick='simulate("linearBase2Power_11",11)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -184,8 +221,9 @@
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_12'><input type='button' onclick='simulate("linearBase2Power_12",12)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -197,8 +235,9 @@
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_13'><input type='button' onclick='simulate("linearBase2Power_13",13)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -210,8 +249,9 @@
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_14'><input type='button' onclick='simulate("linearBase2Power_14",14)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -223,8 +263,9 @@
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_15'><input type='button' onclick='simulate("linearBase2Power_15",15)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -236,8 +277,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_16'><input type='button' onclick='simulate("linearBase2Power_16",16)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -249,8 +291,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>0 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_17'><input type='button' onclick='simulate("linearBase2Power_17",17)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -262,8 +305,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
-      <td></td>
+      <td>0 ms</td>
       <td>Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng (2^18 time)</td>
+      <td id='linearBase2Power_18'><input type='button' onclick='simulate("linearBase2Power_18",18)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -275,8 +319,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>1 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_19'><input type='button' onclick='simulate("linearBase2Power_19",19)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -288,8 +333,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
-      <td>5 ms</td>
+      <td>1 ms</td>
       <td></td>
+      <td id='linearBase2Power_20'><input type='button' onclick='simulate("linearBase2Power_20",20)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -301,8 +347,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>3 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_21'><input type='button' onclick='simulate("linearBase2Power_21",21)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -314,8 +361,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>6 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_22'><input type='button' onclick='simulate("linearBase2Power_22",22)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -327,8 +375,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>11 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_23'><input type='button' onclick='simulate("linearBase2Power_23",23)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -340,8 +389,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
+      <td>24 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_24'><input type='button' onclick='simulate("linearBase2Power_24",24)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -353,8 +403,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
+      <td>51 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_25'><input type='button' onclick='simulate("linearBase2Power_25",25)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -366,8 +417,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
+      <td>95 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_26'><input type='button' onclick='simulate("linearBase2Power_26",26)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -379,8 +431,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
+      <td>197 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_27'><input type='button' onclick='simulate("linearBase2Power_27",27)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -392,8 +445,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
+      <td>392 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_28'><input type='button' onclick='simulate("linearBase2Power_28",28)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -405,8 +459,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
+      <td>776 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_29'><input type='button' onclick='simulate("linearBase2Power_29",29)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -418,8 +473,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
-      <td>2 s, 295 ms</td>
+      <td>1 s, 560 ms</td>
       <td></td>
+      <td id='linearBase2Power_30'><input type='button' onclick='simulate("linearBase2Power_30",30)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -431,8 +487,9 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
+      <td>4 s, 723 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_31'><input type='button' onclick='simulate("linearBase2Power_31",31)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -444,8 +501,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
+      <td>6 s, 46 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_32'><input type='button' onclick='simulate("linearBase2Power_32",32)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -457,8 +515,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>12 s, 95 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_33'><input type='button' onclick='simulate("linearBase2Power_33",33)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -470,8 +529,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
-      <td></td>
+      <td>24 s, 830 ms</td>
       <td>Sorting all 10 digit phone numbers with Obama's algorithm (10^10 or about 2^34) or counting all 32 bit integers (2^32)</td>
+      <td id='linearBase2Power_34'><input type='button' onclick='simulate("linearBase2Power_34",34)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -483,8 +543,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>48 s, 955 ms</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_35'><input type='button' onclick='simulate("linearBase2Power_35",35)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -496,8 +557,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>13 minutes, 3 s**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_36'><input type='button' onclick='simulate("linearBase2Power_36",36)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -509,8 +571,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>52 minutes, 13 s**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_37'><input type='button' onclick='simulate("linearBase2Power_37",37)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -522,8 +585,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>3 hours, 28 minutes**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_38'><input type='button' onclick='simulate("linearBase2Power_38",38)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -535,8 +599,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>13 hours, 55 minutes**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_39'><input type='button' onclick='simulate("linearBase2Power_39",39)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -548,8 +613,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>2 days, 7 hours**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_40'><input type='button' onclick='simulate("linearBase2Power_40",40)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -561,8 +627,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>9 days, 6 hours**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_41'><input type='button' onclick='simulate("linearBase2Power_41",41)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -574,8 +641,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>37 days, 3 hours**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_42'><input type='button' onclick='simulate("linearBase2Power_42",42)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -587,8 +655,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>148 days, 12 hours**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_43'><input type='button' onclick='simulate("linearBase2Power_43",43)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -600,8 +669,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>1 years, 229 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_44'><input type='button' onclick='simulate("linearBase2Power_44",44)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -613,8 +683,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>6 years, 186 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_45'><input type='button' onclick='simulate("linearBase2Power_45",45)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -626,8 +697,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
-      <td></td>
+      <td>26 years, 16 days**</td>
       <td>303 days to calculate 50,000,000,000,000 digits of pi (about 2^46)</td>
+      <td id='linearBase2Power_46'><input type='button' onclick='simulate("linearBase2Power_46",46)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -639,8 +711,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>104 years, 64 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_47'><input type='button' onclick='simulate("linearBase2Power_47",47)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -652,8 +725,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>416 years, 257 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_48'><input type='button' onclick='simulate("linearBase2Power_48",48)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -665,8 +739,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>1666 years, 301 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_49'><input type='button' onclick='simulate("linearBase2Power_49",49)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -678,8 +753,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>6667 years, 111 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_50'><input type='button' onclick='simulate("linearBase2Power_50",50)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -691,8 +767,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>26669 years, 79 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_51'><input type='button' onclick='simulate("linearBase2Power_51",51)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -704,8 +781,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>106676 years, 319 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_52'><input type='button' onclick='simulate("linearBase2Power_52",52)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -717,8 +795,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>426707 years, 184 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_53'><input type='button' onclick='simulate("linearBase2Power_53",53)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1023</sup>, 10<sup>308</sup></td>
@@ -730,8 +809,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>1706830 years, 9 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_54'><input type='button' onclick='simulate("linearBase2Power_54",54)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1022</sup>, 10<sup>308</sup></td>
@@ -743,8 +823,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>6827320 years, 39 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_55'><input type='button' onclick='simulate("linearBase2Power_55",55)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1020</sup>, 10<sup>308</sup></td>
@@ -756,8 +837,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
-      <td></td>
+      <td>27309280 years, 158 days**</td>
       <td>brute force attack of DES is 2^56 in the worst case</td>
+      <td id='linearBase2Power_56'><input type='button' onclick='simulate("linearBase2Power_56",56)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1016</sup>, 10<sup>306</sup></td>
@@ -769,8 +851,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>109237121 years, 270 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_57'><input type='button' onclick='simulate("linearBase2Power_57",57)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>1008</sup>, 10<sup>304</sup></td>
@@ -782,8 +865,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>-136 ms**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_58'><input type='button' onclick='simulate("linearBase2Power_58",58)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>992</sup>, 10<sup>299</sup></td>
@@ -795,8 +879,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>-928 ms**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_59'><input type='button' onclick='simulate("linearBase2Power_59",59)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>960</sup>, 10<sup>289</sup></td>
@@ -808,8 +893,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>-712 ms**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_60'><input type='button' onclick='simulate("linearBase2Power_60",60)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>896</sup>, 10<sup>270</sup></td>
@@ -821,8 +907,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>-848 ms**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_61'><input type='button' onclick='simulate("linearBase2Power_61",61)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>768</sup>, 10<sup>232</sup></td>
@@ -834,8 +921,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>134810947 years, 273 days**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_62'><input type='button' onclick='simulate("linearBase2Power_62",62)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>513</sup>, 10<sup>155</sup></td>
@@ -847,8 +935,9 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>-720 ms**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_63'><input type='button' onclick='simulate("linearBase2Power_63",63)' value='Go'</td>
     </tr>
     <tr>
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
@@ -860,10 +949,12 @@
       <td>2<sup>6</sup>, 10<sup>0</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
+      <td>-880 ms**</td>
       <td></td>
-      <td></td>
+      <td id='linearBase2Power_64'><input type='button' onclick='simulate("linearBase2Power_64",64)' value='Go'</td>
     </tr>
   </table>
-  <div>* - these are estimated because I do not want to leave my computer running that long.</div>
+  <div>* - Counts from 1 to 2^N in your browser.</div>
+  <div>** - these are estimated because I do not want to leave my computer running that long.</div>
 </body>
 </html>
