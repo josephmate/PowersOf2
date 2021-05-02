@@ -116,6 +116,10 @@ public class Main {
         closestDistance = distance;
         closest = i;
       }
+      if (distance > previousDistance) {
+        break;
+      }
+      previousDistance = distance;
     }
     return closest;
   }
