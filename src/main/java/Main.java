@@ -7,9 +7,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 import com.google.common.collect.ImmutableMap;
+import org.apache.commons.lang3.time.DurationFormatUtils;
 import org.apache.commons.lang3.time.StopWatch;
 
 public class Main {
@@ -26,8 +28,8 @@ public class Main {
       """;
   private static final String AFTER_TABLE_HEADERS =
       """
-            <!--<th>Time(msec)</th>-->
-            <th>Not able Usage</th>
+            <th>Time(msec)</th>
+            <th>Notable Usage</th>
             <!--<th>Time it yourself</th>-->
           </thead>
       """;
@@ -47,6 +49,12 @@ public class Main {
       .put(56, "brute force attack of DES is 2^56 in the worst case")
       .build();
 
+  private static final Map<Integer, Long> TIMED_POWERS = new ImmutableMap.Builder()
+      .put(10, 0L)
+      .put(20, 5L)
+      .put(30, 2295L)
+      .build();
+
   private static double factorial(double n) {
     double result = 1;
     for (int i = 2; i <= n; i++) {
@@ -59,17 +67,6 @@ public class Main {
     return Math.log(val)/Math.log(base);
   }
 
-  /**
-   *             <th>O(lgN) Power</th>
-   *             <th>O(sqrt(N)) Power</th>
-   *             <th>O(N) Power</th>
-   *             <th>O(NlgN) Power</th>
-   *             <th>O(N^2) Power</th>
-   *             <th>O(N^3) Power</th>
-   *             <th>O(2^N) Power</th>
-   *             <th>O(N!) Power</th>
-   *             <th>O(N^N) Power</th>
-   */
   private static final List<ComplexityOrder> COMPLEXITY_ORDERS = Arrays.asList(
       //new ComplexityOrder("O(lgN)", Function.identity()),
       //new ComplexityOrder("O(&#8730N)", Function.identity()),
@@ -136,7 +133,38 @@ public class Main {
     writer.write("10<sup>");
     writer.write(String.valueOf(findNearestBaseXPower(base2Power, 10, order.linearToTargetRuntime)));
     writer.write("</sup>");
-    writer.write("      </td>\n");
+    writer.write("</td>\n");
+  }
+
+  private static String prettyPrintDuration(final long durationMilliseconds) {
+    final long millisecondsTrimmed = durationMilliseconds % 1000;
+    final long seconds = durationMilliseconds/1000;
+    final long secondsTrimmed = seconds % 60;
+    final long minutes = seconds / 60;
+    final long minutesTrimmed = minutes % 60;
+    final long hours = minutes / 60;
+    final long hoursTrimmed = hours % 24;
+    final long days = hours / 24;
+    final long daysTrimmed = days % 365;
+    final long years = days / 365;
+
+    if (years > 0) {
+      return years + " years, " + days + " days";
+    }
+    if (days > 0) {
+      return daysTrimmed + " days, " + hoursTrimmed + " hours";
+    }
+    if(hours > 0) {
+      return hoursTrimmed + " hours, " + minutesTrimmed + " minutes";
+    }
+    if(minutes > 0) {
+      return minutesTrimmed + " minutes, " + secondsTrimmed + " s";
+    }
+    if(seconds > 0) {
+      return secondsTrimmed + " s, " + millisecondsTrimmed + " ms";
+    }
+
+    return millisecondsTrimmed + " ms";
   }
 
   public static void main(String[] args) throws Exception {
@@ -151,17 +179,23 @@ public class Main {
       for(int linearBase2Power = 0; linearBase2Power <= 64; linearBase2Power++) {
         writer.write("    <tr>\n");
         for (ComplexityOrder complexityOrder : COMPLEXITY_ORDERS) {
-          StopWatch sw = StopWatch.createStarted();
           printComplexity(writer, linearBase2Power, complexityOrder);
-          sw.stop();
-          System.out.println(linearBase2Power + " " + complexityOrder.htmlDisplay + " " + sw.formatTime());
         }
+
+        Long duration = TIMED_POWERS.get(linearBase2Power);
+        writer.write("      <td>");
+        if (duration != null) {
+          writer.write(prettyPrintDuration(duration));
+        }
+        writer.write("</td>\n");
+
         String notable = NOTABLE_POWERS.get(linearBase2Power);
         writer.write("      <td>");
         if (notable != null) {
           writer.write(notable);
         }
         writer.write("</td>\n");
+
         writer.write("    </tr>\n");
       }
       writer.write(BOTTOM_MATERIAL);
