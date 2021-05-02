@@ -1,0 +1,35 @@
+table {
+  width: 60%;
+  border-collapse: collapse;
+  margin: 0px auto;
+}
+
+/* Zebra striping */
+
+tr:nth-of-type(odd) {
+  background: #eee;
+}
+
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
+  cursor: s-resize;
+  background-repeat: no-repeat;
+  background-position: 3% center;
+}
+
+td,
+th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th.des:after {
+  content: "\21E3";
+}
+
+th.aes:after {
+  content: "\21E1";
+}
