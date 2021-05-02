@@ -1,18 +1,12 @@
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 import com.google.common.collect.ImmutableMap;
-import org.apache.commons.lang3.time.DurationFormatUtils;
-import org.apache.commons.lang3.time.StopWatch;
 
 public class Main {
 
@@ -68,8 +62,8 @@ public class Main {
   }
 
   private static final List<ComplexityOrder> COMPLEXITY_ORDERS = Arrays.asList(
-      //new ComplexityOrder("O(lgN)", Function.identity()),
-      //new ComplexityOrder("O(&#8730N)", Function.identity()),
+      new ComplexityOrder("O(lgN)", n -> log(2, n)),
+      new ComplexityOrder("O(&#8730N)", n -> Math.sqrt(n)),
       new ComplexityOrder("O(N)", n -> n),
       new ComplexityOrder("O(NlgN)", n -> log(2, n)*n),
       new ComplexityOrder("O(N<sup>2</sup>)", n -> Math.pow(n, 2)),
@@ -105,7 +99,8 @@ public class Main {
     double closestDistance = Double.MAX_VALUE;
     double previousDistance = Double.MAX_VALUE;
     final double expected = Math.pow(2, linearBase2Power);
-    for (int i = 0; i <= linearBase2Power; i++) {
+    int i = 0;
+    while (true) {
       double inputSize = Math.pow(inputPower, i);
       double runtime = linearToTargetComplexity.apply(inputSize);
       double distance = Math.abs(runtime - expected);
@@ -117,6 +112,7 @@ public class Main {
         break;
       }
       previousDistance = distance;
+      i+=1;
     }
     return closest;
   }
