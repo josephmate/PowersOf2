@@ -15,38 +15,16 @@ public class Main {
           <html>
           <head>
             <link rel="stylesheet" href="css/styles.css">
-            <script>
-              function pow(exponent) {
-                var result = 1;
-                for(var i = 0; i < exponent; i++) {
-                  result *= 2;
-                }
-                return result;
-              }
-            
-              function simulate(cellId, linearBase2Power) {
-                var accumulator = 0;
-                var iterations = pow(linearBase2Power);
-        
-                var t1 = new Date().getTime();
-                for(var i = 0; i < iterations; i++) {
-                  accumulator += 1;
-                }
-                var t2 = new Date().getTime();
-                var timeMsec = t2 - t1;
-                console.log("2^" + linearBase2Power + ": " + accumulator + ": " + timeMsec);
-                
-                var tableCell = document.getElementById(cellId);
-                tableCell.innerHTML = "" + timeMsec + " ms";
-              }
-            </script>
-          </head> 
+            <link rel="script" href="js/simulator.js">
+          </head>
           <body>
             <div>
               Use this table to figure out the max complexity your algorithm can have in order to achieve some deadline.
-              Look for your approximate runtime in the time column.
-              In that row, look for your approximate problem size.
-              That's the complexity of the algorithm you need to achieve to finish in time.
+              <ol>
+                <li>Look for your how much time your algorithm has available in the Time column.</li>
+                <li>In that row, look for your approximate problem size, expressed as a power of 2 and power of 10.</li>
+                <li>The column you picked is the complexity of the algorithm you need to achieve to finish fast enough.</li>
+              </ol>
             </div>
               These are based on estimates.
               There are so many factors that can throw the runtimes off by factors of 10-100 like:
@@ -59,12 +37,22 @@ public class Main {
             <div>
             </div>
             <div>
-              For instance, In Google Kickstart 2017 Round F, Problem 1 "Cake",
+              For instance, In
+              <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201d29/0000000000201d2a">
+                Google Kickstart 2017 Round F, Problem 1 "Cake"
+              </a>,
               you're suppose find the minimum square cakes needed for a target input area.
               The input size was 10^4 and the runtime limit was 30 seconds.
               I had an algorithm that I was guessing was  less between O(N^3) and O(N^6).
               At O(N^3), with 10^3 we were looking at seconds.
               As a result, I decided it would not be a waste of time to try out this solution.
+            </div>
+            <br/>
+            <div>
+              Feel free to file an
+              <a href="https://github.com/josephmate/PowersOf2/issues">issue</a>
+              or a
+              <a href="https://github.com/josephmate/PowersOf2/pulls">pull request</a>.
             </div>
             <table>
               <thead>
@@ -82,18 +70,18 @@ public class Main {
       </table>
       <div>* - Counts from 1 to 2^N in your browser.</div>
       <div>** - these are estimated because I do not want to leave my computer running that long.</div>
-    </body>      
+    </body>
     </html>
     """;
 
-  private static final Map<Integer, String> NOTABLE_POWERS = new ImmutableMap.Builder()
+  private static final Map<Integer, String> NOTABLE_POWERS = new ImmutableMap.Builder<Integer,String>()
       .put(18, "Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng (2^18 time)")
       .put(34, "Sorting all 10 digit phone numbers with Obama's algorithm (10^10 or about 2^34) or counting all 32 bit integers (2^32)")
       .put(46, "303 days to calculate 50,000,000,000,000 digits of pi (about 2^46)")
       .put(56, "brute force attack of DES is 2^56 in the worst case")
       .build();
 
-  private static final Map<Integer, Long> TIMED_POWERS = new ImmutableMap.Builder()
+  private static final Map<Integer, Long> TIMED_POWERS = new ImmutableMap.Builder<Integer,Long>()
       .put(0, 0L)
       .put(1, 0L)
       .put(2, 0L)
@@ -140,20 +128,20 @@ public class Main {
     return result;
   }
 
-  private static double log(double base, double val) {
-    return Math.log(val)/Math.log(base);
+  private static double log2(double val) {
+    return Math.log(val)/Math.log(2);
   }
 
   private static final List<ComplexityOrder> COMPLEXITY_ORDERS = Arrays.asList(
-      new ComplexityOrder("O(lgN)", n -> log(2, n)),
-      new ComplexityOrder("O(&#8730N)", n -> Math.sqrt(n)),
+      new ComplexityOrder("O(lgN)", Main::log2),
+      new ComplexityOrder("O(&#8730N)", Math::sqrt),
       new ComplexityOrder("O(N)", n -> n),
-      new ComplexityOrder("O(NlgN)", n -> log(2, n)*n),
+      new ComplexityOrder("O(NlgN)", n -> log2(n)*n),
       new ComplexityOrder("O(N<sup>2</sup>)", n -> Math.pow(n, 2)),
       new ComplexityOrder("O(N<sup>3</sup>)", n -> Math.pow(n, 3)),
       new ComplexityOrder("O(N<sup>4</sup>)", n -> Math.pow(n, 4)),
       new ComplexityOrder("O(2<sup>N</sup>)", n -> Math.pow(2, n)),
-      new ComplexityOrder("O(N!)", n -> factorial(n)),
+      new ComplexityOrder("O(N!)", Main::factorial),
       new ComplexityOrder("O(N<sup>N</sup>)", n -> Math.pow(n, n))
   );
 

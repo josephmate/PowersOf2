@@ -1,38 +1,16 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/styles.css">
-  <script>
-    function pow(exponent) {
-      var result = 1;
-      for(var i = 0; i < exponent; i++) {
-        result *= 2;
-      }
-      return result;
-    }
-
-    function simulate(cellId, linearBase2Power) {
-      var accumulator = 0;
-      var iterations = pow(linearBase2Power);
-
-      var t1 = new Date().getTime();
-      for(var i = 0; i < iterations; i++) {
-        accumulator += 1;
-      }
-      var t2 = new Date().getTime();
-      var timeMsec = t2 - t1;
-      console.log("2^" + linearBase2Power + ": " + accumulator + ": " + timeMsec);
-
-      var tableCell = document.getElementById(cellId);
-      tableCell.innerHTML = "" + timeMsec + " ms";
-    }
-  </script>
+  <link rel="script" href="js/simulator.js">
 </head>
 <body>
   <div>
     Use this table to figure out the max complexity your algorithm can have in order to achieve some deadline.
-    Look for your approximate runtime in the time column.
-    In that row, look for your approximate problem size.
-    That's the complexity of the algorithm you need to achieve to finish in time.
+    <ol>
+      <li>Look for your how much time your algorithm has available in the Time column.</li>
+      <li>In that row, look for your approximate problem size, expressed as a power of 2 and power of 10.</li>
+      <li>The column you picked is the complexity of the algorithm you need to achieve to finish fast enough.</li>
+    </ol>
   </div>
     These are based on estimates.
     There are so many factors that can throw the runtimes off by factors of 10-100 like:
@@ -45,12 +23,22 @@
   <div>
   </div>
   <div>
-    For instance, In Google Kickstart 2017 Round F, Problem 1 "Cake",
+    For instance, In
+    <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201d29/0000000000201d2a">
+      Google Kickstart 2017 Round F, Problem 1 "Cake"
+    </a>,
     you're suppose find the minimum square cakes needed for a target input area.
     The input size was 10^4 and the runtime limit was 30 seconds.
     I had an algorithm that I was guessing was  less between O(N^3) and O(N^6).
     At O(N^3), with 10^3 we were looking at seconds.
     As a result, I decided it would not be a waste of time to try out this solution.
+  </div>
+  <br/>
+  <div>
+    Feel free to file an
+    <a href="https://github.com/josephmate/PowersOf2/issues">issue</a>
+    or a
+    <a href="https://github.com/josephmate/PowersOf2/pulls">pull request</a>.
   </div>
   <table>
     <thead>
