@@ -28,6 +28,30 @@
   </script>
 </head>
 <body>
+  <div>
+    Use this table to figure out the max complexity your algorithm can have in order to achieve some deadline.
+    Look for your approximate runtime in the time column.
+    In that row, look for your approximate problem size.
+    That's the complexity of the algorithm you need to achieve to finish in time.
+  </div>
+    These are based on estimates.
+    There are so many factors that can throw the runtimes off by factors of 10-100 like:
+    <ol>
+      <li>Computer age</li>
+      <li>Platform (running in a browser vs. desktop)</li>
+      <li>Lower order terms of your algorithm's complexity (ex: N^2 vs 2*N^2)</li>
+      <li>Concurrency</li>
+    </ol>
+  <div>
+  </div>
+  <div>
+    For instance, In Google Kickstart 2017 Round F, Problem 1 "Cake",
+    you're suppose find the minimum square cakes needed for a target input area.
+    The input size was 10^4 and the runtime limit was 30 seconds.
+    I had an algorithm that I was guessing was  less between O(N^3) and O(N^6).
+    At O(N^3), with 10^3 we were looking at seconds.
+    As a result, I decided it would not be a waste of time to try out this solution.
+  </div>
   <table>
     <thead>
       <th>O(lgN)
@@ -36,6 +60,7 @@
       <th>O(NlgN)
       <th>O(N<sup>2</sup>)
       <th>O(N<sup>3</sup>)
+      <th>O(N<sup>4</sup>)
       <th>O(2<sup>N</sup>)
       <th>O(N!)
       <th>O(N<sup>N</sup>)
@@ -45,6 +70,7 @@
     </thead>
     <tr>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
+      <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
@@ -65,6 +91,7 @@
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
+      <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>0 ms</td>
@@ -77,6 +104,7 @@
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
+      <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
@@ -92,6 +120,7 @@
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
+      <td>2<sup>0</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
@@ -105,6 +134,7 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -120,6 +150,7 @@
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
+      <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
@@ -134,6 +165,7 @@
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
@@ -148,6 +180,7 @@
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
+      <td>2<sup>1</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>1</sup>, 10<sup>0</sup></td>
@@ -161,6 +194,7 @@
       <td>2<sup>8</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
+      <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -176,6 +210,7 @@
       <td>2<sup>6</sup>, 10<sup>2</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -190,6 +225,7 @@
       <td>2<sup>7</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -204,6 +240,7 @@
       <td>2<sup>8</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -218,6 +255,7 @@
       <td>2<sup>9</sup>, 10<sup>2</sup></td>
       <td>2<sup>6</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
+      <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -233,6 +271,7 @@
       <td>2<sup>6</sup>, 10<sup>2</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>0 ms</td>
@@ -246,6 +285,7 @@
       <td>2<sup>10</sup>, 10<sup>3</sup></td>
       <td>2<sup>7</sup>, 10<sup>2</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
+      <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -261,6 +301,7 @@
       <td>2<sup>7</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
+      <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>0 ms</td>
@@ -274,6 +315,7 @@
       <td>2<sup>12</sup>, 10<sup>3</sup></td>
       <td>2<sup>8</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
+      <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -289,6 +331,7 @@
       <td>2<sup>8</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
+      <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>0 ms</td>
@@ -302,6 +345,7 @@
       <td>2<sup>14</sup>, 10<sup>4</sup></td>
       <td>2<sup>9</sup>, 10<sup>2</sup></td>
       <td>2<sup>6</sup>, 10<sup>1</sup></td>
+      <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -317,6 +361,7 @@
       <td>2<sup>9</sup>, 10<sup>3</sup></td>
       <td>2<sup>6</sup>, 10<sup>2</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
+      <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>1 ms</td>
@@ -330,6 +375,7 @@
       <td>2<sup>16</sup>, 10<sup>5</sup></td>
       <td>2<sup>10</sup>, 10<sup>3</sup></td>
       <td>2<sup>6</sup>, 10<sup>2</sup></td>
+      <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -344,6 +390,7 @@
       <td>2<sup>17</sup>, 10<sup>5</sup></td>
       <td>2<sup>10</sup>, 10<sup>3</sup></td>
       <td>2<sup>7</sup>, 10<sup>2</sup></td>
+      <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -358,6 +405,7 @@
       <td>2<sup>18</sup>, 10<sup>5</sup></td>
       <td>2<sup>11</sup>, 10<sup>3</sup></td>
       <td>2<sup>7</sup>, 10<sup>2</sup></td>
+      <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -372,6 +420,7 @@
       <td>2<sup>19</sup>, 10<sup>5</sup></td>
       <td>2<sup>11</sup>, 10<sup>3</sup></td>
       <td>2<sup>7</sup>, 10<sup>2</sup></td>
+      <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
@@ -386,6 +435,7 @@
       <td>2<sup>20</sup>, 10<sup>6</sup></td>
       <td>2<sup>12</sup>, 10<sup>3</sup></td>
       <td>2<sup>8</sup>, 10<sup>2</sup></td>
+      <td>2<sup>6</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
@@ -400,6 +450,7 @@
       <td>2<sup>21</sup>, 10<sup>6</sup></td>
       <td>2<sup>12</sup>, 10<sup>3</sup></td>
       <td>2<sup>8</sup>, 10<sup>2</sup></td>
+      <td>2<sup>6</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
@@ -414,6 +465,7 @@
       <td>2<sup>21</sup>, 10<sup>6</sup></td>
       <td>2<sup>13</sup>, 10<sup>4</sup></td>
       <td>2<sup>8</sup>, 10<sup>2</sup></td>
+      <td>2<sup>6</sup>, 10<sup>2</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
@@ -428,6 +480,7 @@
       <td>2<sup>22</sup>, 10<sup>7</sup></td>
       <td>2<sup>13</sup>, 10<sup>4</sup></td>
       <td>2<sup>9</sup>, 10<sup>2</sup></td>
+      <td>2<sup>6</sup>, 10<sup>2</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
@@ -442,6 +495,7 @@
       <td>2<sup>23</sup>, 10<sup>7</sup></td>
       <td>2<sup>14</sup>, 10<sup>4</sup></td>
       <td>2<sup>9</sup>, 10<sup>2</sup></td>
+      <td>2<sup>7</sup>, 10<sup>2</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
@@ -456,6 +510,7 @@
       <td>2<sup>24</sup>, 10<sup>7</sup></td>
       <td>2<sup>14</sup>, 10<sup>4</sup></td>
       <td>2<sup>9</sup>, 10<sup>3</sup></td>
+      <td>2<sup>7</sup>, 10<sup>2</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
@@ -470,6 +525,7 @@
       <td>2<sup>25</sup>, 10<sup>7</sup></td>
       <td>2<sup>15</sup>, 10<sup>4</sup></td>
       <td>2<sup>10</sup>, 10<sup>3</sup></td>
+      <td>2<sup>7</sup>, 10<sup>2</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
@@ -484,6 +540,7 @@
       <td>2<sup>26</sup>, 10<sup>8</sup></td>
       <td>2<sup>15</sup>, 10<sup>4</sup></td>
       <td>2<sup>10</sup>, 10<sup>3</sup></td>
+      <td>2<sup>7</sup>, 10<sup>2</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
@@ -498,6 +555,7 @@
       <td>2<sup>27</sup>, 10<sup>8</sup></td>
       <td>2<sup>16</sup>, 10<sup>4</sup></td>
       <td>2<sup>10</sup>, 10<sup>3</sup></td>
+      <td>2<sup>8</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
@@ -512,6 +570,7 @@
       <td>2<sup>28</sup>, 10<sup>8</sup></td>
       <td>2<sup>16</sup>, 10<sup>5</sup></td>
       <td>2<sup>11</sup>, 10<sup>3</sup></td>
+      <td>2<sup>8</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -526,6 +585,7 @@
       <td>2<sup>29</sup>, 10<sup>9</sup></td>
       <td>2<sup>17</sup>, 10<sup>5</sup></td>
       <td>2<sup>11</sup>, 10<sup>3</sup></td>
+      <td>2<sup>8</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -540,6 +600,7 @@
       <td>2<sup>30</sup>, 10<sup>9</sup></td>
       <td>2<sup>17</sup>, 10<sup>5</sup></td>
       <td>2<sup>11</sup>, 10<sup>3</sup></td>
+      <td>2<sup>8</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -554,6 +615,7 @@
       <td>2<sup>31</sup>, 10<sup>9</sup></td>
       <td>2<sup>18</sup>, 10<sup>5</sup></td>
       <td>2<sup>12</sup>, 10<sup>3</sup></td>
+      <td>2<sup>9</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -568,6 +630,7 @@
       <td>2<sup>32</sup>, 10<sup>9</sup></td>
       <td>2<sup>18</sup>, 10<sup>5</sup></td>
       <td>2<sup>12</sup>, 10<sup>3</sup></td>
+      <td>2<sup>9</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -582,6 +645,7 @@
       <td>2<sup>33</sup>, 10<sup>10</sup></td>
       <td>2<sup>19</sup>, 10<sup>5</sup></td>
       <td>2<sup>12</sup>, 10<sup>3</sup></td>
+      <td>2<sup>9</sup>, 10<sup>2</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -596,6 +660,7 @@
       <td>2<sup>34</sup>, 10<sup>10</sup></td>
       <td>2<sup>19</sup>, 10<sup>6</sup></td>
       <td>2<sup>13</sup>, 10<sup>4</sup></td>
+      <td>2<sup>9</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -610,6 +675,7 @@
       <td>2<sup>35</sup>, 10<sup>10</sup></td>
       <td>2<sup>20</sup>, 10<sup>6</sup></td>
       <td>2<sup>13</sup>, 10<sup>4</sup></td>
+      <td>2<sup>10</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -624,6 +690,7 @@
       <td>2<sup>36</sup>, 10<sup>11</sup></td>
       <td>2<sup>20</sup>, 10<sup>6</sup></td>
       <td>2<sup>13</sup>, 10<sup>4</sup></td>
+      <td>2<sup>10</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -638,6 +705,7 @@
       <td>2<sup>37</sup>, 10<sup>11</sup></td>
       <td>2<sup>21</sup>, 10<sup>6</sup></td>
       <td>2<sup>14</sup>, 10<sup>4</sup></td>
+      <td>2<sup>10</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -652,6 +720,7 @@
       <td>2<sup>38</sup>, 10<sup>11</sup></td>
       <td>2<sup>21</sup>, 10<sup>6</sup></td>
       <td>2<sup>14</sup>, 10<sup>4</sup></td>
+      <td>2<sup>10</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -666,6 +735,7 @@
       <td>2<sup>39</sup>, 10<sup>11</sup></td>
       <td>2<sup>22</sup>, 10<sup>6</sup></td>
       <td>2<sup>14</sup>, 10<sup>4</sup></td>
+      <td>2<sup>11</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -680,6 +750,7 @@
       <td>2<sup>40</sup>, 10<sup>12</sup></td>
       <td>2<sup>22</sup>, 10<sup>6</sup></td>
       <td>2<sup>15</sup>, 10<sup>4</sup></td>
+      <td>2<sup>11</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -694,6 +765,7 @@
       <td>2<sup>41</sup>, 10<sup>12</sup></td>
       <td>2<sup>23</sup>, 10<sup>7</sup></td>
       <td>2<sup>15</sup>, 10<sup>4</sup></td>
+      <td>2<sup>11</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -708,6 +780,7 @@
       <td>2<sup>42</sup>, 10<sup>12</sup></td>
       <td>2<sup>23</sup>, 10<sup>7</sup></td>
       <td>2<sup>15</sup>, 10<sup>4</sup></td>
+      <td>2<sup>11</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -722,6 +795,7 @@
       <td>2<sup>42</sup>, 10<sup>13</sup></td>
       <td>2<sup>24</sup>, 10<sup>7</sup></td>
       <td>2<sup>16</sup>, 10<sup>4</sup></td>
+      <td>2<sup>12</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -736,6 +810,7 @@
       <td>2<sup>43</sup>, 10<sup>13</sup></td>
       <td>2<sup>24</sup>, 10<sup>7</sup></td>
       <td>2<sup>16</sup>, 10<sup>5</sup></td>
+      <td>2<sup>12</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -750,6 +825,7 @@
       <td>2<sup>44</sup>, 10<sup>13</sup></td>
       <td>2<sup>25</sup>, 10<sup>7</sup></td>
       <td>2<sup>16</sup>, 10<sup>5</sup></td>
+      <td>2<sup>12</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -764,6 +840,7 @@
       <td>2<sup>45</sup>, 10<sup>13</sup></td>
       <td>2<sup>25</sup>, 10<sup>7</sup></td>
       <td>2<sup>17</sup>, 10<sup>5</sup></td>
+      <td>2<sup>12</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -778,6 +855,7 @@
       <td>2<sup>46</sup>, 10<sup>14</sup></td>
       <td>2<sup>26</sup>, 10<sup>7</sup></td>
       <td>2<sup>17</sup>, 10<sup>5</sup></td>
+      <td>2<sup>13</sup>, 10<sup>3</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -792,6 +870,7 @@
       <td>2<sup>47</sup>, 10<sup>14</sup></td>
       <td>2<sup>26</sup>, 10<sup>8</sup></td>
       <td>2<sup>17</sup>, 10<sup>5</sup></td>
+      <td>2<sup>13</sup>, 10<sup>4</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -806,6 +885,7 @@
       <td>2<sup>48</sup>, 10<sup>14</sup></td>
       <td>2<sup>27</sup>, 10<sup>8</sup></td>
       <td>2<sup>18</sup>, 10<sup>5</sup></td>
+      <td>2<sup>13</sup>, 10<sup>4</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -820,6 +900,7 @@
       <td>2<sup>49</sup>, 10<sup>15</sup></td>
       <td>2<sup>27</sup>, 10<sup>8</sup></td>
       <td>2<sup>18</sup>, 10<sup>5</sup></td>
+      <td>2<sup>13</sup>, 10<sup>4</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -834,6 +915,7 @@
       <td>2<sup>50</sup>, 10<sup>15</sup></td>
       <td>2<sup>28</sup>, 10<sup>8</sup></td>
       <td>2<sup>18</sup>, 10<sup>5</sup></td>
+      <td>2<sup>14</sup>, 10<sup>4</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -848,6 +930,7 @@
       <td>2<sup>51</sup>, 10<sup>15</sup></td>
       <td>2<sup>28</sup>, 10<sup>8</sup></td>
       <td>2<sup>19</sup>, 10<sup>5</sup></td>
+      <td>2<sup>14</sup>, 10<sup>4</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -862,6 +945,7 @@
       <td>2<sup>52</sup>, 10<sup>15</sup></td>
       <td>2<sup>29</sup>, 10<sup>8</sup></td>
       <td>2<sup>19</sup>, 10<sup>5</sup></td>
+      <td>2<sup>14</sup>, 10<sup>4</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -876,6 +960,7 @@
       <td>2<sup>53</sup>, 10<sup>16</sup></td>
       <td>2<sup>29</sup>, 10<sup>9</sup></td>
       <td>2<sup>19</sup>, 10<sup>6</sup></td>
+      <td>2<sup>14</sup>, 10<sup>4</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -890,6 +975,7 @@
       <td>2<sup>54</sup>, 10<sup>16</sup></td>
       <td>2<sup>30</sup>, 10<sup>9</sup></td>
       <td>2<sup>20</sup>, 10<sup>6</sup></td>
+      <td>2<sup>15</sup>, 10<sup>4</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -904,6 +990,7 @@
       <td>2<sup>55</sup>, 10<sup>16</sup></td>
       <td>2<sup>30</sup>, 10<sup>9</sup></td>
       <td>2<sup>20</sup>, 10<sup>6</sup></td>
+      <td>2<sup>15</sup>, 10<sup>4</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -918,6 +1005,7 @@
       <td>2<sup>56</sup>, 10<sup>17</sup></td>
       <td>2<sup>31</sup>, 10<sup>9</sup></td>
       <td>2<sup>20</sup>, 10<sup>6</sup></td>
+      <td>2<sup>15</sup>, 10<sup>4</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -932,6 +1020,7 @@
       <td>2<sup>57</sup>, 10<sup>17</sup></td>
       <td>2<sup>31</sup>, 10<sup>9</sup></td>
       <td>2<sup>21</sup>, 10<sup>6</sup></td>
+      <td>2<sup>15</sup>, 10<sup>4</sup></td>
       <td>2<sup>5</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
@@ -946,6 +1035,7 @@
       <td>2<sup>58</sup>, 10<sup>17</sup></td>
       <td>2<sup>32</sup>, 10<sup>9</sup></td>
       <td>2<sup>21</sup>, 10<sup>6</sup></td>
+      <td>2<sup>16</sup>, 10<sup>4</sup></td>
       <td>2<sup>6</sup>, 10<sup>0</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>

@@ -42,6 +42,30 @@ public class Main {
             </script>
           </head> 
           <body>
+            <div>
+              Use this table to figure out the max complexity your algorithm can have in order to achieve some deadline.
+              Look for your approximate runtime in the time column.
+              In that row, look for your approximate problem size.
+              That's the complexity of the algorithm you need to achieve to finish in time.
+            </div>
+              These are based on estimates.
+              There are so many factors that can throw the runtimes off by factors of 10-100 like:
+              <ol>
+                <li>Computer age</li>
+                <li>Platform (running in a browser vs. desktop)</li>
+                <li>Lower order terms of your algorithm's complexity (ex: N^2 vs 2*N^2)</li>
+                <li>Concurrency</li>
+              </ol>
+            <div>
+            </div>
+            <div>
+              For instance, In Google Kickstart 2017 Round F, Problem 1 "Cake",
+              you're suppose find the minimum square cakes needed for a target input area.
+              The input size was 10^4 and the runtime limit was 30 seconds.
+              I had an algorithm that I was guessing was  less between O(N^3) and O(N^6).
+              At O(N^3), with 10^3 we were looking at seconds.
+              As a result, I decided it would not be a waste of time to try out this solution.
+            </div>
             <table>
               <thead>
           """;
@@ -127,6 +151,7 @@ public class Main {
       new ComplexityOrder("O(NlgN)", n -> log(2, n)*n),
       new ComplexityOrder("O(N<sup>2</sup>)", n -> Math.pow(n, 2)),
       new ComplexityOrder("O(N<sup>3</sup>)", n -> Math.pow(n, 3)),
+      new ComplexityOrder("O(N<sup>4</sup>)", n -> Math.pow(n, 4)),
       new ComplexityOrder("O(2<sup>N</sup>)", n -> Math.pow(2, n)),
       new ComplexityOrder("O(N!)", n -> factorial(n)),
       new ComplexityOrder("O(N<sup>N</sup>)", n -> Math.pow(n, n))
