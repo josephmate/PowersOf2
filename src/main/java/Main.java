@@ -46,9 +46,11 @@ public class Main {
               The input size was 10^4 and the runtime limit was 30 seconds.
               I had a brute force algorithm that I was guessing was  less between O(N^3) and O(N^6).
               At the time, I had no long how that would take.
-              So I wrote the algorithm and it ended up working.
+              So I wrote the algorithm and I got lucky and it ended up working.
+              However, I wasted times thinking about how to make it more efficient.
               Using this table, I would have been more confident in my brute force algorithm.
-              At O(N^3), with 10^3 we were looking at seconds.
+              At O(N^3), with 10^4 we were looking at seconds.
+              With this tool, I could have been more confident that my approach would work and saved my effort.
             </div>
             <br/>
             <div>
@@ -235,6 +237,14 @@ public class Main {
     return closest;
   }
 
+  private static long pow(long base, long exp) {
+    long result = 1;
+    for(long i = 0; i < exp; i++) {
+      result = result * base;
+    }
+    return result;
+  }
+
   private static void printComplexity(
       BufferedWriter writer,
       int base2Power,
@@ -242,10 +252,25 @@ public class Main {
   ) throws IOException {
     writer.write("      <td>");
     writer.write("2<sup>");
-    writer.write(String.valueOf(findNearestBaseXPower(base2Power, 2, order.linearToTargetRuntime)));
+    if (order.htmlDisplay.equals("O(lgN)")) {
+      if (base2Power <= 9) {
+        writer.write(String.valueOf(pow(2, base2Power)));
+      } else {
+        writer.write("2<sup>");
+        writer.write(String.valueOf(base2Power));
+        writer.write("</sup>");
+      }
+    } else {
+      writer.write(String.valueOf(findNearestBaseXPower(base2Power, 2, order.linearToTargetRuntime)));
+    }
     writer.write("</sup>, ");
     writer.write("10<sup>");
-    writer.write(String.valueOf(findNearestBaseXPower(base2Power, 10, order.linearToTargetRuntime)));
+
+    if (order.htmlDisplay.equals("O(lgN)") && base2Power > 9) {
+      writer.write(String.valueOf(154 * pow(2, base2Power-9)));
+    } else {
+      writer.write(String.valueOf(findNearestBaseXPower(base2Power, 10, order.linearToTargetRuntime)));
+    }
     writer.write("</sup>");
     writer.write("</td>\n");
   }
