@@ -12,10 +12,12 @@
       <li>The column you picked is the complexity of the algorithm you need to achieve to finish fast enough.</li>
     </ol>
   </div>
-    These are based on estimates.
-    There are so many factors that can throw the runtimes off by factors of 10-100 like:
+    These are estimates.
+    There are so many factors that can throw the runtimes off by factors of 1000s like:
     <ol>
       <li>Computer age</li>
+      <li>IO</li>
+      <li>Network</li>
       <li>Platform (running in a browser vs. desktop)</li>
       <li>Lower order terms of your algorithm's complexity (ex: N^2 vs 2*N^2)</li>
       <li>Concurrency</li>
@@ -27,15 +29,19 @@
     <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201d29/0000000000201d2a">
       Google Kickstart 2017 Round F, Problem 1 "Cake"
     </a>,
-    you're suppose find the minimum square cakes needed for a target input area.
-    The input size was 10^4 and the runtime limit was 30 seconds.
-    I had a brute force algorithm that I was guessing was  less between O(N^3) and O(N^6).
+    you're suppose find the minimum number of square cakes needed to cover a target area.
+    The input size was 10^4 and the expected runtime limit was 30 seconds.
+    I had a brute force algorithm that I was guessing was between O(N^3) and O(N^6).
     At the time, I had no long how that would take.
-    So I wrote the algorithm and I got lucky and it ended up working.
-    However, I wasted times thinking about how to make it more efficient.
+    I was hoping for a resource similar to
+    <a href="https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html">
+      Latency Numbers Every Programmer Should Know
+    </a>
+    to help me ballpark how long my algorithm would take before implementing it.
+    I couldn't find anything so I wasted time thinking about how to make it more efficient.
+    I eventually gave up and wrote the algorithm.
+    I got lucky and it ended up working.
     Using this table, I would have been more confident in my brute force algorithm.
-    At O(N^3), with 10^4 we were looking at seconds.
-    With this tool, I could have been more confident that my approach would work and saved my effort.
   </div>
   <br/>
   <div>
@@ -362,7 +368,10 @@
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>868 &mu;s, 900 ns</td>
       <td>****</td>
-      <td>Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng (2^18 time)</td>
+      <td><a href="https://en.wikipedia.org/wiki/MD5">
+Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng (2^18 time)
+</a>
+</td>
       <td id='linearBase2Power_18'><input type='button' onclick='simulate("linearBase2Power_18",18)' value='Go'</td>
     </tr>
     <tr>
@@ -586,7 +595,10 @@
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>260 ms, 377 &mu;s</td>
       <td>6 s, 46 ms</td>
-      <td></td>
+      <td><a href="https://www.youtube.com/watch?v=m4yVlPqeZwo&t=1380s">
+A linear solution to the sorting question Eric Schmidt asked President Obama
+</a>
+</td>
       <td id='linearBase2Power_32'><input type='button' onclick='simulate("linearBase2Power_32",32)' value='Go'</td>
     </tr>
     <tr>
@@ -618,7 +630,7 @@
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>944 ms, 203 &mu;s</td>
       <td>24 s, 830 ms</td>
-      <td>Sorting all 10 digit phone numbers with Obama's algorithm (10^10 or about 2^34) or counting all 32 bit integers (2^32)</td>
+      <td></td>
       <td id='linearBase2Power_34'><input type='button' onclick='simulate("linearBase2Power_34",34)' value='Go'</td>
     </tr>
     <tr>
@@ -970,7 +982,10 @@
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>80 days, 11 hours*****</td>
       <td>6 years, 186 days*****</td>
-      <td>brute force attack of DES is 2^56 in the worst case</td>
+      <td><a href="https://en.wikipedia.org/wiki/Data_Encryption_Standard">
+brute force attack of DES is 2^56 in the worst case
+</a>
+</td>
       <td id='linearBase2Power_56'><input type='button' onclick='simulate("linearBase2Power_56",56)' value='Go'</td>
     </tr>
     <tr>
@@ -1002,7 +1017,10 @@
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>321 days, 23 hours*****</td>
       <td>26 years, 16 days*****</td>
-      <td>303 days to calculate 50,000,000,000,000 digits of pi</td>
+      <td><a href="https://en.wikipedia.org/wiki/Chronology_of_computation_of_%CF%80">
+303 days to calculate 50,000,000,000,000 digits of pi
+</a>
+</td>
       <td id='linearBase2Power_58'><input type='button' onclick='simulate("linearBase2Power_58",58)' value='Go'</td>
     </tr>
     <tr>
@@ -1050,7 +1068,10 @@
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>7 years, 20 days*****</td>
       <td>208 years, 128 days*****</td>
-      <td></td>
+      <td><a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem#Exact_algorithms">
+85,900 node Travelling Salesman problem was solved in 136 CPU Years.
+</a>
+</td>
       <td id='linearBase2Power_61'><input type='button' onclick='simulate("linearBase2Power_61",61)' value='Go'</td>
     </tr>
     <tr>

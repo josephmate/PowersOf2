@@ -27,10 +27,12 @@ public class Main {
                 <li>The column you picked is the complexity of the algorithm you need to achieve to finish fast enough.</li>
               </ol>
             </div>
-              These are based on estimates.
-              There are so many factors that can throw the runtimes off by factors of 10-100 like:
+              These are estimates.
+              There are so many factors that can throw the runtimes off by factors of 1000s like:
               <ol>
                 <li>Computer age</li>
+                <li>IO</li>
+                <li>Network</li>
                 <li>Platform (running in a browser vs. desktop)</li>
                 <li>Lower order terms of your algorithm's complexity (ex: N^2 vs 2*N^2)</li>
                 <li>Concurrency</li>
@@ -42,15 +44,19 @@ public class Main {
               <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201d29/0000000000201d2a">
                 Google Kickstart 2017 Round F, Problem 1 "Cake"
               </a>,
-              you're suppose find the minimum square cakes needed for a target input area.
-              The input size was 10^4 and the runtime limit was 30 seconds.
-              I had a brute force algorithm that I was guessing was  less between O(N^3) and O(N^6).
+              you're suppose find the minimum number of square cakes needed to cover a target area.
+              The input size was 10^4 and the expected runtime limit was 30 seconds.
+              I had a brute force algorithm that I was guessing was between O(N^3) and O(N^6).
               At the time, I had no long how that would take.
-              So I wrote the algorithm and I got lucky and it ended up working.
-              However, I wasted times thinking about how to make it more efficient.
+              I was hoping for a resource similar to
+              <a href="https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html">
+                Latency Numbers Every Programmer Should Know
+              </a>
+              to help me ballpark how long my algorithm would take before implementing it.
+              I couldn't find anything so I wasted time thinking about how to make it more efficient.
+              I eventually gave up and wrote the algorithm.
+              I got lucky and it ended up working.
               Using this table, I would have been more confident in my brute force algorithm.
-              At O(N^3), with 10^4 we were looking at seconds.
-              With this tool, I could have been more confident that my approach would work and saved my effort.
             </div>
             <br/>
             <div>
@@ -84,10 +90,35 @@ public class Main {
     """;
 
   private static final Map<Integer, String> NOTABLE_POWERS = new ImmutableMap.Builder<Integer,String>()
-      .put(18, "Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng (2^18 time)")
-      .put(34, "Sorting all 10 digit phone numbers with Obama's algorithm (10^10 or about 2^34) or counting all 32 bit integers (2^32)")
-      .put(56, "brute force attack of DES is 2^56 in the worst case")
-      .put(58, "303 days to calculate 50,000,000,000,000 digits of pi")
+      .put(18,
+          """
+          <a href="https://en.wikipedia.org/wiki/MD5">
+          Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng (2^18 time)
+          </a>
+          """)
+      .put(32, """
+          <a href="https://www.youtube.com/watch?v=m4yVlPqeZwo&t=1380s">
+          A linear solution to the sorting question Eric Schmidt asked President Obama
+          </a>
+          """)
+      .put(56,
+          """
+          <a href="https://en.wikipedia.org/wiki/Data_Encryption_Standard">
+          brute force attack of DES is 2^56 in the worst case
+          </a>
+          """)
+      .put(58,
+          """
+          <a href="https://en.wikipedia.org/wiki/Chronology_of_computation_of_%CF%80">
+          303 days to calculate 50,000,000,000,000 digits of pi
+          </a>
+          """)
+      .put(61,
+          """
+          <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem#Exact_algorithms">
+          85,900 node Travelling Salesman problem was solved in 136 CPU Years.
+          </a>
+          """)
       .build();
 
   private static final Map<Integer, Long> JAVA_TIMED_POWERS = new ImmutableMap.Builder<Integer,Long>()
