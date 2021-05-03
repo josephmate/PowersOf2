@@ -1,6 +1,7 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -43,9 +44,11 @@ public class Main {
               </a>,
               you're suppose find the minimum square cakes needed for a target input area.
               The input size was 10^4 and the runtime limit was 30 seconds.
-              I had an algorithm that I was guessing was  less between O(N^3) and O(N^6).
+              I had a brute force algorithm that I was guessing was  less between O(N^3) and O(N^6).
+              At the time, I had no long how that would take.
+              So I wrote the algorithm and it ended up working.
+              Using this table, I would have been more confident in my brute force algorithm.
               At O(N^3), with 10^3 we were looking at seconds.
-              As a result, I decided it would not be a waste of time to try out this solution.
             </div>
             <br/>
             <div>
@@ -59,17 +62,21 @@ public class Main {
           """;
   private static final String AFTER_TABLE_HEADERS =
       """
-            <th>Time(msec)</th>
-            <th>Notable Usage</th>
-            <th>Time it yourself*</th>
-          </thead>
+                <th>Java Time*</th>
+                <th>Javascript Time**</th>
+                <th>Notable Usage</th>
+                <th>Time it yourself***</th>
+              </thead>
       """;
 
   private static final String BOTTOM_MATERIAL =
     """
       </table>
-      <div>* - Counts from 1 to 2^N in your browser.</div>
-      <div>** - these are estimated because I do not want to leave my computer running that long.</div>
+      <div>*- ran using a loop that counts from 1 to 2^N on an AMD-FX6300</div>
+      <div>**- ran using a loop that counts from 1 to 2^N on an AMD-FX6300 in my Google Chrome 90.0.4430.93</div>
+      <div>*** - Counts from 1 to 2^N in your browser.</div>
+      <div>**** - I couldn't measure such a small time scale in the browser.</div>
+      <div>***** - These are estimated because I do not want to leave my computer running that long.</div>
     </body>
     </html>
     """;
@@ -77,48 +84,87 @@ public class Main {
   private static final Map<Integer, String> NOTABLE_POWERS = new ImmutableMap.Builder<Integer,String>()
       .put(18, "Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng (2^18 time)")
       .put(34, "Sorting all 10 digit phone numbers with Obama's algorithm (10^10 or about 2^34) or counting all 32 bit integers (2^32)")
-      .put(46, "303 days to calculate 50,000,000,000,000 digits of pi (about 2^46)")
       .put(56, "brute force attack of DES is 2^56 in the worst case")
+      .put(58, "303 days to calculate 50,000,000,000,000 digits of pi")
       .build();
 
-  private static final Map<Integer, Long> TIMED_POWERS = new ImmutableMap.Builder<Integer,Long>()
-      .put(0, 0L)
-      .put(1, 0L)
-      .put(2, 0L)
-      .put(3, 0L)
-      .put(4, 0L)
-      .put(5, 0L)
-      .put(6, 0L)
-      .put(7, 0L)
-      .put(8, 0L)
-      .put(9, 0L)
-      .put(10, 0L)
-      .put(11, 0L)
-      .put(12, 0L)
-      .put(13, 0L)
-      .put(14, 0L)
-      .put(15, 0L)
-      .put(16, 0L)
-      .put(17, 0L)
-      .put(18, 0L)
-      .put(19, 1L)
-      .put(20, 1L)
-      .put(21, 3L)
-      .put(22, 6L)
-      .put(23, 11L)
-      .put(24, 24L)
-      .put(25, 51L)
-      .put(26, 95L)
-      .put(27, 197L)
-      .put(28, 392L)
-      .put(29, 776L)
-      .put(30, 1560L)
-      .put(31, 4723L)
-      .put(32, 6046L)
-      .put(33, 12095L)
-      .put(34, 24830L)
-      .put(35, 48955L)
+  private static final Map<Integer, Long> JAVA_TIMED_POWERS = new ImmutableMap.Builder<Integer,Long>()
+      .put(0, 700L)
+      .put(1, 500L)
+      .put(2, 500L)
+      .put(3, 600L)
+      .put(4, 900L)
+      .put(5, 1500L)
+      .put(6, 3300L)
+      .put(7, 4700L)
+      .put(8, 8800L)
+      .put(9, 24700L)
+      .put(10, 35800L)
+      .put(11, 76700L)
+      .put(12, 144500L)
+      .put(13, 286100L)
+      .put(14, 500200L)
+      .put(15, 1365000L)
+      .put(16, 1991100L)
+      .put(17, 464200L)
+      .put(18, 868900L)
+      .put(19, 2306600L)
+      .put(20, 3720000L)
+      .put(21, 2352200L)
+      .put(22, 4510000L)
+      .put(23, 494600L)
+      .put(24, 993200L)
+      .put(25, 2061000L)
+      .put(26, 3444800L)
+      .put(27, 7180200L)
+      .put(28, 15098600L)
+      .put(29, 28359100L)
+      .put(30, 59983700L)
+      .put(31, 122634500L)
+      .put(32, 260377800L)
+      .put(33, 477866000L)
+      .put(34, 944203900L)
+      .put(35, 1646380100L)
+      .put(36, 3413087700L)
+      .put(37, 7260554300L)
+      .put(38, 14355965800L)
+      .put(39, 28853465300L)
+      .put(40, 53058954000L)
       .build();
+
+  private static final Map<Integer, Long> JAVASCRIPT_TIMED_POWERS = new ImmutableMap.Builder<Integer,Long>()
+      .put(19, 1L * 1000 * 1000)
+      .put(20, 1L * 1000 * 1000)
+      .put(21, 3L * 1000 * 1000)
+      .put(22, 6L * 1000 * 1000)
+      .put(23, 11L * 1000 * 1000)
+      .put(24, 24L * 1000 * 1000)
+      .put(25, 51L * 1000 * 1000)
+      .put(26, 95L * 1000 * 1000)
+      .put(27, 197L * 1000 * 1000)
+      .put(28, 392L * 1000 * 1000)
+      .put(29, 776L * 1000 * 1000)
+      .put(30, 1560L * 1000 * 1000)
+      .put(31, 4723L * 1000 * 1000)
+      .put(32, 6046L * 1000 * 1000)
+      .put(33, 12095L * 1000 * 1000)
+      .put(34, 24830L * 1000 * 1000)
+      .put(35, 48955L * 1000 * 1000)
+      .build();
+
+  private static final int MAX_JAVASCRIPT_POWER;
+  private static final int MIN_JAVASCRIPT_POWER;
+  private static final long MAX_JAVASCRIPT_DURATION;
+  private static final int MAX_JAVA_POWER;
+  private static final long MAX_JAVA_DURATION;
+
+  static {
+    MIN_JAVASCRIPT_POWER = JAVASCRIPT_TIMED_POWERS.keySet().stream().mapToInt(l -> l).min().getAsInt();
+    MAX_JAVASCRIPT_POWER = JAVASCRIPT_TIMED_POWERS.keySet().stream().mapToInt(l -> l).max().getAsInt();
+    MAX_JAVASCRIPT_DURATION = JAVASCRIPT_TIMED_POWERS.get(MAX_JAVASCRIPT_POWER);
+    MAX_JAVA_POWER = JAVA_TIMED_POWERS.keySet().stream().mapToInt(l -> l).max().getAsInt();
+    MAX_JAVA_DURATION = JAVA_TIMED_POWERS.get(MAX_JAVA_POWER);
+  }
 
   private static double factorial(double n) {
     double result = 1;
@@ -204,43 +250,81 @@ public class Main {
     writer.write("</td>\n");
   }
 
-  private static String prettyPrintDuration(final long durationMilliseconds) {
-    final long millisecondsTrimmed = durationMilliseconds % 1000;
-    final long seconds = durationMilliseconds/1000;
-    final long secondsTrimmed = seconds % 60;
-    final long minutes = seconds / 60;
-    final long minutesTrimmed = minutes % 60;
-    final long hours = minutes / 60;
-    final long hoursTrimmed = hours % 24;
-    final long days = hours / 24;
-    final long daysTrimmed = days % 365;
-    final long years = days / 365;
+  private static String prettyPrintDuration(BigInteger durationNanos) {
+    final BigInteger nanoSecondsTrimmed = durationNanos.mod(BigInteger.valueOf(1000L));
+    final BigInteger microSeconds = durationNanos.divide(BigInteger.valueOf(1000L));
+    final BigInteger microSecondsTrimmed = microSeconds.mod(BigInteger.valueOf(1000L));
+    final BigInteger milliSeconds = microSeconds.divide(BigInteger.valueOf(1000L));
+    final BigInteger millisecondsTrimmed = milliSeconds.mod(BigInteger.valueOf(1000L));
+    final BigInteger seconds = milliSeconds.divide(BigInteger.valueOf(1000));
+    final BigInteger secondsTrimmed = seconds.mod(BigInteger.valueOf(60));
+    final BigInteger minutes = seconds.divide(BigInteger.valueOf(60));
+    final BigInteger minutesTrimmed = minutes.mod(BigInteger.valueOf(60));
+    final BigInteger hours = minutes.divide(BigInteger.valueOf(60));
+    final BigInteger hoursTrimmed = hours.mod(BigInteger.valueOf(24));
+    final BigInteger days = hours.divide(BigInteger.valueOf(24));
+    final BigInteger daysTrimmed = days.mod(BigInteger.valueOf(365));
+    final BigInteger years = days.divide(BigInteger.valueOf(365));
 
-    if (years > 0) {
+    if (years.compareTo(BigInteger.valueOf(0)) > 0) {
       return years + " years, " + daysTrimmed + " days";
     }
-    if (days > 0) {
+    if (days.compareTo(BigInteger.valueOf(0)) > 0) {
       return daysTrimmed + " days, " + hoursTrimmed + " hours";
     }
-    if(hours > 0) {
+    if (hours.compareTo(BigInteger.valueOf(0)) > 0) {
       return hoursTrimmed + " hours, " + minutesTrimmed + " minutes";
     }
-    if(minutes > 0) {
+    if (minutes.compareTo(BigInteger.valueOf(0)) > 0) {
       return minutesTrimmed + " minutes, " + secondsTrimmed + " s";
     }
-    if(seconds > 0) {
+    if (seconds.compareTo(BigInteger.valueOf(0)) > 0) {
       return secondsTrimmed + " s, " + millisecondsTrimmed + " ms";
     }
+    if (milliSeconds.compareTo(BigInteger.valueOf(0)) > 0) {
+      return millisecondsTrimmed + " ms, " + microSecondsTrimmed + " &mu;s";
+    }
+    if (microSeconds.compareTo(BigInteger.valueOf(0)) > 0) {
+      return microSecondsTrimmed + " &mu;s, " + nanoSecondsTrimmed + " ns";
+    }
 
-    return millisecondsTrimmed + " ms";
+    return nanoSecondsTrimmed + " ns";
   }
 
-  private static long extendPower(int linearBase2Power) {
-    long result = 48955L;
-    for (int i = 35; i <= linearBase2Power; i++) {
-      result = result << 2;
+  private static BigInteger extendPower(
+      int linearBase2Power,
+      int startBase,
+      long startSize
+  ) {
+    BigInteger result = BigInteger.valueOf(startSize);
+    for (int i = startBase; i <= linearBase2Power; i++) {
+      result = result.multiply(BigInteger.valueOf(2));
     }
     return result;
+  }
+
+  private static void printTime(
+      BufferedWriter writer,
+      int linearBase2Power,
+      int minPower,
+      int maxPower,
+      long maxDuration,
+      Map<Integer, Long> timedPowers
+  ) throws IOException {
+    Long duration = timedPowers.get(linearBase2Power);
+    writer.write("      <td>");
+    if (duration != null) {
+      writer.write(prettyPrintDuration(BigInteger.valueOf(duration)));
+    } else if (linearBase2Power < minPower) {
+      writer.write("****");
+    } else {
+      writer.write(prettyPrintDuration(extendPower(
+          linearBase2Power,
+          maxPower,
+          maxDuration)));
+      writer.write("*****");
+    }
+    writer.write("</td>\n");
   }
 
   public static void main(String[] args) throws Exception {
@@ -258,15 +342,8 @@ public class Main {
           printComplexity(writer, linearBase2Power, complexityOrder);
         }
 
-        Long duration = TIMED_POWERS.get(linearBase2Power);
-        writer.write("      <td>");
-        if (duration != null) {
-          writer.write(prettyPrintDuration(duration));
-        } else {
-          writer.write(prettyPrintDuration(extendPower(linearBase2Power)));
-          writer.write("**");
-        }
-        writer.write("</td>\n");
+        printTime(writer, linearBase2Power, 0, MAX_JAVA_POWER, MAX_JAVA_DURATION, JAVA_TIMED_POWERS);
+        printTime(writer, linearBase2Power, MIN_JAVASCRIPT_POWER, MAX_JAVASCRIPT_POWER, MAX_JAVASCRIPT_DURATION, JAVASCRIPT_TIMED_POWERS);
 
         String notable = NOTABLE_POWERS.get(linearBase2Power);
         writer.write("      <td>");
