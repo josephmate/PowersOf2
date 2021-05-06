@@ -11,6 +11,8 @@ tr:nth-of-type(odd) {
 }
 
 th {
+  position: sticky;
+  top: 0;
   background: #333;
   color: white;
   font-weight: bold;
