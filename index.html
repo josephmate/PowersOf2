@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="script" href="js/simulator.js">
+  <script src="js/simulator.js"></script>
 </head>
 <body>
   <div>
@@ -21,6 +21,7 @@
       <li>Platform (running in a browser vs. desktop)</li>
       <li>Lower order terms of your algorithm's complexity (ex: N^2 vs 2*N^2)</li>
       <li>Concurrency</li>
+      <li>Contention for physical resources</li>
     </ol>
   <div>
   </div>
@@ -50,7 +51,17 @@
     or a
     <a href="https://github.com/josephmate/PowersOf2/pulls">pull request</a>.
   </div>
-  <table>
+  <br/>
+  <div>
+    Time how long it takes to count from 0 to 2^32 (or another power of 2 of your choosing) in milliseconds on your computer or in your language
+    put it in the text, hit go to add a column scaled to your platform in case you're running a 486 and
+    want to see how it compares.
+    <br/>
+    2^: <input id ="rescalePower" type="text" value="32"><br/>
+    Time in msec: <input id ="rescaleTimeMsec" type="text" value="260"/><br/>
+    <input type="button" onclick="rescale()" value="Rescale">
+  </div>
+  <table id="runtimeTable">
     <thead>
       <th>O(lgN)
       <th>O(&#8730N)
@@ -81,7 +92,7 @@
       <td>700 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_0'><input type='button' onclick='simulate("linearBase2Power_0",0)' value='Go'</td>
+      <td id='linearBase2Power_0'><input type='button' onclick='simulate("linearBase2Power_0",0)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2</sup>, 10<sup>1</sup></td>
@@ -97,7 +108,7 @@
       <td>500 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_1'><input type='button' onclick='simulate("linearBase2Power_1",1)' value='Go'</td>
+      <td id='linearBase2Power_1'><input type='button' onclick='simulate("linearBase2Power_1",1)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
@@ -113,7 +124,7 @@
       <td>500 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_2'><input type='button' onclick='simulate("linearBase2Power_2",2)' value='Go'</td>
+      <td id='linearBase2Power_2'><input type='button' onclick='simulate("linearBase2Power_2",2)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>8</sup>, 10<sup>2</sup></td>
@@ -129,7 +140,7 @@
       <td>600 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_3'><input type='button' onclick='simulate("linearBase2Power_3",3)' value='Go'</td>
+      <td id='linearBase2Power_3'><input type='button' onclick='simulate("linearBase2Power_3",3)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>16</sup>, 10<sup>5</sup></td>
@@ -145,7 +156,7 @@
       <td>900 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_4'><input type='button' onclick='simulate("linearBase2Power_4",4)' value='Go'</td>
+      <td id='linearBase2Power_4'><input type='button' onclick='simulate("linearBase2Power_4",4)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>32</sup>, 10<sup>10</sup></td>
@@ -161,7 +172,7 @@
       <td>1 &mu;s, 500 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_5'><input type='button' onclick='simulate("linearBase2Power_5",5)' value='Go'</td>
+      <td id='linearBase2Power_5'><input type='button' onclick='simulate("linearBase2Power_5",5)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>64</sup>, 10<sup>19</sup></td>
@@ -177,7 +188,7 @@
       <td>3 &mu;s, 300 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_6'><input type='button' onclick='simulate("linearBase2Power_6",6)' value='Go'</td>
+      <td id='linearBase2Power_6'><input type='button' onclick='simulate("linearBase2Power_6",6)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>128</sup>, 10<sup>39</sup></td>
@@ -193,7 +204,7 @@
       <td>4 &mu;s, 700 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_7'><input type='button' onclick='simulate("linearBase2Power_7",7)' value='Go'</td>
+      <td id='linearBase2Power_7'><input type='button' onclick='simulate("linearBase2Power_7",7)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>256</sup>, 10<sup>77</sup></td>
@@ -209,7 +220,7 @@
       <td>8 &mu;s, 800 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_8'><input type='button' onclick='simulate("linearBase2Power_8",8)' value='Go'</td>
+      <td id='linearBase2Power_8'><input type='button' onclick='simulate("linearBase2Power_8",8)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>512</sup>, 10<sup>154</sup></td>
@@ -225,7 +236,7 @@
       <td>24 &mu;s, 700 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_9'><input type='button' onclick='simulate("linearBase2Power_9",9)' value='Go'</td>
+      <td id='linearBase2Power_9'><input type='button' onclick='simulate("linearBase2Power_9",9)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>10</sup></sup>, 10<sup>308</sup></td>
@@ -241,7 +252,7 @@
       <td>35 &mu;s, 800 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_10'><input type='button' onclick='simulate("linearBase2Power_10",10)' value='Go'</td>
+      <td id='linearBase2Power_10'><input type='button' onclick='simulate("linearBase2Power_10",10)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>11</sup></sup>, 10<sup>616</sup></td>
@@ -257,7 +268,7 @@
       <td>76 &mu;s, 700 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_11'><input type='button' onclick='simulate("linearBase2Power_11",11)' value='Go'</td>
+      <td id='linearBase2Power_11'><input type='button' onclick='simulate("linearBase2Power_11",11)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>12</sup></sup>, 10<sup>1232</sup></td>
@@ -273,7 +284,7 @@
       <td>144 &mu;s, 500 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_12'><input type='button' onclick='simulate("linearBase2Power_12",12)' value='Go'</td>
+      <td id='linearBase2Power_12'><input type='button' onclick='simulate("linearBase2Power_12",12)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>13</sup></sup>, 10<sup>2464</sup></td>
@@ -289,7 +300,7 @@
       <td>286 &mu;s, 100 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_13'><input type='button' onclick='simulate("linearBase2Power_13",13)' value='Go'</td>
+      <td id='linearBase2Power_13'><input type='button' onclick='simulate("linearBase2Power_13",13)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>14</sup></sup>, 10<sup>4928</sup></td>
@@ -305,7 +316,7 @@
       <td>500 &mu;s, 200 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_14'><input type='button' onclick='simulate("linearBase2Power_14",14)' value='Go'</td>
+      <td id='linearBase2Power_14'><input type='button' onclick='simulate("linearBase2Power_14",14)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>15</sup></sup>, 10<sup>9856</sup></td>
@@ -321,7 +332,7 @@
       <td>1 ms, 365 &mu;s</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_15'><input type='button' onclick='simulate("linearBase2Power_15",15)' value='Go'</td>
+      <td id='linearBase2Power_15'><input type='button' onclick='simulate("linearBase2Power_15",15)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>16</sup></sup>, 10<sup>19712</sup></td>
@@ -337,7 +348,7 @@
       <td>1 ms, 991 &mu;s</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_16'><input type='button' onclick='simulate("linearBase2Power_16",16)' value='Go'</td>
+      <td id='linearBase2Power_16'><input type='button' onclick='simulate("linearBase2Power_16",16)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>17</sup></sup>, 10<sup>39424</sup></td>
@@ -353,7 +364,7 @@
       <td>464 &mu;s, 200 ns</td>
       <td>****</td>
       <td></td>
-      <td id='linearBase2Power_17'><input type='button' onclick='simulate("linearBase2Power_17",17)' value='Go'</td>
+      <td id='linearBase2Power_17'><input type='button' onclick='simulate("linearBase2Power_17",17)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>18</sup></sup>, 10<sup>78848</sup></td>
@@ -372,7 +383,7 @@
 Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng (2^18 time)
 </a>
 </td>
-      <td id='linearBase2Power_18'><input type='button' onclick='simulate("linearBase2Power_18",18)' value='Go'</td>
+      <td id='linearBase2Power_18'><input type='button' onclick='simulate("linearBase2Power_18",18)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>19</sup></sup>, 10<sup>157696</sup></td>
@@ -388,7 +399,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>2 ms, 306 &mu;s</td>
       <td>1 ms, 0 &mu;s</td>
       <td></td>
-      <td id='linearBase2Power_19'><input type='button' onclick='simulate("linearBase2Power_19",19)' value='Go'</td>
+      <td id='linearBase2Power_19'><input type='button' onclick='simulate("linearBase2Power_19",19)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>20</sup></sup>, 10<sup>315392</sup></td>
@@ -404,7 +415,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>3 ms, 720 &mu;s</td>
       <td>1 ms, 0 &mu;s</td>
       <td></td>
-      <td id='linearBase2Power_20'><input type='button' onclick='simulate("linearBase2Power_20",20)' value='Go'</td>
+      <td id='linearBase2Power_20'><input type='button' onclick='simulate("linearBase2Power_20",20)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>21</sup></sup>, 10<sup>630784</sup></td>
@@ -420,7 +431,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>2 ms, 352 &mu;s</td>
       <td>3 ms, 0 &mu;s</td>
       <td></td>
-      <td id='linearBase2Power_21'><input type='button' onclick='simulate("linearBase2Power_21",21)' value='Go'</td>
+      <td id='linearBase2Power_21'><input type='button' onclick='simulate("linearBase2Power_21",21)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>22</sup></sup>, 10<sup>1261568</sup></td>
@@ -436,7 +447,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>4 ms, 510 &mu;s</td>
       <td>6 ms, 0 &mu;s</td>
       <td></td>
-      <td id='linearBase2Power_22'><input type='button' onclick='simulate("linearBase2Power_22",22)' value='Go'</td>
+      <td id='linearBase2Power_22'><input type='button' onclick='simulate("linearBase2Power_22",22)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>23</sup></sup>, 10<sup>2523136</sup></td>
@@ -452,7 +463,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>494 &mu;s, 600 ns</td>
       <td>11 ms, 0 &mu;s</td>
       <td></td>
-      <td id='linearBase2Power_23'><input type='button' onclick='simulate("linearBase2Power_23",23)' value='Go'</td>
+      <td id='linearBase2Power_23'><input type='button' onclick='simulate("linearBase2Power_23",23)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>24</sup></sup>, 10<sup>5046272</sup></td>
@@ -468,7 +479,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>993 &mu;s, 200 ns</td>
       <td>24 ms, 0 &mu;s</td>
       <td></td>
-      <td id='linearBase2Power_24'><input type='button' onclick='simulate("linearBase2Power_24",24)' value='Go'</td>
+      <td id='linearBase2Power_24'><input type='button' onclick='simulate("linearBase2Power_24",24)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>25</sup></sup>, 10<sup>10092544</sup></td>
@@ -484,7 +495,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>2 ms, 61 &mu;s</td>
       <td>51 ms, 0 &mu;s</td>
       <td></td>
-      <td id='linearBase2Power_25'><input type='button' onclick='simulate("linearBase2Power_25",25)' value='Go'</td>
+      <td id='linearBase2Power_25'><input type='button' onclick='simulate("linearBase2Power_25",25)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>26</sup></sup>, 10<sup>20185088</sup></td>
@@ -500,7 +511,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>3 ms, 444 &mu;s</td>
       <td>95 ms, 0 &mu;s</td>
       <td></td>
-      <td id='linearBase2Power_26'><input type='button' onclick='simulate("linearBase2Power_26",26)' value='Go'</td>
+      <td id='linearBase2Power_26'><input type='button' onclick='simulate("linearBase2Power_26",26)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>27</sup></sup>, 10<sup>40370176</sup></td>
@@ -516,7 +527,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>7 ms, 180 &mu;s</td>
       <td>197 ms, 0 &mu;s</td>
       <td></td>
-      <td id='linearBase2Power_27'><input type='button' onclick='simulate("linearBase2Power_27",27)' value='Go'</td>
+      <td id='linearBase2Power_27'><input type='button' onclick='simulate("linearBase2Power_27",27)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>28</sup></sup>, 10<sup>80740352</sup></td>
@@ -532,7 +543,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>15 ms, 98 &mu;s</td>
       <td>392 ms, 0 &mu;s</td>
       <td></td>
-      <td id='linearBase2Power_28'><input type='button' onclick='simulate("linearBase2Power_28",28)' value='Go'</td>
+      <td id='linearBase2Power_28'><input type='button' onclick='simulate("linearBase2Power_28",28)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>29</sup></sup>, 10<sup>161480704</sup></td>
@@ -548,7 +559,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>28 ms, 359 &mu;s</td>
       <td>776 ms, 0 &mu;s</td>
       <td></td>
-      <td id='linearBase2Power_29'><input type='button' onclick='simulate("linearBase2Power_29",29)' value='Go'</td>
+      <td id='linearBase2Power_29'><input type='button' onclick='simulate("linearBase2Power_29",29)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>30</sup></sup>, 10<sup>322961408</sup></td>
@@ -564,7 +575,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>59 ms, 983 &mu;s</td>
       <td>1 s, 560 ms</td>
       <td></td>
-      <td id='linearBase2Power_30'><input type='button' onclick='simulate("linearBase2Power_30",30)' value='Go'</td>
+      <td id='linearBase2Power_30'><input type='button' onclick='simulate("linearBase2Power_30",30)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>31</sup></sup>, 10<sup>645922816</sup></td>
@@ -580,7 +591,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>122 ms, 634 &mu;s</td>
       <td>4 s, 723 ms</td>
       <td></td>
-      <td id='linearBase2Power_31'><input type='button' onclick='simulate("linearBase2Power_31",31)' value='Go'</td>
+      <td id='linearBase2Power_31'><input type='button' onclick='simulate("linearBase2Power_31",31)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>32</sup></sup>, 10<sup>1291845632</sup></td>
@@ -599,7 +610,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
 A linear solution to the sorting question Eric Schmidt asked President Obama
 </a>
 </td>
-      <td id='linearBase2Power_32'><input type='button' onclick='simulate("linearBase2Power_32",32)' value='Go'</td>
+      <td id='linearBase2Power_32'><input type='button' onclick='simulate("linearBase2Power_32",32)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>33</sup></sup>, 10<sup>2583691264</sup></td>
@@ -615,7 +626,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>477 ms, 866 &mu;s</td>
       <td>12 s, 95 ms</td>
       <td></td>
-      <td id='linearBase2Power_33'><input type='button' onclick='simulate("linearBase2Power_33",33)' value='Go'</td>
+      <td id='linearBase2Power_33'><input type='button' onclick='simulate("linearBase2Power_33",33)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>34</sup></sup>, 10<sup>5167382528</sup></td>
@@ -631,7 +642,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>944 ms, 203 &mu;s</td>
       <td>24 s, 830 ms</td>
       <td></td>
-      <td id='linearBase2Power_34'><input type='button' onclick='simulate("linearBase2Power_34",34)' value='Go'</td>
+      <td id='linearBase2Power_34'><input type='button' onclick='simulate("linearBase2Power_34",34)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>35</sup></sup>, 10<sup>10334765056</sup></td>
@@ -647,7 +658,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>1 s, 646 ms</td>
       <td>48 s, 955 ms</td>
       <td></td>
-      <td id='linearBase2Power_35'><input type='button' onclick='simulate("linearBase2Power_35",35)' value='Go'</td>
+      <td id='linearBase2Power_35'><input type='button' onclick='simulate("linearBase2Power_35",35)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>36</sup></sup>, 10<sup>20669530112</sup></td>
@@ -663,7 +674,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>3 s, 413 ms</td>
       <td>3 minutes, 15 s*****</td>
       <td></td>
-      <td id='linearBase2Power_36'><input type='button' onclick='simulate("linearBase2Power_36",36)' value='Go'</td>
+      <td id='linearBase2Power_36'><input type='button' onclick='simulate("linearBase2Power_36",36)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>37</sup></sup>, 10<sup>41339060224</sup></td>
@@ -679,7 +690,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>7 s, 260 ms</td>
       <td>6 minutes, 31 s*****</td>
       <td></td>
-      <td id='linearBase2Power_37'><input type='button' onclick='simulate("linearBase2Power_37",37)' value='Go'</td>
+      <td id='linearBase2Power_37'><input type='button' onclick='simulate("linearBase2Power_37",37)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>38</sup></sup>, 10<sup>82678120448</sup></td>
@@ -695,7 +706,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>14 s, 355 ms</td>
       <td>13 minutes, 3 s*****</td>
       <td></td>
-      <td id='linearBase2Power_38'><input type='button' onclick='simulate("linearBase2Power_38",38)' value='Go'</td>
+      <td id='linearBase2Power_38'><input type='button' onclick='simulate("linearBase2Power_38",38)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>39</sup></sup>, 10<sup>165356240896</sup></td>
@@ -711,7 +722,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>28 s, 853 ms</td>
       <td>26 minutes, 6 s*****</td>
       <td></td>
-      <td id='linearBase2Power_39'><input type='button' onclick='simulate("linearBase2Power_39",39)' value='Go'</td>
+      <td id='linearBase2Power_39'><input type='button' onclick='simulate("linearBase2Power_39",39)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>40</sup></sup>, 10<sup>330712481792</sup></td>
@@ -727,7 +738,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>53 s, 58 ms</td>
       <td>52 minutes, 13 s*****</td>
       <td></td>
-      <td id='linearBase2Power_40'><input type='button' onclick='simulate("linearBase2Power_40",40)' value='Go'</td>
+      <td id='linearBase2Power_40'><input type='button' onclick='simulate("linearBase2Power_40",40)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>41</sup></sup>, 10<sup>661424963584</sup></td>
@@ -743,7 +754,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>3 minutes, 32 s*****</td>
       <td>1 hours, 44 minutes*****</td>
       <td></td>
-      <td id='linearBase2Power_41'><input type='button' onclick='simulate("linearBase2Power_41",41)' value='Go'</td>
+      <td id='linearBase2Power_41'><input type='button' onclick='simulate("linearBase2Power_41",41)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>42</sup></sup>, 10<sup>1322849927168</sup></td>
@@ -759,7 +770,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>7 minutes, 4 s*****</td>
       <td>3 hours, 28 minutes*****</td>
       <td></td>
-      <td id='linearBase2Power_42'><input type='button' onclick='simulate("linearBase2Power_42",42)' value='Go'</td>
+      <td id='linearBase2Power_42'><input type='button' onclick='simulate("linearBase2Power_42",42)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>43</sup></sup>, 10<sup>2645699854336</sup></td>
@@ -775,7 +786,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>14 minutes, 8 s*****</td>
       <td>6 hours, 57 minutes*****</td>
       <td></td>
-      <td id='linearBase2Power_43'><input type='button' onclick='simulate("linearBase2Power_43",43)' value='Go'</td>
+      <td id='linearBase2Power_43'><input type='button' onclick='simulate("linearBase2Power_43",43)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>44</sup></sup>, 10<sup>5291399708672</sup></td>
@@ -791,7 +802,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>28 minutes, 17 s*****</td>
       <td>13 hours, 55 minutes*****</td>
       <td></td>
-      <td id='linearBase2Power_44'><input type='button' onclick='simulate("linearBase2Power_44",44)' value='Go'</td>
+      <td id='linearBase2Power_44'><input type='button' onclick='simulate("linearBase2Power_44",44)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>45</sup></sup>, 10<sup>10582799417344</sup></td>
@@ -807,7 +818,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>56 minutes, 35 s*****</td>
       <td>1 days, 3 hours*****</td>
       <td></td>
-      <td id='linearBase2Power_45'><input type='button' onclick='simulate("linearBase2Power_45",45)' value='Go'</td>
+      <td id='linearBase2Power_45'><input type='button' onclick='simulate("linearBase2Power_45",45)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>46</sup></sup>, 10<sup>21165598834688</sup></td>
@@ -823,7 +834,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>1 hours, 53 minutes*****</td>
       <td>2 days, 7 hours*****</td>
       <td></td>
-      <td id='linearBase2Power_46'><input type='button' onclick='simulate("linearBase2Power_46",46)' value='Go'</td>
+      <td id='linearBase2Power_46'><input type='button' onclick='simulate("linearBase2Power_46",46)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>47</sup></sup>, 10<sup>42331197669376</sup></td>
@@ -839,7 +850,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>3 hours, 46 minutes*****</td>
       <td>4 days, 15 hours*****</td>
       <td></td>
-      <td id='linearBase2Power_47'><input type='button' onclick='simulate("linearBase2Power_47",47)' value='Go'</td>
+      <td id='linearBase2Power_47'><input type='button' onclick='simulate("linearBase2Power_47",47)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>48</sup></sup>, 10<sup>84662395338752</sup></td>
@@ -855,7 +866,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>7 hours, 32 minutes*****</td>
       <td>9 days, 6 hours*****</td>
       <td></td>
-      <td id='linearBase2Power_48'><input type='button' onclick='simulate("linearBase2Power_48",48)' value='Go'</td>
+      <td id='linearBase2Power_48'><input type='button' onclick='simulate("linearBase2Power_48",48)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>49</sup></sup>, 10<sup>169324790677504</sup></td>
@@ -871,7 +882,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>15 hours, 5 minutes*****</td>
       <td>18 days, 13 hours*****</td>
       <td></td>
-      <td id='linearBase2Power_49'><input type='button' onclick='simulate("linearBase2Power_49",49)' value='Go'</td>
+      <td id='linearBase2Power_49'><input type='button' onclick='simulate("linearBase2Power_49",49)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>50</sup></sup>, 10<sup>338649581355008</sup></td>
@@ -887,7 +898,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>1 days, 6 hours*****</td>
       <td>37 days, 3 hours*****</td>
       <td></td>
-      <td id='linearBase2Power_50'><input type='button' onclick='simulate("linearBase2Power_50",50)' value='Go'</td>
+      <td id='linearBase2Power_50'><input type='button' onclick='simulate("linearBase2Power_50",50)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>51</sup></sup>, 10<sup>677299162710016</sup></td>
@@ -903,7 +914,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>2 days, 12 hours*****</td>
       <td>74 days, 6 hours*****</td>
       <td></td>
-      <td id='linearBase2Power_51'><input type='button' onclick='simulate("linearBase2Power_51",51)' value='Go'</td>
+      <td id='linearBase2Power_51'><input type='button' onclick='simulate("linearBase2Power_51",51)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>52</sup></sup>, 10<sup>1354598325420032</sup></td>
@@ -919,7 +930,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>5 days, 0 hours*****</td>
       <td>148 days, 12 hours*****</td>
       <td></td>
-      <td id='linearBase2Power_52'><input type='button' onclick='simulate("linearBase2Power_52",52)' value='Go'</td>
+      <td id='linearBase2Power_52'><input type='button' onclick='simulate("linearBase2Power_52",52)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>53</sup></sup>, 10<sup>2709196650840064</sup></td>
@@ -935,7 +946,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>10 days, 1 hours*****</td>
       <td>297 days, 1 hours*****</td>
       <td></td>
-      <td id='linearBase2Power_53'><input type='button' onclick='simulate("linearBase2Power_53",53)' value='Go'</td>
+      <td id='linearBase2Power_53'><input type='button' onclick='simulate("linearBase2Power_53",53)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>54</sup></sup>, 10<sup>5418393301680128</sup></td>
@@ -951,7 +962,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>20 days, 2 hours*****</td>
       <td>1 years, 229 days*****</td>
       <td></td>
-      <td id='linearBase2Power_54'><input type='button' onclick='simulate("linearBase2Power_54",54)' value='Go'</td>
+      <td id='linearBase2Power_54'><input type='button' onclick='simulate("linearBase2Power_54",54)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>55</sup></sup>, 10<sup>10836786603360256</sup></td>
@@ -967,7 +978,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>40 days, 5 hours*****</td>
       <td>3 years, 93 days*****</td>
       <td></td>
-      <td id='linearBase2Power_55'><input type='button' onclick='simulate("linearBase2Power_55",55)' value='Go'</td>
+      <td id='linearBase2Power_55'><input type='button' onclick='simulate("linearBase2Power_55",55)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>56</sup></sup>, 10<sup>21673573206720512</sup></td>
@@ -986,7 +997,7 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
 brute force attack of DES is 2^56 in the worst case
 </a>
 </td>
-      <td id='linearBase2Power_56'><input type='button' onclick='simulate("linearBase2Power_56",56)' value='Go'</td>
+      <td id='linearBase2Power_56'><input type='button' onclick='simulate("linearBase2Power_56",56)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>57</sup></sup>, 10<sup>43347146413441024</sup></td>
@@ -1002,7 +1013,7 @@ brute force attack of DES is 2^56 in the worst case
       <td>160 days, 23 hours*****</td>
       <td>13 years, 8 days*****</td>
       <td></td>
-      <td id='linearBase2Power_57'><input type='button' onclick='simulate("linearBase2Power_57",57)' value='Go'</td>
+      <td id='linearBase2Power_57'><input type='button' onclick='simulate("linearBase2Power_57",57)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>58</sup></sup>, 10<sup>86694292826882048</sup></td>
@@ -1021,7 +1032,7 @@ brute force attack of DES is 2^56 in the worst case
 303 days to calculate 50,000,000,000,000 digits of pi
 </a>
 </td>
-      <td id='linearBase2Power_58'><input type='button' onclick='simulate("linearBase2Power_58",58)' value='Go'</td>
+      <td id='linearBase2Power_58'><input type='button' onclick='simulate("linearBase2Power_58",58)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>59</sup></sup>, 10<sup>173388585653764096</sup></td>
@@ -1037,7 +1048,7 @@ brute force attack of DES is 2^56 in the worst case
       <td>1 years, 278 days*****</td>
       <td>52 years, 32 days*****</td>
       <td></td>
-      <td id='linearBase2Power_59'><input type='button' onclick='simulate("linearBase2Power_59",59)' value='Go'</td>
+      <td id='linearBase2Power_59'><input type='button' onclick='simulate("linearBase2Power_59",59)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>60</sup></sup>, 10<sup>346777171307528192</sup></td>
@@ -1053,7 +1064,7 @@ brute force attack of DES is 2^56 in the worst case
       <td>3 years, 192 days*****</td>
       <td>104 years, 64 days*****</td>
       <td></td>
-      <td id='linearBase2Power_60'><input type='button' onclick='simulate("linearBase2Power_60",60)' value='Go'</td>
+      <td id='linearBase2Power_60'><input type='button' onclick='simulate("linearBase2Power_60",60)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>61</sup></sup>, 10<sup>693554342615056384</sup></td>
@@ -1072,7 +1083,7 @@ brute force attack of DES is 2^56 in the worst case
 85,900 node Travelling Salesman problem was solved in 136 CPU Years.
 </a>
 </td>
-      <td id='linearBase2Power_61'><input type='button' onclick='simulate("linearBase2Power_61",61)' value='Go'</td>
+      <td id='linearBase2Power_61'><input type='button' onclick='simulate("linearBase2Power_61",61)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>62</sup></sup>, 10<sup>1387108685230112768</sup></td>
@@ -1088,7 +1099,7 @@ brute force attack of DES is 2^56 in the worst case
       <td>14 years, 41 days*****</td>
       <td>416 years, 257 days*****</td>
       <td></td>
-      <td id='linearBase2Power_62'><input type='button' onclick='simulate("linearBase2Power_62",62)' value='Go'</td>
+      <td id='linearBase2Power_62'><input type='button' onclick='simulate("linearBase2Power_62",62)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>63</sup></sup>, 10<sup>2774217370460225536</sup></td>
@@ -1104,7 +1115,7 @@ brute force attack of DES is 2^56 in the worst case
       <td>28 years, 83 days*****</td>
       <td>833 years, 150 days*****</td>
       <td></td>
-      <td id='linearBase2Power_63'><input type='button' onclick='simulate("linearBase2Power_63",63)' value='Go'</td>
+      <td id='linearBase2Power_63'><input type='button' onclick='simulate("linearBase2Power_63",63)' value='Go'></td>
     </tr>
     <tr>
       <td>2<sup>2<sup>64</sup></sup>, 10<sup>5548434740920451072</sup></td>
@@ -1120,7 +1131,7 @@ brute force attack of DES is 2^56 in the worst case
       <td>56 years, 166 days*****</td>
       <td>1666 years, 301 days*****</td>
       <td></td>
-      <td id='linearBase2Power_64'><input type='button' onclick='simulate("linearBase2Power_64",64)' value='Go'</td>
+      <td id='linearBase2Power_64'><input type='button' onclick='simulate("linearBase2Power_64",64)' value='Go'></td>
     </tr>
   </table>
   <div>*- ran using a loop that counts from 1 to 2^N on an AMD-FX6300</div>

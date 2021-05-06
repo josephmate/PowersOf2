@@ -16,7 +16,7 @@ public class Main {
           <html>
           <head>
             <link rel="stylesheet" href="css/styles.css">
-            <link rel="script" href="js/simulator.js">
+            <script src="js/simulator.js"></script>
           </head>
           <body>
             <div>
@@ -36,6 +36,7 @@ public class Main {
                 <li>Platform (running in a browser vs. desktop)</li>
                 <li>Lower order terms of your algorithm's complexity (ex: N^2 vs 2*N^2)</li>
                 <li>Concurrency</li>
+                <li>Contention for physical resources</li>
               </ol>
             <div>
             </div>
@@ -65,7 +66,17 @@ public class Main {
               or a
               <a href="https://github.com/josephmate/PowersOf2/pulls">pull request</a>.
             </div>
-            <table>
+            <br/>
+            <div>
+              Time how long it takes to count from 0 to 2^32 (or another power of 2 of your choosing) in milliseconds on your computer or in your language
+              put it in the text, hit go to add a column scaled to your platform in case you're running a 486 and
+              want to see how it compares.
+              <br/>
+              2^: <input id ="rescalePower" type="text" value="32"><br/>
+              Time in msec: <input id ="rescaleTimeMsec" type="text" value="260"/><br/>
+              <input type="button" onclick="rescale()" value="Rescale">
+            </div>
+            <table id="runtimeTable">
               <thead>
           """;
   private static final String AFTER_TABLE_HEADERS =
@@ -417,7 +428,7 @@ public class Main {
         writer.write(cellId);
         writer.write("\",");
         writer.write(String.valueOf(linearBase2Power));
-        writer.write(")' value='Go'");
+        writer.write(")' value='Go'>");
         writer.write("</td>\n");
 
         writer.write("    </tr>\n");
