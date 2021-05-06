@@ -4,27 +4,38 @@
   <script src="js/simulator.js"></script>
 </head>
 <body>
+  <h1>Summary</h1>
   <div>
-    Use this table to figure out the max complexity your algorithm can have in order to achieve some deadline.
+    Sometimes you have a poor algorithm with a large runtime complexity, but the problem size is small.
+    Is your algorithm good enough?
+    Should you waste your time trying to come up with a polynomial algorithm to solve the travelling salesman problem when your only has 10 nodes?
+  </div>
+  <h1>How to use</h1>
+  <div>
+    Use this table to estimate out the max complexity your algorithm can have in order to achieve some deadline.
     <ol>
       <li>Look for your how much time your algorithm has available in the Time column.</li>
       <li>In that row, look for your approximate problem size, expressed as a power of 2 and power of 10.</li>
       <li>The column you picked is the complexity of the algorithm you need to achieve to finish fast enough.</li>
     </ol>
   </div>
+
+  <h1>Warning</h1>
+  <div>
     These are estimates.
     There are so many factors that can throw the runtimes off by factors of 1000s like:
     <ol>
       <li>Computer age</li>
       <li>IO</li>
       <li>Network</li>
-      <li>Platform (running in a browser vs. desktop)</li>
-      <li>Lower order terms of your algorithm's complexity (ex: N^2 vs 2*N^2)</li>
+      <li>Language (C, javascript, java, etc)</li>
+      <li>Coefficients and lower order terms of your algorithm's complexity (ex: N^2 vs 2*N^2)</li>
       <li>Concurrency</li>
       <li>Contention for physical resources</li>
+      <li>Bugs in my code</li>
     </ol>
-  <div>
   </div>
+  <h1>My Motivation</h1>
   <div>
     For instance, In
     <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201d29/0000000000201d2a">
@@ -44,14 +55,14 @@
     I got lucky and it ended up working.
     Using this table, I would have been more confident in my brute force algorithm.
   </div>
-  <br/>
+  <h1>Bugs? Improvements?</h1>
   <div>
     Feel free to file an
     <a href="https://github.com/josephmate/PowersOf2/issues">issue</a>
     or a
     <a href="https://github.com/josephmate/PowersOf2/pulls">pull request</a>.
   </div>
-  <br/>
+  <h1>Using your own timings</h1>
   <div>
     Time how long it takes to count from 0 to 2^32 (or another power of 2 of your choosing) in milliseconds on your computer or in your language
     put it in the text, hit go to add a column scaled to your platform in case you're running a 486 and
@@ -61,6 +72,7 @@
     Time in msec: <input id ="rescaleTimeMsec" type="text" value="260"/><br/>
     <input type="button" onclick="rescale()" value="Rescale">
   </div>
+  <h1>Powers of 2</h1>
   <table id="runtimeTable">
     <thead>
       <th>O(lgN)
