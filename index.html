@@ -4,6 +4,7 @@
   <script src="js/simulator.js"></script>
 </head>
 <body>
+
   <h1>Summary</h1>
   <div>
     Sometimes you have a poor algorithm with a large runtime complexity, but the problem size is small.
@@ -36,9 +37,10 @@
       <li>Bugs in this article</li>
     </ol>
   </div>
+
   <h1>My Motivation</h1>
   <div>
-    For instance, In
+    In
     <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201d29/0000000000201d2a">
       Google Kickstart 2017 Round F, Problem 1 "Cake"
     </a>,
@@ -57,6 +59,25 @@
     Using this table, I would have been more confident in my brute force algorithm.
     During competitions it'll save me time implementing an algorithm that is just good enough.
   </div>
+
+  <h1>Pseudocode to calculate the table</h1>
+  <div>
+    <ol>
+      <li>
+        For each power p of 2 from 0 to 64
+        <ol>
+          <li>
+            For each runtime complexity f(n)
+            <ol>
+              <li>Find the closest integer r such that f(2<sup>r</sup>) is closest to 2<sup>p</sup></li>
+              <li>Find the closest integer t such that f(10<sup>t</sup>) is closest to 2<sup>p</sup></li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+
   <h1>Bugs? Improvements?</h1>
   <div>
     Feel free to file an
@@ -64,6 +85,7 @@
     or a
     <a href="https://github.com/josephmate/PowersOf2/pulls">pull request</a>.
   </div>
+
   <h1>Using your own timings</h1>
   <div>
     Time how long it takes to count from 0 to 2<sup>32</sup> (or another power of 2 of your choosing) in milliseconds on your computer or in your language.
@@ -427,7 +449,10 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>2<sup>2</sup>, 10<sup>0</sup></td>
       <td>3 ms, 720 &mu;s</td>
       <td>1 ms, 0 &mu;s</td>
-      <td></td>
+      <td><a href="https://www.youtube.com/watch?v=m4yVlPqeZwo&t=1380s">
+A linear solution to the sorting question Eric Schmidt asked President Obama
+</a>
+</td>
       <td id='linearBase2Power_20'><input type='button' onclick='simulate("linearBase2Power_20",20)' value='Go'></td>
     </tr>
     <tr>
@@ -619,10 +644,7 @@ Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng 
       <td>2<sup>3</sup>, 10<sup>0</sup></td>
       <td>260 ms, 377 &mu;s</td>
       <td>6 s, 46 ms</td>
-      <td><a href="https://www.youtube.com/watch?v=m4yVlPqeZwo&t=1380s">
-A linear solution to the sorting question Eric Schmidt asked President Obama
-</a>
-</td>
+      <td></td>
       <td id='linearBase2Power_32'><input type='button' onclick='simulate("linearBase2Power_32",32)' value='Go'></td>
     </tr>
     <tr>
@@ -814,7 +836,10 @@ A linear solution to the sorting question Eric Schmidt asked President Obama
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>28 minutes, 17 s*****</td>
       <td>13 hours, 55 minutes*****</td>
-      <td></td>
+      <td><a href="https://www.youtube.com/watch?v=V4V2bpZlqx8">
+20 minutes to solve the Enigma code every morning.
+</a>
+</td>
       <td id='linearBase2Power_44'><input type='button' onclick='simulate("linearBase2Power_44",44)' value='Go'></td>
     </tr>
     <tr>
@@ -1092,10 +1117,7 @@ brute force attack of DES is 2^56 in the worst case
       <td>2<sup>3</sup>, 10<sup>1</sup></td>
       <td>7 years, 20 days*****</td>
       <td>208 years, 128 days*****</td>
-      <td><a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem#Exact_algorithms">
-85,900 node Travelling Salesman problem was solved in 136 CPU Years.
-</a>
-</td>
+      <td></td>
       <td id='linearBase2Power_61'><input type='button' onclick='simulate("linearBase2Power_61",61)' value='Go'></td>
     </tr>
     <tr>
@@ -1143,7 +1165,10 @@ brute force attack of DES is 2^56 in the worst case
       <td>2<sup>4</sup>, 10<sup>1</sup></td>
       <td>56 years, 166 days*****</td>
       <td>1666 years, 301 days*****</td>
-      <td></td>
+      <td><a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem#Exact_algorithms">
+85,900 node Travelling Salesman problem was solved in 136 CPU Years.
+</a>
+</td>
       <td id='linearBase2Power_64'><input type='button' onclick='simulate("linearBase2Power_64",64)' value='Go'></td>
     </tr>
   </table>

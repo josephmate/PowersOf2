@@ -19,6 +19,7 @@ public class Main {
             <script src="js/simulator.js"></script>
           </head>
           <body>
+          
             <h1>Summary</h1>
             <div>
               Sometimes you have a poor algorithm with a large runtime complexity, but the problem size is small.
@@ -51,9 +52,10 @@ public class Main {
                 <li>Bugs in this article</li>
               </ol>
             </div>
+            
             <h1>My Motivation</h1>
             <div>
-              For instance, In
+              In
               <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201d29/0000000000201d2a">
                 Google Kickstart 2017 Round F, Problem 1 "Cake"
               </a>,
@@ -72,6 +74,25 @@ public class Main {
               Using this table, I would have been more confident in my brute force algorithm.
               During competitions it'll save me time implementing an algorithm that is just good enough.
             </div>
+            
+            <h1>Pseudocode to calculate the table</h1>
+            <div>
+              <ol>
+                <li>
+                  For each power p of 2 from 0 to 64
+                  <ol>
+                    <li>
+                      For each runtime complexity f(n)
+                      <ol>
+                        <li>Find the closest integer r such that f(2<sup>r</sup>) is closest to 2<sup>p</sup></li>
+                        <li>Find the closest integer t such that f(10<sup>t</sup>) is closest to 2<sup>p</sup></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+            
             <h1>Bugs? Improvements?</h1>
             <div>
               Feel free to file an
@@ -79,6 +100,7 @@ public class Main {
               or a
               <a href="https://github.com/josephmate/PowersOf2/pulls">pull request</a>.
             </div>
+            
             <h1>Using your own timings</h1>
             <div>
               Time how long it takes to count from 0 to 2<sup>32</sup> (or another power of 2 of your choosing) in milliseconds on your computer or in your language.
@@ -120,9 +142,14 @@ public class Main {
           Efficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng (2^18 time)
           </a>
           """)
-      .put(32, """
+      .put(20, """
           <a href="https://www.youtube.com/watch?v=m4yVlPqeZwo&t=1380s">
           A linear solution to the sorting question Eric Schmidt asked President Obama
+          </a>
+          """)
+      .put(44, """
+          <a href="https://www.youtube.com/watch?v=V4V2bpZlqx8">
+          20 minutes to solve the Enigma code every morning.
           </a>
           """)
       .put(56,
@@ -137,7 +164,7 @@ public class Main {
           303 days to calculate 50,000,000,000,000 digits of pi
           </a>
           """)
-      .put(61,
+      .put(64,
           """
           <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem#Exact_algorithms">
           85,900 node Travelling Salesman problem was solved in 136 CPU Years.
