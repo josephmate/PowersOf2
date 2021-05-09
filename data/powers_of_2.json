@@ -1,0 +1,3060 @@
+{
+  "complexities" : [ "O(lgN)", "O(&#8730N)", "O(N)", "O(NlgN)", "O(N<sup>2</sup>)", "O(N<sup>3</sup>)", "O(N<sup>4</sup>)", "O(2<sup>N</sup>)", "O(N!)", "O(N<sup>N</sup>)" ],
+  "powers" : {
+    "0" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        }
+      },
+      "javaTimeDisplay" : "600 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "1" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        }
+      },
+      "javaTimeDisplay" : "500 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "2" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        }
+      },
+      "javaTimeDisplay" : "500 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "3" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>0</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>2</sup>"
+        }
+      },
+      "javaTimeDisplay" : "600 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "4" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>16</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        }
+      },
+      "javaTimeDisplay" : "1 &mu;s, 0 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "5" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>32</sup>",
+          "base10" : "10<sup>10</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        }
+      },
+      "javaTimeDisplay" : "1 &mu;s, 400 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "6" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>64</sup>",
+          "base10" : "10<sup>19</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>12</sup>",
+          "base10" : "10<sup>3</sup>"
+        }
+      },
+      "javaTimeDisplay" : "2 &mu;s, 400 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "7" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>7</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>1</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>128</sup>",
+          "base10" : "10<sup>39</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>14</sup>",
+          "base10" : "10<sup>4</sup>"
+        }
+      },
+      "javaTimeDisplay" : "4 &mu;s, 300 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "8" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>256</sup>",
+          "base10" : "10<sup>77</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>16</sup>",
+          "base10" : "10<sup>5</sup>"
+        }
+      },
+      "javaTimeDisplay" : "8 &mu;s, 0 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "9" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>9</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>512</sup>",
+          "base10" : "10<sup>154</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>18</sup>",
+          "base10" : "10<sup>5</sup>"
+        }
+      },
+      "javaTimeDisplay" : "15 &mu;s, 800 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "10" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>7</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>10</sup></sup>",
+          "base10" : "10<sup>308</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>20</sup>",
+          "base10" : "10<sup>6</sup>"
+        }
+      },
+      "javaTimeDisplay" : "33 &mu;s, 700 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "11" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>11</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>11</sup></sup>",
+          "base10" : "10<sup>616</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>22</sup>",
+          "base10" : "10<sup>6</sup>"
+        }
+      },
+      "javaTimeDisplay" : "67 &mu;s, 800 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "12" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>12</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>9</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>12</sup></sup>",
+          "base10" : "10<sup>1232</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>24</sup>",
+          "base10" : "10<sup>7</sup>"
+        }
+      },
+      "javaTimeDisplay" : "188 &mu;s, 800 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "13" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>13</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>13</sup></sup>",
+          "base10" : "10<sup>2464</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>26</sup>",
+          "base10" : "10<sup>8</sup>"
+        }
+      },
+      "javaTimeDisplay" : "376 &mu;s, 300 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "14" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>14</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>7</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>14</sup></sup>",
+          "base10" : "10<sup>4928</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>28</sup>",
+          "base10" : "10<sup>8</sup>"
+        }
+      },
+      "javaTimeDisplay" : "469 &mu;s, 600 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "15" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>15</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>11</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>7</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>15</sup></sup>",
+          "base10" : "10<sup>9856</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>30</sup>",
+          "base10" : "10<sup>9</sup>"
+        }
+      },
+      "javaTimeDisplay" : "1 ms, 369 &mu;s",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "16" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>16</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>12</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>16</sup></sup>",
+          "base10" : "10<sup>19712</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>32</sup>",
+          "base10" : "10<sup>9</sup>"
+        }
+      },
+      "javaTimeDisplay" : "1 ms, 970 &mu;s",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "17" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>17</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>13</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>17</sup></sup>",
+          "base10" : "10<sup>39424</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>34</sup>",
+          "base10" : "10<sup>10</sup>"
+        }
+      },
+      "javaTimeDisplay" : "756 &mu;s, 500 ns",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : null
+    },
+    "18" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>18</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>14</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>9</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>18</sup></sup>",
+          "base10" : "10<sup>78848</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>36</sup>",
+          "base10" : "10<sup>11</sup>"
+        }
+      },
+      "javaTimeDisplay" : "1 ms, 155 &mu;s",
+      "javascriptTimeDisplay" : "****",
+      "notableUsage" : "<a href=\"https://en.wikipedia.org/wiki/MD5\">\nEfficient MD5 Collision calculation: 2013 Xie Tao, Fanbao Liu, and Dengguo Feng (2^18 time)\n</a>\n"
+    },
+    "19" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>19</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>15</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>9</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>19</sup></sup>",
+          "base10" : "10<sup>157696</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>38</sup>",
+          "base10" : "10<sup>11</sup>"
+        }
+      },
+      "javaTimeDisplay" : "2 ms, 28 &mu;s",
+      "javascriptTimeDisplay" : "1 ms, 0 &mu;s",
+      "notableUsage" : null
+    },
+    "20" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>20</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>16</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>20</sup></sup>",
+          "base10" : "10<sup>315392</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>40</sup>",
+          "base10" : "10<sup>12</sup>"
+        }
+      },
+      "javaTimeDisplay" : "3 ms, 232 &mu;s",
+      "javascriptTimeDisplay" : "1 ms, 0 &mu;s",
+      "notableUsage" : "<a href=\"https://www.youtube.com/watch?v=m4yVlPqeZwo&t=1380s\">\nA linear solution to the sorting question Eric Schmidt asked President Obama\n</a>\n"
+    },
+    "21" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>21</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>17</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>7</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>21</sup></sup>",
+          "base10" : "10<sup>630784</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>42</sup>",
+          "base10" : "10<sup>13</sup>"
+        }
+      },
+      "javaTimeDisplay" : "6 ms, 568 &mu;s",
+      "javascriptTimeDisplay" : "3 ms, 0 &mu;s",
+      "notableUsage" : null
+    },
+    "22" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>22</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>18</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>11</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>7</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>22</sup></sup>",
+          "base10" : "10<sup>1261568</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>44</sup>",
+          "base10" : "10<sup>13</sup>"
+        }
+      },
+      "javaTimeDisplay" : "12 ms, 983 &mu;s",
+      "javascriptTimeDisplay" : "6 ms, 0 &mu;s",
+      "notableUsage" : null
+    },
+    "23" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>23</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>19</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>2</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>11</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>7</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>23</sup></sup>",
+          "base10" : "10<sup>2523136</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>46</sup>",
+          "base10" : "10<sup>14</sup>"
+        }
+      },
+      "javaTimeDisplay" : "9 ms, 183 &mu;s",
+      "javascriptTimeDisplay" : "11 ms, 0 &mu;s",
+      "notableUsage" : null
+    },
+    "24" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>24</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>20</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>12</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>24</sup></sup>",
+          "base10" : "10<sup>5046272</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>48</sup>",
+          "base10" : "10<sup>14</sup>"
+        }
+      },
+      "javaTimeDisplay" : "17 ms, 314 &mu;s",
+      "javascriptTimeDisplay" : "24 ms, 0 &mu;s",
+      "notableUsage" : null
+    },
+    "25" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>25</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>21</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>12</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>25</sup></sup>",
+          "base10" : "10<sup>10092544</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>50</sup>",
+          "base10" : "10<sup>15</sup>"
+        }
+      },
+      "javaTimeDisplay" : "1 ms, 740 &mu;s",
+      "javascriptTimeDisplay" : "51 ms, 0 &mu;s",
+      "notableUsage" : null
+    },
+    "26" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>26</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>21</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>13</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>26</sup></sup>",
+          "base10" : "10<sup>20185088</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>52</sup>",
+          "base10" : "10<sup>16</sup>"
+        }
+      },
+      "javaTimeDisplay" : "3 ms, 459 &mu;s",
+      "javascriptTimeDisplay" : "95 ms, 0 &mu;s",
+      "notableUsage" : null
+    },
+    "27" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>27</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>22</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>13</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>9</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>27</sup></sup>",
+          "base10" : "10<sup>40370176</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>54</sup>",
+          "base10" : "10<sup>16</sup>"
+        }
+      },
+      "javaTimeDisplay" : "6 ms, 930 &mu;s",
+      "javascriptTimeDisplay" : "197 ms, 0 &mu;s",
+      "notableUsage" : null
+    },
+    "28" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>28</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>23</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>14</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>9</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>7</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>28</sup></sup>",
+          "base10" : "10<sup>80740352</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>56</sup>",
+          "base10" : "10<sup>17</sup>"
+        }
+      },
+      "javaTimeDisplay" : "14 ms, 258 &mu;s",
+      "javascriptTimeDisplay" : "392 ms, 0 &mu;s",
+      "notableUsage" : null
+    },
+    "29" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>29</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>24</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>14</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>9</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>7</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>29</sup></sup>",
+          "base10" : "10<sup>161480704</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>58</sup>",
+          "base10" : "10<sup>17</sup>"
+        }
+      },
+      "javaTimeDisplay" : "30 ms, 352 &mu;s",
+      "javascriptTimeDisplay" : "776 ms, 0 &mu;s",
+      "notableUsage" : null
+    },
+    "30" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>30</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>25</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>15</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>7</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>30</sup></sup>",
+          "base10" : "10<sup>322961408</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>60</sup>",
+          "base10" : "10<sup>18</sup>"
+        }
+      },
+      "javaTimeDisplay" : "58 ms, 379 &mu;s",
+      "javascriptTimeDisplay" : "1 s, 560 ms",
+      "notableUsage" : null
+    },
+    "31" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>31</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>26</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>15</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>7</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>31</sup></sup>",
+          "base10" : "10<sup>645922816</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>62</sup>",
+          "base10" : "10<sup>19</sup>"
+        }
+      },
+      "javaTimeDisplay" : "131 ms, 277 &mu;s",
+      "javascriptTimeDisplay" : "4 s, 723 ms",
+      "notableUsage" : null
+    },
+    "32" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>32</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>27</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>16</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>32</sup></sup>",
+          "base10" : "10<sup>1291845632</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>64</sup>",
+          "base10" : "10<sup>19</sup>"
+        }
+      },
+      "javaTimeDisplay" : "250 ms, 475 &mu;s",
+      "javascriptTimeDisplay" : "6 s, 46 ms",
+      "notableUsage" : null
+    },
+    "33" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>33</sup>",
+          "base10" : "10<sup>10</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>28</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>16</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>11</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>33</sup></sup>",
+          "base10" : "10<sup>2583691264</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>66</sup>",
+          "base10" : "10<sup>20</sup>"
+        }
+      },
+      "javaTimeDisplay" : "483 ms, 496 &mu;s",
+      "javascriptTimeDisplay" : "12 s, 95 ms",
+      "notableUsage" : null
+    },
+    "34" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>34</sup>",
+          "base10" : "10<sup>10</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>29</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>17</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>11</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>34</sup></sup>",
+          "base10" : "10<sup>5167382528</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>68</sup>",
+          "base10" : "10<sup>20</sup>"
+        }
+      },
+      "javaTimeDisplay" : "923 ms, 904 &mu;s",
+      "javascriptTimeDisplay" : "24 s, 830 ms",
+      "notableUsage" : null
+    },
+    "35" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>35</sup>",
+          "base10" : "10<sup>10</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>30</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>17</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>11</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>8</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>35</sup></sup>",
+          "base10" : "10<sup>10334765056</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>70</sup>",
+          "base10" : "10<sup>21</sup>"
+        }
+      },
+      "javaTimeDisplay" : "1 s, 660 ms",
+      "javascriptTimeDisplay" : "48 s, 955 ms",
+      "notableUsage" : null
+    },
+    "36" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>36</sup>",
+          "base10" : "10<sup>11</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>31</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>18</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>12</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>9</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>36</sup></sup>",
+          "base10" : "10<sup>20669530112</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>72</sup>",
+          "base10" : "10<sup>22</sup>"
+        }
+      },
+      "javaTimeDisplay" : "3 s, 303 ms",
+      "javascriptTimeDisplay" : "3 minutes, 15 s*****",
+      "notableUsage" : null
+    },
+    "37" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>37</sup>",
+          "base10" : "10<sup>11</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>32</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>18</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>12</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>9</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>37</sup></sup>",
+          "base10" : "10<sup>41339060224</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>74</sup>",
+          "base10" : "10<sup>22</sup>"
+        }
+      },
+      "javaTimeDisplay" : "6 s, 576 ms",
+      "javascriptTimeDisplay" : "6 minutes, 31 s*****",
+      "notableUsage" : null
+    },
+    "38" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>38</sup>",
+          "base10" : "10<sup>11</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>33</sup>",
+          "base10" : "10<sup>10</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>19</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>12</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>9</sup>",
+          "base10" : "10<sup>2</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>38</sup></sup>",
+          "base10" : "10<sup>82678120448</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>76</sup>",
+          "base10" : "10<sup>23</sup>"
+        }
+      },
+      "javaTimeDisplay" : "13 s, 220 ms",
+      "javascriptTimeDisplay" : "13 minutes, 3 s*****",
+      "notableUsage" : null
+    },
+    "39" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>39</sup>",
+          "base10" : "10<sup>11</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>34</sup>",
+          "base10" : "10<sup>10</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>19</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>13</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>9</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>39</sup></sup>",
+          "base10" : "10<sup>165356240896</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>78</sup>",
+          "base10" : "10<sup>23</sup>"
+        }
+      },
+      "javaTimeDisplay" : "26 s, 429 ms",
+      "javascriptTimeDisplay" : "26 minutes, 6 s*****",
+      "notableUsage" : null
+    },
+    "40" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>40</sup>",
+          "base10" : "10<sup>12</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>35</sup>",
+          "base10" : "10<sup>10</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>20</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>13</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>40</sup></sup>",
+          "base10" : "10<sup>330712481792</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>80</sup>",
+          "base10" : "10<sup>24</sup>"
+        }
+      },
+      "javaTimeDisplay" : "52 s, 850 ms",
+      "javascriptTimeDisplay" : "52 minutes, 13 s*****",
+      "notableUsage" : null
+    },
+    "41" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>41</sup>",
+          "base10" : "10<sup>12</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>36</sup>",
+          "base10" : "10<sup>11</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>20</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>13</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>41</sup></sup>",
+          "base10" : "10<sup>661424963584</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>82</sup>",
+          "base10" : "10<sup>25</sup>"
+        }
+      },
+      "javaTimeDisplay" : "3 minutes, 31 s*****",
+      "javascriptTimeDisplay" : "1 hours, 44 minutes*****",
+      "notableUsage" : null
+    },
+    "42" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>42</sup>",
+          "base10" : "10<sup>12</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>37</sup>",
+          "base10" : "10<sup>11</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>21</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>14</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>42</sup></sup>",
+          "base10" : "10<sup>1322849927168</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>84</sup>",
+          "base10" : "10<sup>25</sup>"
+        }
+      },
+      "javaTimeDisplay" : "7 minutes, 2 s*****",
+      "javascriptTimeDisplay" : "3 hours, 28 minutes*****",
+      "notableUsage" : null
+    },
+    "43" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>43</sup>",
+          "base10" : "10<sup>13</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>38</sup>",
+          "base10" : "10<sup>11</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>21</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>14</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>10</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>43</sup></sup>",
+          "base10" : "10<sup>2645699854336</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>86</sup>",
+          "base10" : "10<sup>26</sup>"
+        }
+      },
+      "javaTimeDisplay" : "14 minutes, 5 s*****",
+      "javascriptTimeDisplay" : "6 hours, 57 minutes*****",
+      "notableUsage" : null
+    },
+    "44" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>44</sup>",
+          "base10" : "10<sup>13</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>39</sup>",
+          "base10" : "10<sup>11</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>22</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>14</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>11</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>44</sup></sup>",
+          "base10" : "10<sup>5291399708672</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>88</sup>",
+          "base10" : "10<sup>26</sup>"
+        }
+      },
+      "javaTimeDisplay" : "28 minutes, 11 s*****",
+      "javascriptTimeDisplay" : "13 hours, 55 minutes*****",
+      "notableUsage" : "<a href=\"https://www.youtube.com/watch?v=V4V2bpZlqx8\">\n20 minutes to solve the Enigma code every morning.\n</a>\n"
+    },
+    "45" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>45</sup>",
+          "base10" : "10<sup>13</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>40</sup>",
+          "base10" : "10<sup>12</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>22</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>15</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>11</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>45</sup></sup>",
+          "base10" : "10<sup>10582799417344</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>90</sup>",
+          "base10" : "10<sup>27</sup>"
+        }
+      },
+      "javaTimeDisplay" : "56 minutes, 22 s*****",
+      "javascriptTimeDisplay" : "1 days, 3 hours*****",
+      "notableUsage" : null
+    },
+    "46" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>46</sup>",
+          "base10" : "10<sup>14</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>41</sup>",
+          "base10" : "10<sup>12</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>23</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>15</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>11</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>46</sup></sup>",
+          "base10" : "10<sup>21165598834688</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>92</sup>",
+          "base10" : "10<sup>28</sup>"
+        }
+      },
+      "javaTimeDisplay" : "1 hours, 52 minutes*****",
+      "javascriptTimeDisplay" : "2 days, 7 hours*****",
+      "notableUsage" : null
+    },
+    "47" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>47</sup>",
+          "base10" : "10<sup>14</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>42</sup>",
+          "base10" : "10<sup>12</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>23</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>15</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>11</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>47</sup></sup>",
+          "base10" : "10<sup>42331197669376</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>94</sup>",
+          "base10" : "10<sup>28</sup>"
+        }
+      },
+      "javaTimeDisplay" : "3 hours, 45 minutes*****",
+      "javascriptTimeDisplay" : "4 days, 15 hours*****",
+      "notableUsage" : null
+    },
+    "48" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>48</sup>",
+          "base10" : "10<sup>14</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>42</sup>",
+          "base10" : "10<sup>13</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>24</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>16</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>12</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>48</sup></sup>",
+          "base10" : "10<sup>84662395338752</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>96</sup>",
+          "base10" : "10<sup>29</sup>"
+        }
+      },
+      "javaTimeDisplay" : "7 hours, 30 minutes*****",
+      "javascriptTimeDisplay" : "9 days, 6 hours*****",
+      "notableUsage" : null
+    },
+    "49" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>49</sup>",
+          "base10" : "10<sup>15</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>43</sup>",
+          "base10" : "10<sup>13</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>24</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>16</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>12</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>49</sup></sup>",
+          "base10" : "10<sup>169324790677504</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>98</sup>",
+          "base10" : "10<sup>29</sup>"
+        }
+      },
+      "javaTimeDisplay" : "15 hours, 1 minutes*****",
+      "javascriptTimeDisplay" : "18 days, 13 hours*****",
+      "notableUsage" : null
+    },
+    "50" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>50</sup>",
+          "base10" : "10<sup>15</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>44</sup>",
+          "base10" : "10<sup>13</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>25</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>16</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>12</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>50</sup></sup>",
+          "base10" : "10<sup>338649581355008</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>100</sup>",
+          "base10" : "10<sup>30</sup>"
+        }
+      },
+      "javaTimeDisplay" : "1 days, 6 hours*****",
+      "javascriptTimeDisplay" : "37 days, 3 hours*****",
+      "notableUsage" : null
+    },
+    "51" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>51</sup>",
+          "base10" : "10<sup>15</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>45</sup>",
+          "base10" : "10<sup>13</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>25</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>17</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>12</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>51</sup></sup>",
+          "base10" : "10<sup>677299162710016</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>102</sup>",
+          "base10" : "10<sup>31</sup>"
+        }
+      },
+      "javaTimeDisplay" : "2 days, 12 hours*****",
+      "javascriptTimeDisplay" : "74 days, 6 hours*****",
+      "notableUsage" : null
+    },
+    "52" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>52</sup>",
+          "base10" : "10<sup>15</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>46</sup>",
+          "base10" : "10<sup>14</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>26</sup>",
+          "base10" : "10<sup>7</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>17</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>13</sup>",
+          "base10" : "10<sup>3</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>52</sup></sup>",
+          "base10" : "10<sup>1354598325420032</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>104</sup>",
+          "base10" : "10<sup>31</sup>"
+        }
+      },
+      "javaTimeDisplay" : "5 days, 0 hours*****",
+      "javascriptTimeDisplay" : "148 days, 12 hours*****",
+      "notableUsage" : null
+    },
+    "53" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>53</sup>",
+          "base10" : "10<sup>16</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>47</sup>",
+          "base10" : "10<sup>14</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>26</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>17</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>13</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>53</sup></sup>",
+          "base10" : "10<sup>2709196650840064</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>106</sup>",
+          "base10" : "10<sup>32</sup>"
+        }
+      },
+      "javaTimeDisplay" : "10 days, 0 hours*****",
+      "javascriptTimeDisplay" : "297 days, 1 hours*****",
+      "notableUsage" : null
+    },
+    "54" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>54</sup>",
+          "base10" : "10<sup>16</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>48</sup>",
+          "base10" : "10<sup>14</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>27</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>18</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>13</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>54</sup></sup>",
+          "base10" : "10<sup>5418393301680128</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>108</sup>",
+          "base10" : "10<sup>32</sup>"
+        }
+      },
+      "javaTimeDisplay" : "20 days, 1 hours*****",
+      "javascriptTimeDisplay" : "1 years, 229 days*****",
+      "notableUsage" : null
+    },
+    "55" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>55</sup>",
+          "base10" : "10<sup>16</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>49</sup>",
+          "base10" : "10<sup>15</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>27</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>18</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>13</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>55</sup></sup>",
+          "base10" : "10<sup>10836786603360256</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>110</sup>",
+          "base10" : "10<sup>33</sup>"
+        }
+      },
+      "javaTimeDisplay" : "40 days, 2 hours*****",
+      "javascriptTimeDisplay" : "3 years, 93 days*****",
+      "notableUsage" : null
+    },
+    "56" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>56</sup>",
+          "base10" : "10<sup>17</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>50</sup>",
+          "base10" : "10<sup>15</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>28</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>18</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>14</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>56</sup></sup>",
+          "base10" : "10<sup>21673573206720512</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>112</sup>",
+          "base10" : "10<sup>34</sup>"
+        }
+      },
+      "javaTimeDisplay" : "80 days, 4 hours*****",
+      "javascriptTimeDisplay" : "6 years, 186 days*****",
+      "notableUsage" : "<a href=\"https://en.wikipedia.org/wiki/Data_Encryption_Standard\">\nbrute force attack of DES is 2^56 in the worst case\n</a>\n"
+    },
+    "57" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>57</sup>",
+          "base10" : "10<sup>17</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>51</sup>",
+          "base10" : "10<sup>15</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>28</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>19</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>14</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>57</sup></sup>",
+          "base10" : "10<sup>43347146413441024</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>114</sup>",
+          "base10" : "10<sup>34</sup>"
+        }
+      },
+      "javaTimeDisplay" : "160 days, 8 hours*****",
+      "javascriptTimeDisplay" : "13 years, 8 days*****",
+      "notableUsage" : null
+    },
+    "58" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>58</sup>",
+          "base10" : "10<sup>17</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>52</sup>",
+          "base10" : "10<sup>15</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>29</sup>",
+          "base10" : "10<sup>8</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>19</sup>",
+          "base10" : "10<sup>5</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>14</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>58</sup></sup>",
+          "base10" : "10<sup>86694292826882048</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>116</sup>",
+          "base10" : "10<sup>35</sup>"
+        }
+      },
+      "javaTimeDisplay" : "320 days, 16 hours*****",
+      "javascriptTimeDisplay" : "26 years, 16 days*****",
+      "notableUsage" : "<a href=\"https://en.wikipedia.org/wiki/Chronology_of_computation_of_%CF%80\">\n303 days to calculate 50,000,000,000,000 digits of pi\n</a>\n"
+    },
+    "59" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>59</sup>",
+          "base10" : "10<sup>18</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>53</sup>",
+          "base10" : "10<sup>16</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>29</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>19</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>14</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>59</sup></sup>",
+          "base10" : "10<sup>173388585653764096</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>118</sup>",
+          "base10" : "10<sup>35</sup>"
+        }
+      },
+      "javaTimeDisplay" : "1 years, 276 days*****",
+      "javascriptTimeDisplay" : "52 years, 32 days*****",
+      "notableUsage" : null
+    },
+    "60" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>60</sup>",
+          "base10" : "10<sup>18</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>54</sup>",
+          "base10" : "10<sup>16</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>30</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>20</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>15</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>60</sup></sup>",
+          "base10" : "10<sup>346777171307528192</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>120</sup>",
+          "base10" : "10<sup>36</sup>"
+        }
+      },
+      "javaTimeDisplay" : "3 years, 187 days*****",
+      "javascriptTimeDisplay" : "104 years, 64 days*****",
+      "notableUsage" : null
+    },
+    "61" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>61</sup>",
+          "base10" : "10<sup>18</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>55</sup>",
+          "base10" : "10<sup>16</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>30</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>20</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>15</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>61</sup></sup>",
+          "base10" : "10<sup>693554342615056384</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>122</sup>",
+          "base10" : "10<sup>37</sup>"
+        }
+      },
+      "javaTimeDisplay" : "7 years, 10 days*****",
+      "javascriptTimeDisplay" : "208 years, 128 days*****",
+      "notableUsage" : null
+    },
+    "62" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>62</sup>",
+          "base10" : "10<sup>18</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>56</sup>",
+          "base10" : "10<sup>17</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>31</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>20</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>15</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>62</sup></sup>",
+          "base10" : "10<sup>1387108685230112768</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>124</sup>",
+          "base10" : "10<sup>37</sup>"
+        }
+      },
+      "javaTimeDisplay" : "14 years, 21 days*****",
+      "javascriptTimeDisplay" : "416 years, 257 days*****",
+      "notableUsage" : null
+    },
+    "63" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>63</sup>",
+          "base10" : "10<sup>19</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>57</sup>",
+          "base10" : "10<sup>17</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>5</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>3</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>31</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>21</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>15</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>63</sup></sup>",
+          "base10" : "10<sup>2774217370460225536</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>126</sup>",
+          "base10" : "10<sup>38</sup>"
+        }
+      },
+      "javaTimeDisplay" : "28 years, 42 days*****",
+      "javascriptTimeDisplay" : "833 years, 150 days*****",
+      "notableUsage" : null
+    },
+    "64" : {
+      "powerPerformances" : {
+        "O(N)" : {
+          "base2" : "2<sup>64</sup>",
+          "base10" : "10<sup>19</sup>"
+        },
+        "O(NlgN)" : {
+          "base2" : "2<sup>58</sup>",
+          "base10" : "10<sup>17</sup>"
+        },
+        "O(2<sup>N</sup>)" : {
+          "base2" : "2<sup>6</sup>",
+          "base10" : "10<sup>0</sup>"
+        },
+        "O(N!)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>N</sup>)" : {
+          "base2" : "2<sup>4</sup>",
+          "base10" : "10<sup>1</sup>"
+        },
+        "O(N<sup>2</sup>)" : {
+          "base2" : "2<sup>32</sup>",
+          "base10" : "10<sup>9</sup>"
+        },
+        "O(N<sup>3</sup>)" : {
+          "base2" : "2<sup>21</sup>",
+          "base10" : "10<sup>6</sup>"
+        },
+        "O(N<sup>4</sup>)" : {
+          "base2" : "2<sup>16</sup>",
+          "base10" : "10<sup>4</sup>"
+        },
+        "O(lgN)" : {
+          "base2" : "2<sup>2<sup>64</sup></sup>",
+          "base10" : "10<sup>5548434740920451072</sup>"
+        },
+        "O(&#8730N)" : {
+          "base2" : "2<sup>128</sup>",
+          "base10" : "10<sup>38</sup>"
+        }
+      },
+      "javaTimeDisplay" : "56 years, 84 days*****",
+      "javascriptTimeDisplay" : "1666 years, 301 days*****",
+      "notableUsage" : "<a href=\"https://en.wikipedia.org/wiki/Travelling_salesman_problem#Exact_algorithms\">\n85,900 node Travelling Salesman problem was solved in 136 CPU Years.\n</a>\n"
+    }
+  }
+}
