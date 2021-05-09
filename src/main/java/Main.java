@@ -11,109 +11,6 @@ import com.google.common.collect.ImmutableMap;
 
 public class Main {
 
-  private static final String TOP_MATERIAL =
-      """
-          <html>
-          <head>
-            <link rel="stylesheet" href="css/styles.css">
-            <script src="js/simulator.js"></script>
-          </head>
-          <body>
-          
-            <h1>Summary</h1>
-            <div>
-              Sometimes you have a poor algorithm with a large runtime complexity, but the problem size is small.
-              Is your algorithm good enough?
-              Should you waste your time trying to come up with a polynomial algorithm to solve the travelling salesman problem when your problem only has 10 nodes?
-            </div>
-            <h1>How to use</h1>
-            <div>
-              Use this table to estimate the max complexity your algorithm can have in order to achieve your deadline.
-              <ol>
-                <li>Look for your how much time your algorithm has available in the Time column.</li>
-                <li>In that row, look for your approximate problem size, expressed as a power of 2 or power of 10.</li>
-                <li>The column you picked is the complexity of the algorithm you need to achieve to finish fast enough.</li>
-              </ol>
-            </div>
-            
-            <h1>Warning</h1>
-            <div>
-              These are estimates.
-              There are so many factors that can throw the runtimes off by 1000x like:
-              <ol>
-                <li>IO</li>
-                <li>Network</li>
-                <li>Computer architecture</li>
-                <li>Computer age</li>
-                <li>Coefficients and lower order terms of your algorithm's complexity (ex: N<sup>2</sup> vs 2*N<sup>2</sup>)</li>
-                <li>Concurrency</li>
-                <li>Language (C, javascript, java, etc)</li>
-                <li>Contention for physical resources</li>
-                <li>Bugs in this article</li>
-              </ol>
-            </div>
-            
-            <h1>My Motivation</h1>
-            <div>
-              In
-              <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201d29/0000000000201d2a">
-                Google Kickstart 2017 Round F, Problem 1 "Cake"
-              </a>,
-              you find the minimum number of square cakes needed to cover a target area.
-              The input size was 10<sup>4</sup> and the runtime limit was 30 seconds.
-              I thought of a brute force algorithm that I guessed was between O(N<sup>3</sup>) and O(N<sup>6</sup>).
-              At the time, I had no idea how long that would take.
-              I was hoping for a resource similar to
-              <a href="https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html">
-                Latency Numbers Every Programmer Should Know
-              </a>
-              to help me ballpark how long my algorithm would take before implementing it.
-              I couldn't find anything so I wasted time thinking about how to make it more efficient.
-              I eventually gave up and wrote the algorithm.
-              I got lucky and it ended up working.
-              Using this table, I would have been more confident in my brute force algorithm.
-              During competitions it'll save me time implementing an algorithm that is just good enough.
-            </div>
-            
-            <h1>Pseudocode to calculate the table</h1>
-            <div>
-              <ol>
-                <li>
-                  For each power p of 2 from 0 to 64
-                  <ol>
-                    <li>
-                      For each runtime complexity f(n)
-                      <ol>
-                        <li>Find the closest integer r such that f(2<sup>r</sup>) is closest to 2<sup>p</sup></li>
-                        <li>Find the closest integer t such that f(10<sup>t</sup>) is closest to 2<sup>p</sup></li>
-                      </ol>
-                    </li>
-                  </ol>
-                </li>
-              </ol>
-            </div>
-            
-            <h1>Bugs? Improvements?</h1>
-            <div>
-              Feel free to file an
-              <a href="https://github.com/josephmate/PowersOf2/issues">issue</a>
-              or a
-              <a href="https://github.com/josephmate/PowersOf2/pulls">pull request</a>.
-            </div>
-            
-            <h1>Using your own timings</h1>
-            <div>
-              Time how long it takes to count from 0 to 2<sup>32</sup> (or another power of 2 of your choosing) in milliseconds on your computer or in your language.
-              Fill in the the textboxes and hit go. This will add a column scaled to your platform.
-              <br/>
-              2<sup><sup><sup><input id ="rescalePower" type="text" value="32"></sup></sup></sup><br/>
-              Time in milliseconds: <input id ="rescaleTimeMsec" type="text" value="260"/><br/>
-              <input type="button" onclick="rescale()" value="Rescale">
-            </div>
-            <h1>Powers of 2</h1>
-            <table id="runtimeTable">
-              <thead>
-          """;
   private static final String AFTER_TABLE_HEADERS =
       """
                 <th>Java Time*</th>
@@ -122,18 +19,6 @@ public class Main {
                 <th>Time it yourself***</th>
               </thead>
       """;
-
-  private static final String BOTTOM_MATERIAL =
-    """
-      </table>
-      <div>*- ran using a loop that counts from 1 to 2^N on an AMD-FX6300</div>
-      <div>**- ran using a loop that counts from 1 to 2^N on an AMD-FX6300 in my Google Chrome 90.0.4430.93</div>
-      <div>*** - Counts from 1 to 2^N in your browser.</div>
-      <div>**** - I couldn't measure such a small time scale in the browser.</div>
-      <div>***** - These are estimated because I do not want to leave my computer running that long.</div>
-    </body>
-    </html>
-    """;
 
   private static final Map<Integer, String> NOTABLE_POWERS = new ImmutableMap.Builder<Integer,String>()
       .put(18,
@@ -275,7 +160,7 @@ public class Main {
       new ComplexityOrder("O(N<sup>N</sup>)", n -> Math.pow(n, n))
   );
 
-  private record ComplexityOrder(
+  private static record ComplexityOrder(
       String htmlDisplay,
       Function<Double, Double> linearToTargetRuntime
   ) { }
@@ -434,9 +319,17 @@ public class Main {
     writer.write("</td>\n");
   }
 
+  private static final String HTML_PATH = "index.html";
+
   public static void main(String[] args) throws Exception {
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter(("index.html")))) {
-      writer.write(TOP_MATERIAL);
+    HtmlParser.ParsedHtml parsedHtml = HtmlParser.parse(HTML_PATH);
+
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter((HTML_PATH)))) {
+      writer.write(parsedHtml.topMaterial());
+      writer.write("  <table id=\"runtimeTable\">");
+      writer.write("\n");
+      writer.write("    <thead>");
+      writer.write("\n");
       for (ComplexityOrder complexityOrder : COMPLEXITY_ORDERS) {
         writer.write("      <th>");
         writer.write(complexityOrder.htmlDisplay);
@@ -473,7 +366,9 @@ public class Main {
 
         writer.write("    </tr>\n");
       }
-      writer.write(BOTTOM_MATERIAL);
+      writer.write("  </table>");
+      writer.write("\n");
+      writer.write(parsedHtml.bottomMaterial());
     }
   }
 
