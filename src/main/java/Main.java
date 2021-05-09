@@ -1,4 +1,5 @@
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -7,9 +8,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
 
 public class Main {
+
+  private static final String JAVASCRIPT_TIMINGS_PATH = "data/javascript_timings.json";
 
   private static final String AFTER_TABLE_HEADERS =
       """
@@ -56,84 +62,6 @@ public class Main {
           </a>
           """)
       .build();
-
-  private static final Map<Integer, Long> JAVA_TIMED_POWERS = new ImmutableMap.Builder<Integer,Long>()
-      .put(0, 700L)
-      .put(1, 500L)
-      .put(2, 500L)
-      .put(3, 600L)
-      .put(4, 900L)
-      .put(5, 1500L)
-      .put(6, 3300L)
-      .put(7, 4700L)
-      .put(8, 8800L)
-      .put(9, 24700L)
-      .put(10, 35800L)
-      .put(11, 76700L)
-      .put(12, 144500L)
-      .put(13, 286100L)
-      .put(14, 500200L)
-      .put(15, 1365000L)
-      .put(16, 1991100L)
-      .put(17, 464200L)
-      .put(18, 868900L)
-      .put(19, 2306600L)
-      .put(20, 3720000L)
-      .put(21, 2352200L)
-      .put(22, 4510000L)
-      .put(23, 494600L)
-      .put(24, 993200L)
-      .put(25, 2061000L)
-      .put(26, 3444800L)
-      .put(27, 7180200L)
-      .put(28, 15098600L)
-      .put(29, 28359100L)
-      .put(30, 59983700L)
-      .put(31, 122634500L)
-      .put(32, 260377800L)
-      .put(33, 477866000L)
-      .put(34, 944203900L)
-      .put(35, 1646380100L)
-      .put(36, 3413087700L)
-      .put(37, 7260554300L)
-      .put(38, 14355965800L)
-      .put(39, 28853465300L)
-      .put(40, 53058954000L)
-      .build();
-
-  private static final Map<Integer, Long> JAVASCRIPT_TIMED_POWERS = new ImmutableMap.Builder<Integer,Long>()
-      .put(19, 1L * 1000 * 1000)
-      .put(20, 1L * 1000 * 1000)
-      .put(21, 3L * 1000 * 1000)
-      .put(22, 6L * 1000 * 1000)
-      .put(23, 11L * 1000 * 1000)
-      .put(24, 24L * 1000 * 1000)
-      .put(25, 51L * 1000 * 1000)
-      .put(26, 95L * 1000 * 1000)
-      .put(27, 197L * 1000 * 1000)
-      .put(28, 392L * 1000 * 1000)
-      .put(29, 776L * 1000 * 1000)
-      .put(30, 1560L * 1000 * 1000)
-      .put(31, 4723L * 1000 * 1000)
-      .put(32, 6046L * 1000 * 1000)
-      .put(33, 12095L * 1000 * 1000)
-      .put(34, 24830L * 1000 * 1000)
-      .put(35, 48955L * 1000 * 1000)
-      .build();
-
-  private static final int MAX_JAVASCRIPT_POWER;
-  private static final int MIN_JAVASCRIPT_POWER;
-  private static final long MAX_JAVASCRIPT_DURATION;
-  private static final int MAX_JAVA_POWER;
-  private static final long MAX_JAVA_DURATION;
-
-  static {
-    MIN_JAVASCRIPT_POWER = JAVASCRIPT_TIMED_POWERS.keySet().stream().mapToInt(l -> l).min().getAsInt();
-    MAX_JAVASCRIPT_POWER = JAVASCRIPT_TIMED_POWERS.keySet().stream().mapToInt(l -> l).max().getAsInt();
-    MAX_JAVASCRIPT_DURATION = JAVASCRIPT_TIMED_POWERS.get(MAX_JAVASCRIPT_POWER);
-    MAX_JAVA_POWER = JAVA_TIMED_POWERS.keySet().stream().mapToInt(l -> l).max().getAsInt();
-    MAX_JAVA_DURATION = JAVA_TIMED_POWERS.get(MAX_JAVA_POWER);
-  }
 
   private static double factorial(double n) {
     double result = 1;
@@ -324,6 +252,19 @@ public class Main {
   public static void main(String[] args) throws Exception {
     HtmlParser.ParsedHtml parsedHtml = HtmlParser.parse(HTML_PATH);
 
+    ObjectMapper objectMapper = new ObjectMapper();
+    Map<Integer, Long> javascriptTimedPowers = objectMapper.readValue(
+        new File(JAVASCRIPT_TIMINGS_PATH),
+        new TypeReference<>(){});
+    Map<Integer, Long> javaTimedPowers = objectMapper.readValue(
+        new File(MeasureJavaTimings.JAVA_TIMINGS_PATH),
+        new TypeReference<>(){});
+    int minJavascriptPower = javascriptTimedPowers.keySet().stream().mapToInt(l -> l).min().getAsInt();
+    int maxJavascriptPower = javascriptTimedPowers.keySet().stream().mapToInt(l -> l).max().getAsInt();
+    long maxJavascriptDuration = javascriptTimedPowers.get(maxJavascriptPower);
+    int maxJavaPower = javaTimedPowers.keySet().stream().mapToInt(l -> l).max().getAsInt();
+    long maxJavaDuration = javaTimedPowers.get(maxJavaPower);
+
     try (BufferedWriter writer = new BufferedWriter(new FileWriter((HTML_PATH)))) {
       writer.write(parsedHtml.topMaterial());
       writer.write("  <table id=\"runtimeTable\">");
@@ -342,8 +283,8 @@ public class Main {
           printComplexity(writer, linearBase2Power, complexityOrder);
         }
 
-        printTime(writer, linearBase2Power, 0, MAX_JAVA_POWER, MAX_JAVA_DURATION, JAVA_TIMED_POWERS);
-        printTime(writer, linearBase2Power, MIN_JAVASCRIPT_POWER, MAX_JAVASCRIPT_POWER, MAX_JAVASCRIPT_DURATION, JAVASCRIPT_TIMED_POWERS);
+        printTime(writer, linearBase2Power, 0, maxJavaPower, maxJavaDuration, javaTimedPowers);
+        printTime(writer, linearBase2Power, minJavascriptPower, maxJavascriptPower, maxJavascriptDuration, javascriptTimedPowers);
 
         String notable = NOTABLE_POWERS.get(linearBase2Power);
         writer.write("      <td>");
