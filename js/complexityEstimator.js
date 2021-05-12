@@ -151,6 +151,82 @@ function calcLinearBase2Power(
   };
 }
 
+var COMPLEXITIES = [
+  {
+    displayName: "O(lgN)",
+    estimateRuntime: function(inputSize) {
+      return Math.log(inputSize)/Math.log(2);
+    }
+  },
+  {
+    displayName: "O(&#8730N)",
+    estimateRuntime: function(inputSize) {
+      return Math.sqrt(inputSize);
+    }
+  },
+  {
+    displayName: "O(N)",
+    estimateRuntime: function(inputSize) {
+      return inputSize;
+    }
+  },
+  {
+    displayName: "O(NlgN)",
+    estimateRuntime: function(inputSize) {
+      return inputSize*Math.log(inputSize)/Math.log(2);
+    }
+  },
+  {
+    displayName: "O(N<sup>2</sup>)",
+    estimateRuntime: function(inputSize) {
+      return inputSize*inputSize;
+    }
+  },
+  {
+    displayName: "O(N<sup>3</sup>)",
+    estimateRuntime: function(inputSize) {
+      return inputSize*inputSize*inputSize;
+    }
+  },
+  {
+    displayName: "O(N<sup>4</sup>)",
+    estimateRuntime: function(inputSize) {
+      return inputSize*inputSize*inputSize*inputSize;
+    }
+  },
+  {
+    displayName: "O(2<sup>N</sup>)",
+    estimateRuntime: function(inputSize) {
+      return Math.pow(2, inputSize);
+    }
+  },
+  {
+    displayName: "O(N!)",
+    estimateRuntime: function(inputSize) {
+      return inputSize*inputSize*inputSize*inputSize;
+    }
+  },
+  {
+    displayName: "O(N<sup>N</sup>)",
+    estimateRuntime: function(inputSize) {
+      return Math.pow(inputSize, inputSize);
+    }
+  }
+]
+
+function estimateComplexity(
+  linearBase2Power,
+  inputSizeBase,
+  inputSizeExponent
+) {
+  var linearInputSize = Math.pow(2, linearBase2Power);
+
+  for(var i = COMPLEXITIES.length - 1; i >=0; i--) {
+  }
+
+  return "O(1)";
+}
+
 function estimate() {
   var estimateResultDiv = document.getElementById("estimateResult");
   var estimateInput = parseInput();
@@ -172,12 +248,16 @@ function estimate() {
   );
   console.log("linearBase2PowerResult.found=" + linearBase2PowerResult.found);
   if (!linearBase2PowerResult.found) {
-    estimateResultDiv.innerHTML = "O(N<sup>N</sup>";
+    estimateResultDiv.innerHTML = "time provided was too large so I'm giving up: O(&infin;)";
     return;
   }
   var linearBase2Power = linearBase2PowerResult.linearBase2Power;
   console.log("linearBase2Power=" + linearBase2Power);
-  estimateResultDiv.innerHTML = "TODO";
+  estimateResultDiv.innerHTML = estimateComplexity(
+    linearBase2Power,
+    inputSizeBase,
+    inputSizeExponent
+  );
 }
 
 window.addEventListener("load", function(){
