@@ -1,7 +1,8 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="js/simulator.js"></script>
+  <script src="js/powersOf2.js"></script>
+  <script src="js/complexityEstimator.js"></script>
 </head>
 <body>
 
@@ -11,14 +12,55 @@
     Is your algorithm good enough?
     Should you waste your time trying to come up with a polynomial algorithm to solve the travelling salesman problem when your problem only has 10 nodes?
   </div>
-  <h1>How to use</h1>
-  <div>
-    Use this table to estimate the max complexity your algorithm can have in order to achieve your deadline.
+
+  <div id="interactive" style="display: none">
+    <h1>Complexity Estimator</h1>
+    <div>
+      2<sup><sup><sup><input id ="estimateInputSizePower2" type="text" value=""></sup></sup></sup><br/>
+      10<sup><sup><sup><input id ="estimateInputSizePower10" type="text" value="4"></sup></sup></sup><br/>
+      Time algorithm has available:
+      <div><input id ="estimateYears" type="text" value=""/> years</div>
+      <div><input id ="estimateDays" type="text" value=""/> days</div>
+      <div><input id ="estimateHours" type="text" value=""/> hours</div>
+      <div><input id ="estimateMinutes" type="text" value=""/> minutes</div>
+      <div><input id ="estimateSeconds" type="text" value="30"/> seconds</div>
+      <div><input id ="estimateMilliseconds" type="text" value=""/> milliseconds</div>
+      <div><input type="button" onclick="estimate()" value="Estimate"></div>
+      <div id="estimateResult">
+
+      </div>
+    </div>
+
+    <h1>How To</h1>
     <ol>
-      <li>Look for your how much time your algorithm has available in the Time column.</li>
-      <li>In that row, look for your approximate problem size, expressed as a power of 2 or power of 10.</li>
-      <li>The column you picked is the complexity of the algorithm you need to achieve to finish fast enough.</li>
+      <li>Input the input size as a power of 2 or a power of 10. Supports up to 2<sup>64</sup></li>
+      <li>Input the deadline</li>
+      <li>Hit the estimate button.</li>
     </ol>
+
+    <h1>Rescale</h1>
+    <div>
+      <div>
+        The above estimates are based on counting from 0 to 2<sup>N</sup> on a AMD FX6300.
+        You can rescale the results for your application using the input below.
+      </div>
+      <br/>
+      <div>
+        Time how long it takes for a linear problem with input size 2<sup>32</sup> (or another power of 2 of your choosing) in milliseconds on your computer or in your language.
+        Fill in the the text boxes and hit Rescale.
+      </div>
+      <br/>
+      2<sup><sup><sup><input id ="rescaleEstimatePower" type="text" value="32"></sup></sup></sup><br/>
+      Time in milliseconds: <input id ="rescaleEstimateTimeMsec" type="text" value="260"/><br/>
+      <input type="button" onclick="estimate()" value="Rescale">
+    </div>
+  </div>
+
+  <div id="javascriptWarning">
+    <h1>Javascript not detected</h1>
+    Looks like you're not using javascipt.
+    No worries I got you covered.
+    I put together a table at the bottom of this page that achieves the same goal.
   </div>
 
   <h1>Warning</h1>
@@ -60,7 +102,33 @@
     During competitions it'll save me time implementing an algorithm that is just good enough.
   </div>
 
-  <h1>Pseudocode to calculate the table</h1>
+  <h1>Bugs? Improvements?</h1>
+  <div>
+    Feel free to file an
+    <a href="https://github.com/josephmate/PowersOf2/issues">issue</a>
+    or a
+    <a href="https://github.com/josephmate/PowersOf2/pulls">pull request</a>.
+  </div>
+
+  <h1>Table Format for those without Javascript</h1>
+  <div>
+    Some people do not enable javascript in their browsers.
+    As a result, the above tool to help figure out the runtime complexity will not work.
+    I put together this static table below to look up your target runtime complexity.
+    Instead of the tool powered by javascript, it is powered by you searching the table.
+  </div>
+
+  <h2>How to use</h2>
+  <div>
+    Use this table to estimate the max complexity your algorithm can have in order to achieve your deadline.
+    <ol>
+      <li>Look for your how much time your algorithm has available in the Time column.</li>
+      <li>In that row, look for your approximate problem size, expressed as a power of 2 or power of 10.</li>
+      <li>The column you picked is the complexity of the algorithm you need to achieve to finish fast enough.</li>
+    </ol>
+  </div>
+
+  <h2>Pseudocode to calculate the table</h2>
   <div>
     <ol>
       <li>
@@ -76,14 +144,6 @@
         </ol>
       </li>
     </ol>
-  </div>
-
-  <h1>Bugs? Improvements?</h1>
-  <div>
-    Feel free to file an
-    <a href="https://github.com/josephmate/PowersOf2/issues">issue</a>
-    or a
-    <a href="https://github.com/josephmate/PowersOf2/pulls">pull request</a>.
   </div>
 
   <h1>Using your own timings</h1>
