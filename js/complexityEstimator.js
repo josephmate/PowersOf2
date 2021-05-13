@@ -214,17 +214,72 @@ var COMPLEXITIES = [
   }
 ]
 
+function findClosestPowerOf2(complexity, linearBase2Power) {
+  var closest = 0;
+  var closestDistance = Number.MAX_VALUE;
+  var previousDistance = Number.MAX_VALUE;
+  var expected = Math.pow(2, linearBase2Power);
+  var i = 0;
+  while (true) {
+    var inputSize = Math.pow(2, i);
+    var runtime = complexity.estimateRuntime(inputSize);
+    var distance = Math.abs(runtime - expected);
+    if(distance < closestDistance) {
+      closestDistance = distance;
+      closest = i;
+    }
+    if (distance > previousDistance) {
+      break;
+    }
+    previousDistance = distance;
+    i+=1;
+  }
+  return closest;
+}
+
 function estimateComplexity(
   linearBase2Power,
   inputSizeBase,
   inputSizeExponent
 ) {
-  var linearInputSize = Math.pow(2, linearBase2Power);
-
+  var reasons = [];
+  var inputSize = Math.pow(inputSizeBase, inputSizeExponent);
   for(var i = COMPLEXITIES.length - 1; i >=0; i--) {
+    var complexity = COMPLEXITIES[i];
+    var closestPowerOf2 = findClosestPowerOf2(complexity, linearBase2Power);
+    var closestN = Math.pow(2,closestPowerOf2);
+    if (closestN >= inputSize) {
+      reasons.push("when " + complexity.displayName + " is closest to "
+        + " 2<sup>" + linearBase2Power + "</sup>,"
+        + " N=2<sup>" + closestPowerOf2 + "</sup>"
+        + " which is greater than or equal to the target input size "
+        + inputSizeBase + "<sup>" + inputSizeExponent  + "</sup>"
+        + " (" + closestN + " >= " + inputSize + ")"
+      );
+      return {
+        complexity: complexity.displayName,
+        reasons: reasons
+      };
+    }
+    reasons.push("when " + complexity.displayName + " is closest to "
+      + " 2<sup>" + linearBase2Power + "</sup>,"
+      + " N=2<sup>" + closestPowerOf2 + "</sup>"
+      + " which is less than the target input size "
+      + inputSizeBase + "<sup>" + inputSizeExponent  + "</sup>"
+      + " (" + closestN + " < " + inputSize + ")"
+    );
   }
 
-  return "O(1)";
+  reasons.push("the N such that made F(N) closest to"
+    + " 2<sup>" + linearBase2Power + "</sup>"
+    + " was always smaller than "
+    + inputSizeBase + "<sup>" + inputSizeExponent  + "</sup>"
+    + "for all hardcoded functions F"
+  );
+  return {
+    complexity: "O(1)",
+    reasons: reasons
+  };
 }
 
 function estimate() {
@@ -253,11 +308,24 @@ function estimate() {
   }
   var linearBase2Power = linearBase2PowerResult.linearBase2Power;
   console.log("linearBase2Power=" + linearBase2Power);
-  estimateResultDiv.innerHTML = estimateComplexity(
+  var result = estimateComplexity(
     linearBase2Power,
-    inputSizeBase,
-    inputSizeExponent
+    estimateInput.base,
+    estimateInput.exponent
   );
+  var resultHtml = "<div>" + result.complexity + "</div>"
+    + "<ol>Because:";
+    resultHtml += "<li>We assume a linear algorithm with input size 2<sup>" + estimateInput.rescaleEstimatePower + "</sup>"
+    + " takes " + estimateInput.rescaleEstimateTimeMsec + " milliseconds";
+    resultHtml += "<li>"
+      + "So a linear algorithm that takes " + estimateInput.timeMsec + " milliseconds"
+      + " needs an input size of about 2<sup>" + linearBase2Power + "</sup>"
+      + "</li>";
+  for(var i = 0; i < result.reasons.length; i++) {
+    resultHtml += "<li>" + result.reasons[i] + "</li>";
+  }
+  resultHtml += "</ol>";
+  estimateResultDiv.innerHTML = resultHtml;
 }
 
 window.addEventListener("load", function(){
