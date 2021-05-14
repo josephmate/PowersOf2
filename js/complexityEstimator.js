@@ -154,60 +154,70 @@ function calcLinearBase2Power(
 var COMPLEXITIES = [
   {
     displayName: "O(lgN)",
+    displayNameNoO: "lgN",
     estimateRuntime: function(inputSize) {
       return Math.log(inputSize)/Math.log(2);
     }
   },
   {
     displayName: "O(&#8730N)",
+    displayNameNoO: "&#8730N",
     estimateRuntime: function(inputSize) {
       return Math.sqrt(inputSize);
     }
   },
   {
     displayName: "O(N)",
+    displayNameNoO: "N",
     estimateRuntime: function(inputSize) {
       return inputSize;
     }
   },
   {
     displayName: "O(NlgN)",
+    displayNameNoO: "NlgN",
     estimateRuntime: function(inputSize) {
       return inputSize*Math.log(inputSize)/Math.log(2);
     }
   },
   {
     displayName: "O(N<sup>2</sup>)",
+    displayNameNoO: "N<sup>2</sup>",
     estimateRuntime: function(inputSize) {
       return inputSize*inputSize;
     }
   },
   {
     displayName: "O(N<sup>3</sup>)",
+    displayNameNoO: "N<sup>3</sup>",
     estimateRuntime: function(inputSize) {
       return inputSize*inputSize*inputSize;
     }
   },
   {
     displayName: "O(N<sup>4</sup>)",
+    displayNameNoO: "N<sup>4</sup>",
     estimateRuntime: function(inputSize) {
       return inputSize*inputSize*inputSize*inputSize;
     }
   },
   {
     displayName: "O(2<sup>N</sup>)",
+    displayNameNoO: "2<sup>N</sup>",
     estimateRuntime: function(inputSize) {
       return Math.pow(2, inputSize);
     }
   },
   {
     displayName: "O(N!)",
+    displayNameNoO: "N!",
     estimateRuntime: function(inputSize) {
       return inputSize*inputSize*inputSize*inputSize;
     }
   },
   {
     displayName: "O(N<sup>N</sup>)",
+    displayNameNoO: "N<sup>N</sup>",
     estimateRuntime: function(inputSize) {
       return Math.pow(inputSize, inputSize);
     }
@@ -244,40 +254,31 @@ function estimateComplexity(
 ) {
   var reasons = [];
   var inputSize = Math.pow(inputSizeBase, inputSizeExponent);
+  var minDistancePower = Number.MAX_VALUE;
+  var minDistance = Number.MAX_VALUE;
+  var minDistanceN = Number.MAX_VALUE;
+  var minComplexity;
   for(var i = COMPLEXITIES.length - 1; i >=0; i--) {
     var complexity = COMPLEXITIES[i];
     var closestPowerOf2 = findClosestPowerOf2(complexity, linearBase2Power);
     var closestN = Math.pow(2,closestPowerOf2);
-    if (closestN >= inputSize) {
-      reasons.push("when " + complexity.displayName + " is closest to "
-        + " 2<sup>" + linearBase2Power + "</sup>,"
-        + " N=2<sup>" + closestPowerOf2 + "</sup>"
-        + " which is greater than or equal to the target input size "
-        + inputSizeBase + "<sup>" + inputSizeExponent  + "</sup>"
-        + " (" + closestN + " >= " + inputSize + ")"
-      );
-      return {
-        complexity: complexity.displayName,
-        reasons: reasons
-      };
+    var distance = Math.abs(closestN - inputSize);
+    if (distance <= minDistance) {
+      minDistance = distance;
+      minDistancePower = closestPowerOf2;
+      minDistanceN = closestN;
+      minComplexity = complexity;
     }
-    reasons.push("when " + complexity.displayName + " is closest to "
-      + " 2<sup>" + linearBase2Power + "</sup>,"
-      + " N=2<sup>" + closestPowerOf2 + "</sup>"
-      + " which is less than the target input size "
-      + inputSizeBase + "<sup>" + inputSizeExponent  + "</sup>"
-      + " (" + closestN + " < " + inputSize + ")"
-    );
   }
 
-  reasons.push("the N such that made F(N) closest to"
-    + " 2<sup>" + linearBase2Power + "</sup>"
-    + " was always smaller than "
-    + inputSizeBase + "<sup>" + inputSizeExponent  + "</sup>"
-    + "for all hardcoded functions F"
-  );
+  reasons.push("N=2" + "<sup>" + minDistancePower + "</sup> is the closest power of two to " 
+    + inputSizeBase + "<sup>" + inputSizeExponent + "</sup>"
+    + " such that f(N)=" + minComplexity.displayNameNoO + " is the closest power of 2 to 2<sup>" + linearBase2Power + "</sup>."
+    + " for N=2" + "<sup>" + minDistancePower + "</sup>" + "=" + Math.pow(2,minDistancePower) + ", f(N)=" + minComplexity.estimateRuntime(Math.pow(2,minDistancePower))
+    + " which is closest to " + Math.pow(2, linearBase2Power) + "=2<sup>" + linearBase2Power + "</sup>." 
+    );
   return {
-    complexity: "O(1)",
+    complexity: minComplexity.displayName,
     reasons: reasons
   };
 }
