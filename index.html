@@ -119,7 +119,7 @@
 
   <h1>Experiments</h1>
   <div>
-    I went through a bunch of GoogleKickStart problems I solved and put in the time and input size to see what this tool estimates.
+    I went through a bunch of GoogleKickStart problems I solved and put in the time and input size to see what this tool estimates compared with Google's expected complexity, and my implementation's complexity.
     <table>
       <thead>
         <th>Problem</th>
@@ -141,7 +141,7 @@
         <td>O(N<sup>1.5</sup>)</td>
         <td>O(N<sup>2</sup>)</td>
       </tr>
-      <tr>Common Anagrams
+      <tr>
         <td>
           <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050e07/00000000000510f2">
             Google Kickstart 2018 Round F, Problem 1 "Common Anagrams"
@@ -152,6 +152,30 @@
         <td>O(N!)</td>
         <td>O(N<sup>2</sup>) to O(N<sup>4</sup>)</td>
         <td>O(N<sup>2</sup>)</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d82e6">
+            Google Kickstart 2020 Round B, Problem 1 "Bike Tour"
+          </a>
+        </td>
+        <td>10<sup>2</sup></td>
+        <td>10 seconds</td>
+        <td>O(N!)</td>
+        <td>O(N)</td>
+        <td>O(N)</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d82e6">
+            Google Kickstart 2020 Round H, Problem 1 "Retype"
+          </a>
+        </td>
+        <td>10<sup>9</sup></td>
+        <td>20 seconds</td>
+        <td>O(NlgN)</td>
+        <td>O(N)</td>
+        <td>O(N)</td>
       </tr>
     </table>
   </div>
