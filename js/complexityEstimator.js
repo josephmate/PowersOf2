@@ -263,20 +263,22 @@ function estimateComplexity(
     var closestPowerOf2 = findClosestPowerOf2(complexity, linearBase2Power);
     var closestN = Math.pow(2,closestPowerOf2);
     var distance = Math.abs(closestN - inputSize);
-    if (distance <= minDistance) {
-      minDistance = distance;
-      minDistancePower = closestPowerOf2;
-      minDistanceN = closestN;
+    var weightedDistance = complexity.estimateRuntime(distance);
+
+    reasons.push("when " + complexity.displayName + " is closest to "
+      + " 2<sup>" + linearBase2Power + "</sup>,"
+      + " N=2<sup>" + closestPowerOf2 + "</sup>=" + closestN
+      + " has a weighted distance to "
+      + inputSizeBase + "<sup>" + inputSizeExponent  + "</sup>=" + inputSize
+      + " of " + weightedDistance
+    );
+
+    if (distance < minDistance) {
+      minDistance = weightedDistance;
       minComplexity = complexity;
     }
   }
 
-  reasons.push("N=2" + "<sup>" + minDistancePower + "</sup> is the closest power of two to " 
-    + inputSizeBase + "<sup>" + inputSizeExponent + "</sup>"
-    + " such that f(N)=" + minComplexity.displayNameNoO + " is the closest power of 2 to 2<sup>" + linearBase2Power + "</sup>."
-    + " for N=2" + "<sup>" + minDistancePower + "</sup>" + "=" + Math.pow(2,minDistancePower) + ", f(N)=" + minComplexity.estimateRuntime(Math.pow(2,minDistancePower))
-    + " which is closest to " + Math.pow(2, linearBase2Power) + "=2<sup>" + linearBase2Power + "</sup>." 
-    );
   return {
     complexity: minComplexity.displayName,
     reasons: reasons
