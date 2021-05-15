@@ -82,24 +82,78 @@
 
   <h1>My Motivation</h1>
   <div>
-    In
-    <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201d29/0000000000201d2a">
-      Google Kickstart 2017 Round F, Problem 1 "Cake"
-    </a>,
-    you find the minimum number of square cakes needed to cover a target area.
-    The input size was 10<sup>4</sup> and the runtime limit was 30 seconds.
-    I thought of a brute force algorithm that I guessed was between O(N<sup>3</sup>) and O(N<sup>6</sup>).
-    At the time, I had no idea how long that would take.
-    I was hoping for a resource similar to
-    <a href="https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html">
-      Latency Numbers Every Programmer Should Know
-    </a>
-    to help me ballpark how long my algorithm would take before implementing it.
-    I couldn't find anything so I wasted time thinking about how to make it more efficient.
-    I eventually gave up and wrote the algorithm.
-    I got lucky and it ended up working.
-    Using this table, I would have been more confident in my brute force algorithm.
-    During competitions it'll save me time implementing an algorithm that is just good enough.
+    <p>
+      In
+      <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201d29/0000000000201d2a">
+        Google Kickstart 2017 Round F, Problem 1 "Cake"
+      </a>,
+      you find the minimum number of square cakes needed to cover a target area.
+      The input size was 10<sup>4</sup> and the runtime limit was 30 seconds.
+      I thought of a brute force algorithm that I guessed was between O(N<sup>3</sup>) and O(N<sup>6</sup>).
+      At the time, I had no idea how long that would take.
+      I was hoping for a resource similar to
+      <a href="https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html">
+        Latency Numbers Every Programmer Should Know
+      </a>
+      to help me ballpark how long my algorithm would take before implementing it.
+      I couldn't find anything so I wasted time thinking about how to make it more efficient.
+      I eventually gave up and wrote the algorithm.
+      I got lucky and it ended up working.
+      Using this table, I would have been more confident in my brute force algorithm.
+      During competitions it'll save me time implementing an algorithm that is just good enough.
+    </p>
+    <p>
+      This tool predicted O(N<sup>2</sup>), which was the actual complexity of
+      <a href="https://github.com/josephmate/GoogleKickStart/blob/master/java/2017/F/p01/src/Solution.java">
+        my solution!
+      </a>
+      due to
+      <a href="https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem">
+        Lagrange's four-square theorem
+      </a>,
+      which I did not know at the time.
+      GoogleKickStart's expected solution was O(N<sup>1.5</sup>).
+      What's great is that they left with a square root buffer for less performant solutions, but you might not have known that by looking directly at the problem statement.
+    </p>
+  </div>
+
+  <h1>Experiments</h1>
+  <div>
+    I went through a bunch of GoogleKickStart problems I solved and put in the time and input size to see what this tool estimates.
+    <table>
+      <thead>
+        <th>Problem</th>
+        <th>Input Size</th>
+        <th>Time Available</th>
+        <th>Tool Estimate</th>
+        <th>Reference Solution Complexity</th>
+        <th>My Accepted Solution's Complexity</th>
+      </thead>
+      <tr>
+        <td>
+          <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201d29/0000000000201d2a">
+            Google Kickstart 2017 Round F, Problem 1 "Cake"
+          </a>
+        </td>
+        <td>10<sup>4</sup></td>
+        <td>30 seconds</td>
+        <td>O(N<sup>2</sup>)</td>
+        <td>O(N<sup>1.5</sup>)</td>
+        <td>O(N<sup>2</sup>)</td>
+      </tr>
+      <tr>Common Anagrams
+        <td>
+          <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050e07/00000000000510f2">
+            Google Kickstart 2018 Round F, Problem 1 "Common Anagrams"
+          </a>
+        </td>
+        <td>10<sup>1.698</sup></td>
+        <td>20 seconds</td>
+        <td>O(N!)</td>
+        <td>O(N<sup>2</sup>) to O(N<sup>4</sup>)</td>
+        <td>O(N<sup>2</sup>)</td>
+      </tr>
+    </table>
   </div>
 
   <h1>Bugs? Improvements?</h1>
