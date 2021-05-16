@@ -131,24 +131,39 @@ function parseInput() {
   };
 }
 
+var EPSILON = 0.000001;
+var FOUR_DECIMAL_PLACES = 0.0001;
 function calcLinearBase2Power(
   timeMsec,
   rescaleEstimatePower,
   rescaleEstimateTimeMsec
 ) {
-  var current = rescaleEstimateTimeMsec / Math.pow(2, rescaleEstimatePower);
-  for(var i = 0; i <= 64; i++) {
-    if (timeMsec <= current) {
+  var lowerBound = 0;
+  var upperBound = 128;
+  while (true) {
+    // there an input size between 2^0 to 2^128 that achieved the target time
+    if (upperBound < lowerBound) {
+      return {
+        found: false
+      };
+    }
+    var midPoint = (lowerBound + upperBound) / 2;
+    var current = rescaleEstimateTimeMsec * Math.pow(2, midPoint - rescaleEstimatePower);
+
+    if (
+      timeMsec - (FOUR_DECIMAL_PLACES*timeMsec) <= current
+      && current <= timeMsec + (FOUR_DECIMAL_PLACES*timeMsec)
+    ) {
       return {
         found: true,
-        linearBase2Power: i
+        linearBase2Power: midPoint
       }
+    } else if (current < timeMsec) {
+      lowerBound = midPoint + EPSILON;
+    } else {
+      upperBound = midPoint - EPSILON;
     }
-    current = current * 2;
   }
-  return {
-    found: false
-  };
 }
 
 var COMPLEXITIES = [
@@ -303,7 +318,7 @@ function estimate() {
   );
   console.log("linearBase2PowerResult.found=" + linearBase2PowerResult.found);
   if (!linearBase2PowerResult.found) {
-    estimateResultDiv.innerHTML = "time provided was too large so I'm giving up: O(&infin;)";
+    estimateResultDiv.innerHTML = "<div>O(&infin;)</div><ol>Because:<li>time provided was too large so I'm giving up.</li>";
     return;
   }
   var linearBase2Power = linearBase2PowerResult.linearBase2Power;
