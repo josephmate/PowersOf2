@@ -166,6 +166,17 @@ function calcLinearBase2Power(
   }
 }
 
+function factorial(n) {
+  var result = 1;
+  for (var i = 2; i <= n; i++) {
+    result = result * i;
+    if (!isFinite(result)) {
+      return i;
+    }
+  }
+  return i;
+}
+
 var COMPLEXITIES = [
   {
     displayName: "O(lgN)",
@@ -218,7 +229,7 @@ var COMPLEXITIES = [
   {
     displayName: "O(N!)",
     estimateRuntime: function(inputSize) {
-      return inputSize*inputSize*inputSize*inputSize;
+      return factorial(inputSize);
     }
   },
   {
