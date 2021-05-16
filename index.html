@@ -120,6 +120,9 @@
   <h1>Experiments</h1>
   <div>
     I went through a bunch of GoogleKickStart problems I solved and put in the time and input size to see what this tool estimates compared with Google's expected complexity, and my implementation's complexity.
+    For Problem 1, Google usually gives you a large complexity buffer since they keep the input size small.
+    In many cases, my algorithm exceeded the complexity of their expected solution, but was still accepted.
+    However, in some cases, the tool erroniously suggests O(N<sup>3</sup>), but the max allowable is O(N<sup>2</sup>), like in 2020 Round G, Problem 2 "Maximum Coins".
     <table>
       <thead>
         <th>Problem</th>
@@ -147,7 +150,7 @@
             Google Kickstart 2018 Round F, Problem 1 "Common Anagrams"
           </a>
         </td>
-        <td>10<sup>1.698</sup></td>
+        <td>10<sup>1.70</sup></td>
         <td>20 seconds</td>
         <td>O(N<sup>4</sup>)</td>
         <td>O(N<sup>2</sup>) to O(N<sup>4</sup>)</td>
@@ -211,6 +214,42 @@
         <td>20 seconds</td>
         <td>O(N<sup>3</sup>)</td>
         <td>O(N)</td>
+        <td>O(N)</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201c98/0000000000201d26">
+            Google Kickstart 2017 Round C, Problem 1 "Ambiguous Cipher"
+          </a>
+        </td>
+        <td>10<sup>1.70</sup></td>
+        <td>20 seconds</td>
+        <td>O(N<sup>4</sup>)</td>
+        <td>O(N)</td>
+        <td>O(N<sup>2</sup>)</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000414a23">
+            Google Kickstart 2020 Round G, Problem 2 "Maximum Coins"
+          </a>
+        </td>
+        <td>10<sup>3</sup></td>
+        <td>20 seconds</td>
+        <td>O(N<sup>3</sup>)</td>
+        <td>O(N<sup>2</sup>)</td>
+        <td>O(N<sup>2</sup>)</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="hhttps://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d83bf">
+            Google Kickstart 2020 Round B, Problem 2 "Maximum Coins"
+          </a>
+        </td>
+        <td>10<sup>12</sup></td>
+        <td>20 seconds</td>
+        <td>O(1)</td>
+        <td>O(NlgD))</td>
         <td>O(N)</td>
       </tr>
     </table>
