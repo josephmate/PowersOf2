@@ -297,7 +297,7 @@ function estimateComplexity(
       var closestPowerOf2 = result.power;
       var closestN = Math.pow(2,closestPowerOf2);
       if (closestN >= inputSize) {
-        reasons.push("when " + complexity.displayName + " is closest to "
+        reasons.push("when F(N)=" + complexity.displayName.replace("O(", "").replace(")", "") + " is closest to "
           + " 2<sup>" + linearBase2Power + "</sup>,"
           + " N=2<sup>" + closestPowerOf2 + "</sup>"
           + " which is greater than or equal to the target input size "
@@ -309,7 +309,7 @@ function estimateComplexity(
           reasons: reasons
         };
       }
-      reasons.push("when " + complexity.displayName + " is closest to "
+      reasons.push("when F(N)=" + complexity.displayName.replace("O(", "").replace(")", "") + " is closest to "
         + " 2<sup>" + linearBase2Power + "</sup>,"
         + " N=2<sup>" + closestPowerOf2 + "</sup>"
         + " which is less than the target input size "
@@ -317,7 +317,7 @@ function estimateComplexity(
         + " (" + closestN + " < " + inputSize + ")"
       );
     } else {
-      reasons.push("Could not find an N when " + complexity.displayName + " is closest to "
+      reasons.push("Could not find an N when F(N)=" + complexity.displayName.replace("O(", "").replace(")", "") + " is closest to "
         + " 2<sup>" + linearBase2Power + "</sup>."
       );
     }
