@@ -230,26 +230,40 @@ var COMPLEXITIES = [
 ]
 
 function findClosestPowerOf2(complexity, linearBase2Power) {
-  var closest = 0;
-  var closestDistance = Number.MAX_VALUE;
-  var previousDistance = Number.MAX_VALUE;
-  var expected = Math.pow(2, linearBase2Power);
-  var i = 0;
-  while (true) {
-    var inputSize = Math.pow(2, i);
-    var runtime = complexity.estimateRuntime(inputSize);
-    var distance = Math.abs(runtime - expected);
-    if(distance < closestDistance) {
-      closestDistance = distance;
-      closest = i;
-    }
-    if (distance > previousDistance) {
-      break;
-    }
-    previousDistance = distance;
-    i+=1;
+  if (complexity.displayName === "O(lgN)") {
+    return Math.pow(2, linearBase2Power);
+  } else if (complexity.displayName === "O(&#8730N)") {
+    return linearBase2Power*2;
   }
-  return closest;
+
+  var expected = Math.pow(2, linearBase2Power);
+  var lowerBound = 0;
+  var upperBound = 128;
+  while (true) {
+    // there an input size between 2^0 to 2^128 that achieved the target time
+    if (upperBound < lowerBound) {
+      return {
+        found: false
+      };
+    }
+    var midPoint = (lowerBound + upperBound) / 2;
+    var currentInputSize = Math.pow(2, midPoint);
+    var currentRuntime = complexity.estimateRuntime(currentInputSize);
+
+    if (
+      expected - (FOUR_DECIMAL_PLACES*expected) <= currentRuntime
+      && currentRuntime <= expected + (FOUR_DECIMAL_PLACES*expected)
+    ) {
+      return {
+        found: true,
+        power: midPoint
+      }
+    } else if (currentRuntime < expected) {
+      lowerBound = midPoint + EPSILON;
+    } else {
+      upperBound = midPoint - EPSILON;
+    }
+  }
 }
 
 function estimateComplexity(
@@ -261,28 +275,35 @@ function estimateComplexity(
   var inputSize = Math.pow(inputSizeBase, inputSizeExponent);
   for(var i = COMPLEXITIES.length - 1; i >=0; i--) {
     var complexity = COMPLEXITIES[i];
-    var closestPowerOf2 = findClosestPowerOf2(complexity, linearBase2Power);
-    var closestN = Math.pow(2,closestPowerOf2);
-    if (closestN >= inputSize) {
+    var result = findClosestPowerOf2(complexity, linearBase2Power);
+    if (result.found) {
+      var closestPowerOf2 = result.power;
+      var closestN = Math.pow(2,closestPowerOf2);
+      if (closestN >= inputSize) {
+        reasons.push("when " + complexity.displayName + " is closest to "
+          + " 2<sup>" + linearBase2Power + "</sup>,"
+          + " N=2<sup>" + closestPowerOf2 + "</sup>"
+          + " which is greater than or equal to the target input size "
+          + inputSizeBase + "<sup>" + inputSizeExponent  + "</sup>"
+          + " (" + closestN + " >= " + inputSize + ")"
+        );
+        return {
+          complexity: complexity.displayName,
+          reasons: reasons
+        };
+      }
       reasons.push("when " + complexity.displayName + " is closest to "
         + " 2<sup>" + linearBase2Power + "</sup>,"
         + " N=2<sup>" + closestPowerOf2 + "</sup>"
-        + " which is greater than or equal to the target input size "
+        + " which is less than the target input size "
         + inputSizeBase + "<sup>" + inputSizeExponent  + "</sup>"
-        + " (" + closestN + " >= " + inputSize + ")"
+        + " (" + closestN + " < " + inputSize + ")"
       );
-      return {
-        complexity: complexity.displayName,
-        reasons: reasons
-      };
+    } else {
+      reasons.push("Could not find an N when " + complexity.displayName + " is closest to "
+        + " 2<sup>" + linearBase2Power + "</sup>."
+      );
     }
-    reasons.push("when " + complexity.displayName + " is closest to "
-      + " 2<sup>" + linearBase2Power + "</sup>,"
-      + " N=2<sup>" + closestPowerOf2 + "</sup>"
-      + " which is less than the target input size "
-      + inputSizeBase + "<sup>" + inputSizeExponent  + "</sup>"
-      + " (" + closestN + " < " + inputSize + ")"
-    );
   }
 
   reasons.push("the N such that made F(N) closest to"
