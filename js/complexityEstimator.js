@@ -166,15 +166,16 @@ function calcLinearBase2Power(
   }
 }
 
+function gamma(z) {
+  return Math.sqrt(2 * Math.PI / z) * Math.pow((1 / Math.E) * (z + 1 / (12 * z - 1 / (10 * z))), z);
+}
+
+/**
+ * https://stackoverflow.com/questions/15454183/how-to-make-a-function-that-computes-the-factorial-for-numbers-with-decimals
+ * 
+ */
 function factorial(n) {
-  var result = 1;
-  for (var i = 2; i <= n; i++) {
-    result = result * i;
-    if (!isFinite(result)) {
-      return i;
-    }
-  }
-  return i;
+  return gamma(n + 1);
 }
 
 var COMPLEXITIES = [
