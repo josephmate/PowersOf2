@@ -242,9 +242,15 @@ var COMPLEXITIES = [
 
 function findClosestPowerOf2(complexity, linearBase2Power) {
   if (complexity.displayName === "O(lgN)") {
-    return Math.pow(2, linearBase2Power);
+    return {
+      found: true,
+      power: Math.pow(2, linearBase2Power)
+    };
   } else if (complexity.displayName === "O(&#8730N)") {
-    return linearBase2Power*2;
+    return {
+      found: true,
+      power: linearBase2Power*2
+    };
   }
 
   var expected = Math.pow(2, linearBase2Power);
