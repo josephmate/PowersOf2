@@ -16,15 +16,19 @@
   <div id="interactive" style="display: none">
     <h1>Complexity Estimator</h1>
     <div>
-      2<sup><sup><sup><input id ="estimateInputSizePower2" type="text" value=""></sup></sup></sup><br/>
-      10<sup><sup><sup><input id ="estimateInputSizePower10" type="text" value="4"></sup></sup></sup><br/>
-      Time algorithm has available:
-      <div><input id ="estimateYears" type="text" value=""/> years</div>
-      <div><input id ="estimateDays" type="text" value=""/> days</div>
-      <div><input id ="estimateHours" type="text" value=""/> hours</div>
-      <div><input id ="estimateMinutes" type="text" value=""/> minutes</div>
-      <div><input id ="estimateSeconds" type="text" value="30"/> seconds</div>
-      <div><input id ="estimateMilliseconds" type="text" value=""/> milliseconds</div>
+      <div>Problem Size:
+        <div>2<sup><sup><sup><input id ="estimateInputSizePower2" type="text" value=""></sup></sup></sup></div>
+        <div>or</div>
+        <div>10<sup><sup><sup><input id ="estimateInputSizePower10" type="text" value="4"></sup></sup></sup></div>
+      </div>
+      <div>Time algorithm has available:
+        <div><input id ="estimateYears" type="text" value=""/> years</div>
+        <div><input id ="estimateDays" type="text" value=""/> days</div>
+        <div><input id ="estimateHours" type="text" value=""/> hours</div>
+        <div><input id ="estimateMinutes" type="text" value=""/> minutes</div>
+        <div><input id ="estimateSeconds" type="text" value="30"/> seconds</div>
+        <div><input id ="estimateMilliseconds" type="text" value=""/> milliseconds</div>
+      </div>
       <div><input type="button" onclick="estimate()" value="Estimate"></div>
       <div id="estimateResult">
 
@@ -72,11 +76,12 @@
       <li>Network</li>
       <li>Computer architecture</li>
       <li>Computer age</li>
+      <li>The tool includes only common runtime complexities, but there infinitely many complexities inbetween the runtime complexities the tool evaluates.</li>
       <li>Coefficients and lower order terms of your algorithm's complexity (ex: N<sup>2</sup> vs 2*N<sup>2</sup>)</li>
       <li>Concurrency</li>
       <li>Language (C, javascript, java, etc)</li>
       <li>Contention for physical resources</li>
-      <li>Bugs in this article</li>
+      <li>Bugs in this tool</li>
     </ol>
   </div>
 
@@ -121,9 +126,12 @@
   <div>
     I went through a bunch of GoogleKickStart problems I solved and put in the time and input size to see what this tool estimates compared with Google's expected complexity, and my implementation's complexity.
     For Problem 1, Google usually gives you a large complexity buffer since they keep the input size small.
-    In many cases, my algorithm exceeded the complexity of their expected solution, but was still accepted.
-    However, in some cases, the tool erroniously suggests O(N<sup>3</sup>), but the max allowable is O(N<sup>2</sup>), like in 2020 Round G, Problem 2 "Maximum Coins".
-    Finally, this tool doesn't handle multi-variate complexities, making some of the problems difficult to estimate, like in 2020 Round B, Problem 2 "Bus Routes".
+    In most cases, this tool estimates a larger complexity by a factor of O(N).
+    This suggests that Google provides a smaller buffer that you can exploit with a less efficient solution,
+    or this tool has huge room for improvement.
+    For example, the tool suggests O(N<sup>3</sup>), but the max allowable is O(N<sup>2</sup>), like in 2020 Round G, Problem 2 "Maximum Coins".
+    Finally, this tool doesn't handle multi-variate complexities, making some of the problems difficult to estimate, like in Google Kickstart 2018 Round H, Problem 1 "Big Buttons".
+    In those cases I try my best to combine all the problems sizes into a single variable.
     <table>
       <thead>
         <th>Problem</th>
@@ -132,6 +140,7 @@
         <th>Tool Estimate</th>
         <th>Reference Solution Complexity</th>
         <th>My Accepted Solution's Complexity</th>
+        <th>Complexity Buffer of Estimate Error</th>
       </thead>
       <tr>
         <td>
@@ -144,6 +153,7 @@
         <td>O(N<sup>2</sup>)</td>
         <td>O(N<sup>1.5</sup>)</td>
         <td>O(N<sup>2</sup>)</td>
+        <td>O(N<sup>0.5</sup>)</td>
       </tr>
       <tr>
         <td>
@@ -156,6 +166,7 @@
         <td>O(N<sup>4</sup>)</td>
         <td>O(N<sup>2</sup>) to O(N<sup>4</sup>)</td>
         <td>O(N<sup>2</sup>)</td>
+        <td>O(1)</td>
       </tr>
       <tr>
         <td>
@@ -168,6 +179,7 @@
         <td>O(N<sup>4</sup>)</td>
         <td>O(N)</td>
         <td>O(N)</td>
+        <td>O(N<sup>3</sup>)</td>
       </tr>
       <tr>
         <td>
@@ -180,6 +192,7 @@
         <td>O(NlgN)</td>
         <td>O(N)</td>
         <td>O(N)</td>
+        <td>O(lgN)</td>
       </tr>
       <tr>
         <td>
@@ -192,6 +205,7 @@
         <td>O(N<sup>3</sup>)</td>
         <td>O(N) to O(NlgN)</td>
         <td>O(NlgN)</td>
+        <td>O(N<sup>2</sup>/lgN)</td>
       </tr>
       <tr>
         <td>
@@ -204,6 +218,7 @@
         <td>O(N<sup>4</sup>)</td>
         <td>O(P<sup>2</sup>N) for simplicity O(N<sup>3</sup>)</td>
         <td>O(P<sup>2</sup>N) for simplicity O(N<sup>3</sup>)</td>
+        <td>O(N)</td>
       </tr>
       <tr>
         <td>
@@ -216,6 +231,7 @@
         <td>O(N<sup>3</sup>)</td>
         <td>O(N)</td>
         <td>O(N)</td>
+        <td>O(N<sup>2</sup>)</td>
       </tr>
       <tr>
         <td>
@@ -228,6 +244,7 @@
         <td>O(N<sup>4</sup>)</td>
         <td>O(N)</td>
         <td>O(N<sup>2</sup>)</td>
+        <td>O(N<sup>3</sup>)</td>
       </tr>
       <tr>
         <td>
@@ -240,6 +257,7 @@
         <td>O(N<sup>3</sup>)</td>
         <td>O(N<sup>2</sup>)</td>
         <td>O(N<sup>2</sup>)</td>
+        <td>O(N)</td>
       </tr>
       <tr>
         <td>
@@ -250,7 +268,21 @@
         <td>10<sup>12</sup></td>
         <td>20 seconds</td>
         <td>O(&#8730D)</td>
-        <td>O(NlgD))</td>
+        <td>O(N) to O(NlgD))</td>
+        <td>O(N)</td>
+        <td>?</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000201d29/0000000000201b7c">
+            Google Kickstart 2017 Round F, Problem 2 "Kicksort"
+          </a>
+        </td>
+        <td>10<sup>4</sup></td>
+        <td>200 seconds</td>
+        <td>O(N<sup>3</sup>)</td>
+        <td>O(N) to O(N<sup>2</sup>)</td>
+        <td>O(N<sup>2</sup>)</td>
         <td>O(N)</td>
       </tr>
     </table>
@@ -268,13 +300,13 @@
   <div>
     Some people do not enable javascript in their browsers.
     As a result, the above tool to help figure out the runtime complexity will not work.
-    I put together this static table below to look up your target runtime complexity.
+    So I put together the static table below for you to look up your target runtime complexity.
     Instead of the tool powered by javascript, it is powered by you searching the table.
   </div>
 
-  <h2>How to use</h2>
+  <h2>How to use the table</h2>
   <div>
-    Use this table to estimate the max complexity your algorithm can have in order to achieve your deadline.
+    Estimate the max complexity of your algorithm in order to achieve your deadline.
     <ol>
       <li>Look for your how much time your algorithm has available in the Time column.</li>
       <li>In that row, look for your approximate problem size, expressed as a power of 2 or power of 10.</li>
@@ -303,7 +335,7 @@
   <h1>Using your own timings</h1>
   <div>
     Time how long it takes to count from 0 to 2<sup>32</sup> (or another power of 2 of your choosing) in milliseconds on your computer or in your language.
-    Fill in the the textboxes and hit go. This will add a column scaled to your platform.
+    Fill in the the textboxes and hit go. This will add a column scaled to your platform. (Needs javascript)
     <br/>
     2<sup><sup><sup><input id ="rescalePower" type="text" value="32"></sup></sup></sup><br/>
     Time in milliseconds: <input id ="rescaleTimeMsec" type="text" value="260"/><br/>
